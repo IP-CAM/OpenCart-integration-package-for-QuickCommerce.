@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Core - Customers</name>
+	<version>1.0</version>
+	<code>quickcommerce_core_customer</code>
+	<author>lucaslopatka@gmail.com</author>
+	
+	<!-- 
+	This gets too crazy, I'm gonna patch in events right in the controller.
+	Not my favorite solution, but it'll work... this should be easier in OC 2.2.
+	-->
+	<!--<file path="admin/model/customer/customer.php">-->
+	<file path="admin/model/sale/customer.php">
+		<operation>
+			<search><![CDATA[
+				$implode[] = "CONCAT(c.firstname, ' ', c.lastname) LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+			]]>
+			</search>
+			<add position="replace"><![CDATA[
+		if (!empty($data['filter_name'])) {
+			$name = "LOWER(CONCAT(c.firstname, ' ', c.lastname)) LIKE '%" . $this->db->escape(strtolower($data['filter_name'])) . "%'";
+			$name .= "OR LOWER(c.company_name) LIKE '%" . strtolower($this->db->escape($data['filter_name'])) . "%'"; // QC tables and fields should exist so this is all good
+
+			$implode[] = $name;
+		}
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$implode[] = "c.email LIKE '" . $this->db->escape($data['filter_email']) . "%'";
+			]]>
+			</search>
+			<add position="replace"><![CDATA[
+		$implode[] = "c.email LIKE '%" . $this->db->escape($data['filter_email']) . "%'";
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				public function addCustomer($data) {	
+			]]>
+			</search>
+			<add position="replace" offset="16"><![CDATA[
+	public function addCustomer($data) {
+		$this->event->trigger('pre.customer.add', $data);
+	
+		$this->db->query("INSERT INTO " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', display_name = '" . $this->db->escape($data['email']) . "', company_name = '" . $this->db->escape($data['company_name']) . "', print_on_check_name = '" . $this->db->escape($data['print_on_check_name']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? serialize($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "', date_added = NOW()");
+
+		$customer_id = $this->db->getLastId();
+
+		if (isset($data['address'])) {
+			foreach ($data['address'] as $address) {
+				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? serialize($address['custom_field']) : '') . "'");
+
+				if (isset($address['default'])) {
+					$address_id = $this->db->getLastId();
+
+					$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+				}
+			}
+		}
+		
+		$this->event->trigger('post.customer.add', $customer_id);
+	}
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				public function editCustomer($customer_id, $data) {	
+			]]>
+			</search>
+			<add position="replace" offset="28"><![CDATA[
+	public function editCustomer($customer_id, $data) {
+		$this->event->trigger('pre.customer.edit', $data);
+		
+		if (!isset($data['custom_field'])) {
+			$data['custom_field'] = array();
+		}
+
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET customer_group_id = '" . (int)$data['customer_group_id'] . "', display_name = '" . $this->db->escape($data['email']) . "', company_name = '" . $this->db->escape($data['company_name']) . "', print_on_check_name = '" . $this->db->escape($data['print_on_check_name']) . "', firstname = '" . $this->db->escape($data['firstname']) . "', lastname = '" . $this->db->escape($data['lastname']) . "', email = '" . $this->db->escape($data['email']) . "', telephone = '" . $this->db->escape($data['telephone']) . "', fax = '" . $this->db->escape($data['fax']) . "', custom_field = '" . $this->db->escape(isset($data['custom_field']) ? json_encode($data['custom_field']) : '') . "', newsletter = '" . (int)$data['newsletter'] . "', status = '" . (int)$data['status'] . "', approved = '" . (int)$data['approved'] . "', safe = '" . (int)$data['safe'] . "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+		if ($data['password']) {
+			$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9))) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+			// This must be the new OC way post 2.3
+			//$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = token(9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($data['password'])))) . "' WHERE customer_id = '" . (int)$customer_id . "'");
+		}
+
+		$this->db->query("DELETE FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$customer_id . "'");
+
+		if (isset($data['address'])) {
+			foreach ($data['address'] as $address) {
+				if (!isset($address['custom_field'])) {
+					$address['custom_field'] = array();
+				}
+
+				$this->db->query("INSERT INTO " . DB_PREFIX . "address SET address_id = '" . (int)$address['address_id'] . "', customer_id = '" . (int)$customer_id . "', firstname = '" . $this->db->escape($address['firstname']) . "', lastname = '" . $this->db->escape($address['lastname']) . "', company = '" . $this->db->escape($address['company']) . "', address_1 = '" . $this->db->escape($address['address_1']) . "', address_2 = '" . $this->db->escape($address['address_2']) . "', city = '" . $this->db->escape($address['city']) . "', postcode = '" . $this->db->escape($address['postcode']) . "', country_id = '" . (int)$address['country_id'] . "', zone_id = '" . (int)$address['zone_id'] . "', custom_field = '" . $this->db->escape(isset($address['custom_field']) ? json_encode($address['custom_field']) : '') . "'");
+
+				if (isset($address['default'])) {
+					$address_id = $this->db->getLastId();
+
+					$this->db->query("UPDATE " . DB_PREFIX . "customer SET address_id = '" . (int)$address_id . "' WHERE customer_id = '" . (int)$customer_id . "'");
+				}
+			}
+		}
+		
+		$this->event->trigger('post.customer.edit', $customer_id);
+	}
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/sale/customer.php">
+		<operation>
+			<search><![CDATA[
+				$this->getList();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$this->document->addScript('view/javascript/quickcommerce/qc_customer.js');
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['entry_customer_group'] = $this->language->get('entry_customer_group');
+			]]>
+			</search>
+			<add position="after">
+			<![CDATA[
+			$data['entry_display_name'] = $this->language->get('entry_display_name');
+			$data['entry_company_name'] = $this->language->get('entry_company_name');
+			$data['entry_print_on_check_name'] = $this->language->get('entry_print_on_check_name');
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				if (isset($this->error['firstname'])) {
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			if (isset($this->error['display_name'])) {
+				$data['error_display_name'] = $this->error['display_name'];
+			} else {
+				$data['error_display_name'] = '';
+			}
+			
+			if (isset($this->error['company_name'])) {
+				$data['error_company_name'] = $this->error['company_name'];
+			} else {
+				$data['error_company_name'] = '';
+			}
+			
+			if (isset($this->error['print_on_check_name'])) {
+				$data['error_print_on_check_name'] = $this->error['print_on_check_name'];
+			} else {
+				$data['error_print_on_check_name'] = '';
+			}
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				if (isset($this->request->post['firstname'])) {
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			if (isset($this->request->post['display_name'])) {
+				$data['display_name'] = $this->request->post['display_name'];
+			} elseif (!empty($customer_info)) {
+				$data['display_name'] = $customer_info['display_name'];
+			} else {
+				$data['display_name'] = '';
+			}
+			
+			if (isset($this->request->post['company_name'])) {
+				$data['company_name'] = $this->request->post['company_name'];
+			} elseif (!empty($customer_info)) {
+				$data['company_name'] = $customer_info['company_name'];
+			} else {
+				$data['company_name'] = '';
+			}
+			
+			if (isset($this->request->post['print_on_check_name'])) {
+				$data['print_on_check_name'] = $this->request->post['print_on_check_name'];
+			} elseif (!empty($customer_info)) {
+				$data['print_on_check_name'] = $customer_info['print_on_check_name'];
+			} else {
+				$data['print_on_check_name'] = '';
+			}
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				'customer_group_id' => $result['customer_group_id'],
+			]]>
+			</search>
+			<add position="after"><![CDATA[
+		'company_name' => (isset($result['company_name'])) ? $result['company_name'] : '',
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/english/sale/customer.php">
+		<operation>
+			<search><![CDATA[
+$_['entry_customer_group']  = 'Customer Group';
+			]]>
+			</search>
+			<add position="after">
+			<![CDATA[
+$_['entry_display_name']           = 'Display Name';
+$_['entry_company_name']           = 'Company Name';
+$_['entry_print_on_check_name']    = 'Print on Check Name';
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/sale/customer_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+			<a id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</a> <a id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</a> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="<?php echo $customer['edit']; ?>" data-id="<?php echo $customer['customer_id']; ?>" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Sync with QuickBooks" class="btn btn-default"><i class="fa fa-refresh"></i></a> <a href="<?php echo $customer['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				label: item['name'],
+			]]></search>
+			<add position="replace"><![CDATA[
+				label: (typeof item['company_name'] === 'string' && item['company_name'] !== '') ? item['name'] + ' (' + item['company_name'] + ')' : item['name'],
+			]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		<td class="text-left"><?php echo $customer['date_added']; ?></td>
+            ]]></search>
+			<add position="after"><![CDATA[
+        <td class="text-center">
+            <span data-id="<?php echo $customer['customer_id']; ?>" class="label label-default"><i class="fa fa-question"></i></span>
+        </td>
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		<td class="text-right"><?php echo $column_action; ?></td>
+            ]]></search>
+			<add position="before"><![CDATA[
+        <td class="text-center"><?php echo 'Sync'; ?></td>
+            ]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/sale/customer_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<div class="tab-pane active" id="tab-customer">
+			]]></search>
+			<add position="replace" offset="14"><![CDATA[
+				<div class="tab-pane active" id="tab-customer">
+				  <div class="form-group">
+					<label class="col-sm-2 control-label" for="input-customer-group"><?php echo $entry_customer_group; ?></label>
+					<div class="col-sm-10">
+					  <select name="customer_group_id" id="input-customer-group" class="form-control">
+						<?php foreach ($customer_groups as $customer_group) { ?>
+						<?php if ($customer_group['customer_group_id'] == $customer_group_id) { ?>
+						<option value="<?php echo $customer_group['customer_group_id']; ?>" selected="selected"><?php echo $customer_group['name']; ?></option>
+						<?php } else { ?>
+						<option value="<?php echo $customer_group['customer_group_id']; ?>"><?php echo $customer_group['name']; ?></option>
+						<?php } ?>
+						<?php } ?>
+					  </select>
+					</div>
+				  </div>
+				  <div class="form-group required">
+					<label class="col-sm-2 control-label" for="input-display_name"><?php echo $entry_display_name; ?></label>
+					<div class="col-sm-10">
+					  <input type="text" name="display_name" value="<?php echo $display_name; ?>" readonly="readonly" placeholder="<?php echo $entry_display_name; ?>" id="input-display_name" class="form-control" />
+					  <?php if ($error_display_name) { ?>
+					  <div class="text-danger"><?php echo $error_display_name; ?></div>
+					  <?php  } ?>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label class="col-sm-2 control-label" for="input-company_name"><?php echo $entry_company_name; ?></label>
+					<div class="col-sm-10">
+					  <input type="text" name="company_name" value="<?php echo $company_name; ?>" placeholder="<?php echo $entry_company_name; ?>" id="input-company_name" class="form-control" />
+					  <?php if ($error_company_name) { ?>
+					  <div class="text-danger"><?php echo $error_company_name; ?></div>
+					  <?php  } ?>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label class="col-sm-2 control-label" for="input-print_on_check_name"><?php echo $entry_print_on_check_name; ?></label>
+					<div class="col-sm-10">
+					  <input type="text" name="print_on_check_name" value="<?php echo $print_on_check_name; ?>" placeholder="<?php echo $entry_print_on_check_name; ?>" id="input-print_on_check_name" class="form-control" />
+					  <?php if ($error_print_on_check_name) { ?>
+					  <div class="text-danger"><?php echo $error_print_on_check_name; ?></div>
+					  <?php  } ?>
+					</div>
+				  </div>
+			]]></add>
+		</operation>
+	</file>
+</modification>

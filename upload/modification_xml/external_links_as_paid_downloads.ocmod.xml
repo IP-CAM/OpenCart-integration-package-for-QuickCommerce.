@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+ <name>External Links as (Paid) Downloads</name>
+ <code>ilithemes-elapd</code>
+ <version>2.2.0</version>
+ <author>Albert Evers (artcore)</author>
+ <link>http://ilithemes.com</link>
+
+ <file path="admin/controller/catalog/download.php">
+
+  <operation info="remove validation for file mask">
+   <search><![CDATA[$this->error['mask'] = $this->language->get('error_mask');]]></search>
+   <add position="replace"><![CDATA[//$this->error['mask'] = $this->language->get('error_mask');]]></add>
+  </operation>
+
+  <operation info="remove validation for file">
+   <search><![CDATA[$this->error['filename'] = $this->language->get('error_exists');]]></search>
+   <add position="replace"><![CDATA[//$this->error['filename'] = $this->language->get('error_exists');]]></add>
+  </operation>
+ </file>
+
+ <file path="admin/language/*/catalog/download.php">
+
+  <operation info="Append help text">
+   <search><![CDATA[$_['error_product']]]></search>
+   <add position="after"><![CDATA[$_['help_filename'] = 'You can upload via the upload button or use FTP to upload to the download directory and enter the details below.<br><br>To use downloads as external links, paste the url including http(s):// into the filename field!<br><br>Mask is optional';]]></add>
+  </operation>
+ </file>
+
+ <file path="catalog/controller/account/download.php">
+
+  <operation info="get external filesize">
+   <search><![CDATA[public function download() {]]></search>
+   <add position="before"><![CDATA[//Downloads as external links////////////////////
+   protected function getRemoteFilesize($url) {
+		$ch = curl_init($url);
+
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_HEADER, true);
+		curl_setopt($ch, CURLOPT_NOBODY, true);
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+
+		curl_exec($ch);
+		$size = curl_getinfo($ch, CURLINFO_CONTENT_LENGTH_DOWNLOAD);
+		curl_close($ch);
+
+		return $size;
+	}
+	////////////////////Downloads as external links//]]></add>
+  </operation>
+
+  <operation info="size caculation for either local or external">
+   <search><![CDATA[$size = filesize(DIR_DOWNLOAD . $result['filename']);]]></search>
+   <add position="replace"><![CDATA[
+   //Downloads as external links////////////////////
+   $size = (strpos($result['filename'], 'http') !== false) ? $this->getRemoteFilesize($result['filename']) : filesize(DIR_DOWNLOAD . $result['filename']);
+   ////////////////////Downloads as external links//
+   ]]></add>
+  </operation>
+
+  <operation info="file is either local or external">
+   <search><![CDATA[$file = DIR_DOWNLOAD . $download_info['filename'];]]></search>
+   <add position="replace"><![CDATA[//Downloads as external links////////////////////
+   $file = (strpos($download_info['filename'], 'http') !== false) ? $download_info['filename'] : DIR_DOWNLOAD . $download_info['filename'];
+   ////////////////////Downloads as external links//]]></add>
+  </operation>
+
+  <operation info="remove file check">
+   <search><![CDATA[if (file_exists(DIR_DOWNLOAD . $result['filename'])) {]]></search>
+   <add position="replace"><![CDATA[//Downloads as external links////////////////////
+   if ($result['filename']) {
+   ////////////////////Downloads as external links//]]></add>
+  </operation>
+
+  <operation info="remove file check">
+   <search><![CDATA[if (file_exists($file)) {]]></search>
+   <add position="replace"><![CDATA[
+   //Downloads as external links////////////////////
+   if ($file) {
+   ////////////////////Downloads as external links//]]></add>
+  </operation>
+
+  <operation info="prepare size">
+   <search><![CDATA[$mask = basename($download_info['mask']);]]></search>
+   <add position="after">
+    <![CDATA[//Downloads as external links////////////////////
+    $size = (strpos($download_info['filename'], 'http') !== false) ? $this->getRemoteFilesize($download_info['filename']) : filesize(DIR_DOWNLOAD . $download_info['filename']);
+    ////////////////////Downloads as external links//]]></add>
+  </operation>
+
+  <operation info="header file size">
+   <search><![CDATA[filesize($file)]]></search>
+   <add position="replace"><![CDATA[$size]]></add>
+  </operation>
+ </file>
+</modification>

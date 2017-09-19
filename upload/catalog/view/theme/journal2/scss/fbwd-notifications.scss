@@ -1,0 +1,40 @@
+/******************************
+ NOTIFICATION
+*******************************/
+
+.journal-slider + #container > #notification {
+  display: none;
+}
+
+#notification {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+}
+
+.success, .warning, .information, .attention{
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  height: auto;
+  padding:10px 15px;
+  line-height: $margin;
+  a{
+    color: $blue;
+  }
+
+  img{
+    float: right;
+    margin-top: 6px;
+    cursor: pointer;
+    display: block;
+  }
+}
+
+.success{background-color: #CDECA6;}
+.warning{background-color: #FBE3A7;}
+.attention{background-color: #FBE3A7;}
+.information{background-color: #BFE7F1;}
+.fa-exclamation-circle{
+  font-size: 17px;
+}

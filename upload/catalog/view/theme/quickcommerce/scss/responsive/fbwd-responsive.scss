@@ -1,0 +1,334 @@
+@media screen and (max-width: 1280px) {
+    .circle-graphic {
+        max-width: 50%;
+    }
+    svg {
+        height: auto;
+    }
+    .parallax_title_intro {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    .parallax_title_intro .cta-buttons {
+        display: none;
+    }
+    .parallax.title {
+        height: auto !important;
+    }
+    .parallax.title:after {
+        /* kill the gradient - do it everywhere later too */
+        
+        background-image: none;
+    }
+    .parallax .parallax_title.inline {
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .parallax .parallax_title.inline .ppb_title {
+        font-size: 23px;
+    }
+    .parallax .parallax_title.inline .ppb_title_first {
+        font-size: 40px;
+    }
+    .store-location {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    #scene-clouds-3 {
+        display: none !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    header,
+    .journal-header-center {
+        margin-top: 0;
+    }
+    
+    .off-canvas {
+        width: calc(100% - 48px);
+    }
+    
+    #sticky-wrapper, .j-min {
+        min-height: auto;
+        height: 0;
+    }
+    .off-canvas,
+    .off-canvas-trigger {
+        top: 0;
+    }
+    
+    /* Make sticky-menu area bigger */
+    body {
+        padding-top: 0;
+    }
+    
+    .site {
+        border-top: none;
+    }
+    
+    .off-canvas-menu-wrapper {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .off-canvas-menu-wrapper .menu-element {
+        flex-basis: auto;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* Adjust height to cover SFA schedule widget footer */
+    .fullwidth-footer .bottom-footer {
+        position: relative;
+        top: -90px;
+    }
+
+    #footer .footer-location {
+        padding-top: 2rem;
+    }
+    
+    .off-canvas-menu-wrapper {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .off-canvas-menu-wrapper .menu-element {
+        flex-basis: auto;
+        width: 75%;
+    }
+    
+    #sticky-wrapper, .j-min {
+        min-height: auto;
+    }
+    
+    p,
+    body,
+    .journal-carousel .product-details,
+    .journal-carousel .product-grid-item .name a {
+        font-size: 15px;
+    }
+    
+    .store-location > .column:not(.hidden-phone) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .google-play-column,
+    .app-store-column {
+        max-height: 80px !important;
+    }
+    .google-play-column img,
+    .app-store-column img {
+        max-height: 60px !important;
+    }
+}
+
+/* Custom layout fix for Jimmy P's on iPad - there's a 7px range where the footer doesn't line up on iPad */
+@media only screen and (min-width: 761px) and (max-width: 768px) {
+    /* We previously adjusted height to cover SFA schedule widget footer */
+    #footer .footer-location {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .off-canvas-menu-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .off-canvas-menu-wrapper .menu-element {
+        flex-basis: auto;
+        width: auto;
+    }
+    
+    .off-canvas {
+        width: calc(100% - 48px);
+    }
+    
+    #footer {
+        flex-direction: column;
+    }
+    /* Fix & center footer cols for mobile */
+    
+    footer .column {
+        padding-right: 0;
+    }
+    .fullwidth-footer .row.columns {
+        padding: 0;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #text {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .parallax_title_intro .parallax_title {
+        display: none;
+    }
+    .page_title_intro p,
+    .parallax.title .parallax_title_intro p {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+    .name {
+        font-size: 11px;
+    }
+    /*.owl-controls {
+        position: relative;
+    }*/
+    #header {
+        padding-top: 0;
+    }
+    .parallax_title_intro {
+        padding-top: 1.5rem;
+    }
+    .hidden-phone {
+        display: none;
+    }
+    .display-phone {
+        display: block;
+    }
+}
+.journal-carousel .product-grid-item .price,
+.product-grid-item .price {
+    display: none;
+}
+/* TODO: Not sure if these queries are that great - at some point should switch grid system to bootstrap or something so I don't have to f*** around */
+
+@media screen and (min-width: 768px) {
+    .hidden-tablet {
+        display: none;
+    }
+    .display-tablet {
+        display: block;
+    }
+    /* Fix for inline elements */
+    
+    p.display-tablet,
+    span.display-tablet,
+    a.display-tablet,
+    img.display-tablet {
+        display: inline-block;
+    }
+}
+@media screen and (min-width: 992px) {
+    .hidden-lg-tablet {
+        display: none;
+    }
+    .display-lg-tablet {
+        display: block;
+    }
+    /* Fix for inline elements */
+    
+    p.display-lg-tablet,
+    span.display-lg-tablet,
+    a.display-lg-tablet,
+    img.display-lg-tablet {
+        display: inline-block;
+    }
+    .store-location {
+        display: flex;
+        align-items: center;
+    }
+    .store-location svg {
+        align-self: baseline;
+    }
+}
+/* The built in Journal grid system blows, we should replace it at some point */
+
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+    .lg-11 {
+        width: 11.11111111111111%;
+    }
+    .lg-12 {
+        width: 12.5%;
+    }
+    .lg-14 {
+        width: 14.28571428571429%;
+    }
+    .lg-16 {
+        width: 16.66666666666666%;
+    }
+    .lg-33 {
+        width: 33.33333333333333%;
+    }
+    .lg-66 {
+        width: 66.66666666666666%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .hidden-desktop {
+        display: none;
+    }
+    .display-desktop {
+        display: block;
+    }
+    /* Fix for inline elements */
+    
+    p.display-desktop,
+    span.display-desktop,
+    a.display-desktop,
+    img.display-desktop {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cart-ui {
+        flex-flow: column wrap;
+    }
+    
+    .thumbnail {
+        width: 50px !important;
+    }
+    
+    .card {
+        display: flex;
+    }
+    
+    .card h5, .cart p {
+        margin: 0 !important;
+        padding: 0 !important;
+        /* Handle with flex */
+    }
+    
+    .card h5 {
+        flex: 1;
+    }
+    
+    .card p {
+        flex: 2;
+    }
+    
+    /* Fix now that we rearranged cart layout */
+    .checkout-parts button {
+        display: block;
+        float: none !important;
+    }
+    
+    .griddle-container {
+        padding: 3rem 1rem 0.5rem;
+        border: 1px solid #e3e3e3;
+        border-radius: 5px;
+        background: #f5f5f5;
+        min-height: 100px;
+        display: flex;
+    }
+    
+    .checkout-parts {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-device-width: 1024px) and (orientation: landscape) {
+    .griddle-container div[class^="col-"] {
+        height: 230px;
+    }
+}

@@ -1,0 +1,22 @@
+/******************************
+MEGA-MENU HTML
+*******************************/
+
+.mega-menu-html{
+  .mega-menu-item{
+    margin-bottom: 20px;
+    img{
+      max-width: 100%;
+      height: auto !important;
+    }
+    ul, ol{
+      padding-left: 30px;
+    }
+  }
+}
+
+.dummy-hide {
+  display: block !important;
+  visibility: hidden;
+  opacity: 0;
+}

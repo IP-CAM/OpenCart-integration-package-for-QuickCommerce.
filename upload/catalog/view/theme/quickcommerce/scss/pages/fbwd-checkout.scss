@@ -1,0 +1,140 @@
+/******************************
+ CHECKOUT PAGE
+*******************************/
+
+.checkout {
+  margin-bottom: 20px;
+  overflow: hidden;
+  select{
+    margin:0 0 3px 0;
+  }
+  div:last-of-type{
+    .checkout-heading{
+      border-bottom: none;
+    }
+  }
+}
+
+.checkout-heading {
+  border-bottom: 1px solid;
+  border-color: $dark;
+  font-size: 13px;
+  min-height: 35px;
+  padding: 10px;
+  clear: both;
+}
+
+.checkout-heading a {
+  float: right;
+  margin-top: 1px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.checkout-content {
+  padding: 0 0 15px 0;
+  display: none;
+  position: relative;
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  table.radio td:first-child{
+    width: 25px;
+  }
+  p{
+    padding: 10px 0;
+  }
+
+  .left {
+    float: left;
+    width: 48%;
+  }
+
+  .right {
+    float: right;
+    width: 48%;
+  }
+
+  .left {
+    p:last-of-type{
+      min-height: 92px;
+    }
+  }
+
+  .buttons{
+    margin-bottom: 0;
+    clear: both;
+    .right{
+      width:100%;
+    }
+  }
+  textarea{
+    width: 100% !important;
+    margin-top: 15px;
+  }
+}
+
+#payment-address h2{
+  margin-bottom: 15px;
+}
+
+.checkout-product{
+  .total {
+    font-weight: bold;
+  }
+  td {
+    padding: 15px;
+  }
+  thead td {
+    font-weight: bold;
+    padding: 13px;
+  }
+  .name,
+  .model {
+    text-align: left;
+  }
+  .quantity,
+  .price,
+  .total {
+    text-align: right;
+  }
+  tbody td {
+    border-bottom: 1px solid;
+    border-color: $f4;
+  }
+  tfoot td {
+    text-align: right;
+    padding: 6px 15px;
+  }
+}
+
+.wait {
+  position: absolute;
+  padding-top: 12px;
+  right: -10px;
+  bottom: 30px;
+}
+
+.newsletter-page{
+  table.form{
+    padding-top: 0;
+  }
+}
+
+.oc2{
+  .oc-newsletter{
+    .form-horizontal .form-group > label{
+      width: auto;
+      padding-top: 10px;
+    }
+    .form-horizontal .form-group .radio-inline{
+      width: auto;
+    }
+    .form-horizontal .form-group label + div{
+      float: none;
+      padding-top: 0;
+    }
+  }
+}

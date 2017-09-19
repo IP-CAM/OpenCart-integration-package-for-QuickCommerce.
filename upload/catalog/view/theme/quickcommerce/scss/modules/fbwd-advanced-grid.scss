@@ -1,0 +1,52 @@
+/******************************
+ADVANCED GRID
+*******************************/
+
+.multi-modules-wrapper{
+  overflow: hidden;
+}
+
+.multi-modules{
+  .static-banner, .journal-simple-slider, .static-banners > div{
+    margin: 0 !important;
+    padding: 0 !important;
+    .banner-overlay{
+     right: 0;
+    }
+  }
+  .tp-banner-container{
+    height: auto !important;
+  }
+}
+.multi-modules-column{
+  margin-top: 0 !important;
+}
+.multi-modules-row{
+  overflow: hidden;
+  position: relative;
+}
+
+#top-modules, #bottom-modules{
+  .multi-modules{
+    .static-banners{
+      padding: 0 !important;
+    }
+  }
+}
+
+.container-dimensions {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: red;
+  z-index: 97;
+  display: none;
+}
+
+.multi-modules-row:hover .container-dimensions{
+  display: block;
+}
+
+.multi-modules-row .journal-carousel + .container-dimensions{
+  display: none;
+}

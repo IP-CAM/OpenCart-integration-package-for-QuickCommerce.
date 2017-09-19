@@ -1,0 +1,148 @@
+<modification>
+	<name>CallForPrice by iSenseLabs</name>
+	<version>1.0 (Initial)</version>
+	<link>http://isenselabs.com</link>
+	<author>iSenseLabs</author>
+	<code>isenselabs_callforprice</code>
+
+	<file path="catalog/controller/checkout/cart.php">
+		<operation>
+			<search><![CDATA[if ($product_info) {]]></search>
+			<add position="after"><![CDATA[
+				$CFP = $this->config->get('callforprice');
+				
+				if (isset($CFP) && ($CFP['Enabled'] == 'yes')) {
+					if ($CFP['Alert']=='default') {
+						$json['CFP'] = true;
+					} else if ($CFP['Alert']=='selected') {
+						if (isset($CFP['Products']) && (in_array($this->request->post['product_id'],$CFP['Products'])) )
+							$json['CFP'] = true;
+					}
+				} 
+		]]></add>
+		</operation>
+	</file>
+  
+	<file path="catalog/controller/product/product.php">
+		<operation>
+			<search><![CDATA[$data['button_cart'] = $this->language->get('button_cart');]]></search>
+			<add position="after"><![CDATA[
+			////		
+			$this->load->language('module/callforprice');
+			$CFP = $this->config->get('callforprice');
+			$data['CFP_show'] = false;
+			if (isset($CFP) && ($CFP['Enabled'] == 'yes')) {
+				if ($CFP['Alert']=='default') {
+					$data['CFP_show'] = true;
+				} else if ($CFP['Alert']=='selected') {
+					if (isset($CFP['Products']) && (in_array($product_id,$CFP['Products'])) )
+						$data['CFP_show'] = true;
+				}
+				
+				if ($data['CFP_show']) {
+					$data['CFP_button_cart'] = $this->language->get('CallForPrice_Button');
+				}
+			} 	
+			////	
+		]]></add>
+		</operation>
+	</file>
+  
+  	<file path="catalog/view/theme/*/template/product/product.tpl">
+		<operation>
+			<search index="0"><![CDATA[<?php echo $button_cart; ?>]]></search>
+			<add position="replace"><![CDATA[
+			<?php if ($CFP_show) echo $CFP_button_cart; else echo $button_cart; ?>
+		]]></add>
+		</operation>
+      
+      	<operation>
+			<search><![CDATA[$('#button-cart').on('click', function() {]]></search>
+			<add position="after"><![CDATA[
+			<?php if ($CFP_show) { ?>
+				$('#CFP_popup').detach().appendTo('body');
+				var btn = this;
+
+				offset = $(btn).offset();
+				var leftOffset = offset.left + (parseInt($(btn).width()/2));
+				$('div#CFP_popup').css({
+					top: offset.top,
+					left: ((offset.left-$('div#CFP_popup').width()/2) + $(btn).width()/2)
+				});
+
+				$('div#CFP_popup').fadeIn('slow');
+				$(".CFP_popover-content").load("index.php?route=module/callforprice/showform&product_id="+<?php echo $product_id; ?>);
+				return;
+			<?php } ?>
+		]]></add>
+		</operation>
+	</file>
+  
+  	<file path="catalog/model/catalog/product.php">
+		<operation>
+			<search index="0"><![CDATA[if ($query->num_rows) {]]></search>
+			<add position="after"><![CDATA[
+				$this->load->language('module/callforprice');
+				$CFP = $this->config->get('callforprice');
+				$data['CFP_show'] = false;
+				if (isset($CFP) && ($CFP['Enabled'] == 'yes')) {
+					if ($CFP['Alert']=='default') {
+						$data['CFP_show'] = true;
+					} else if ($CFP['Alert']=='selected') {
+						if (isset($CFP['Products']) && (in_array($product_id,$CFP['Products'])) )
+							$data['CFP_show'] = true;
+					}
+				
+					if ($data['CFP_show']) {
+						$query->row['discount'] = 0;
+						$query->row['price'] = 0;
+						$query->row['special'] = 0;
+						$query->row['tax_class_id'] = 0;
+					}
+				} 
+		]]></add>
+		</operation>
+	</file>
+  
+    <file path="admin/controller/common/header.php">
+      	<operation>
+			<search><![CDATA[$data['text_logout'] = $this->language->get('text_logout');]]></search>
+			<add position="after"><![CDATA[
+          		$CFP = $this->config->get('callforprice');
+				$data['cfp_enabled'] = false; 
+				if (isset($CFP) && ($CFP['Enabled'] == 'yes') && isset($this->session->data['token'])) {
+				  $data['cfp_enabled'] = true;
+                  $this->load->language('module/callforprice');
+                  $data['cfp_text'] 			= $this->language->get('cfp_title_notif');
+                  $data['cfp_waiting_list'] 	= $this->language->get('tab_waitinglist');
+                  $data['cfp_url'] 			= $this->url->link('module/callforprice', 'token=' . $this->session->data['token'], 'SSL');
+                  $cfp_query = $this->db->query("SELECT COUNT(*) as `count`  FROM `" . DB_PREFIX . "callforprice` WHERE customer_notified=0");
+                  $data['cfp_total'] 			= $cfp_query->row['count']; 
+				}
+		]]></add>
+		</operation>
+      			
+     	<operation>
+			<search><![CDATA[$data['stores'] = array();]]></search>
+			<add position="before"><![CDATA[
+				if (isset($CFP) && ($CFP['Enabled'] == 'yes')) {
+          			$data['alerts'] = $data['alerts'] + $data['cfp_total'];
+				}
+		]]></add>
+		</operation>
+	</file>
+  
+  	<file path="admin/view/template/common/header.tpl">
+         <operation>
+			<search><![CDATA[<li class="dropdown-header"><?php echo $text_affiliate; ?></li>]]></search>
+			<add position="before"><![CDATA[
+				<?php if ($cfp_enabled) { ?>
+	  	     	  <li class="dropdown-header"><?php echo $cfp_text; ?></li>
+                  <li><a href="<?php echo $cfp_url; ?>"><span class="label label-danger pull-right"><?php echo $cfp_total; ?></span><?php echo $cfp_waiting_list; ?></a></li>
+                  <li class="divider"></li>
+				<?php } ?>
+		]]></add>
+		</operation>
+	</file>
+
+</modification>

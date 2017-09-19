@@ -1,0 +1,48 @@
+.one_half.parallax_scroll {
+    position: absolute;
+    top: 0;
+    background: rgba(255, 255, 255, 0.77);
+    padding: 40px;
+    transform: translate3d(0px, 119.645px, 0px);
+    display: none;
+    z-index: 500;
+}
+.page_title_intro p {
+    color: #424242;
+}
+
+.parallax_scroll.scene {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    position: absolute;
+    max-width: 1920px;
+    left: 0;
+}
+.parallax_scroll.scene img {
+    max-width: 100%;
+}
+.parallax_title_intro {
+    padding-top: 120px;
+    text-align: center;
+}
+
+/* Darker shadows */
+.parallax_title_intro {
+    padding: 150px 0;
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.777) 0%, rgba(0, 0, 0, 0.666) 55%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.777) 0%, rgba(0, 0, 0, 0.66) 55%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0) 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.777) 0%, rgba(0, 0, 0, 0.666) 55%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#a8000000', endColorstr='#00000000', GradientType=1);
+}
+
+.scene .page_title_intro p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#scene-logo {
+    left: 50%;
+    transform: translateX(-50%) !important;
+}

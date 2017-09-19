@@ -1,0 +1,56 @@
+/******************************
+JOURNAL GRID
+*******************************/
+
+$classes: ();
+
+@each $size in xs, sm, md, lg, xl{
+  @for $i from 1 through 20{
+    $classes: join($classes, unquote(".#{$size}-#{$i * 5}"), comma);
+  }
+  $classes: join($classes, unquote(".#{$size}-33"), comma);
+  $classes: join($classes, unquote(".#{$size}-66"), comma);
+}
+
+@for $i from 1 through 20{
+  .xl-#{$i * 5} {
+    width: $i * 5%;
+  }
+}
+
+.xl-11{
+  width: 11.11111111111111%;
+}
+
+.xl-12{
+  width: 12.5%;
+}
+
+.xl-14{
+  width: 14.28571428571429%;
+}
+
+.xl-16{
+  width: 16.66666666666666%;
+}
+
+.xl-33{
+  width: 33.33333333333333%;
+}
+
+.xl-66{
+  width: 66.66666666666666%;
+}
+
+#{$classes} {
+  min-height: 1px;
+  float: left;
+}
+.xs-11, .xs-12, .xs-14, .xs-16,
+.sm-11, .sm-12, .sm-14, .sm-16,
+.md-11, .md-12, .md-14, .md-16,
+.lg-11, .lg-12, .lg-14, .lg-16,
+.xl-11, .xl-12, .xl-14, .xl-16{
+  min-height: 1px;
+  float: left;
+}

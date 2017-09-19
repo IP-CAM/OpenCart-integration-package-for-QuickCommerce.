@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Populate Option Values</name>
+	<version>1.0</version>
+	<code>quickcommerce_populate_option_values</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="admin/controller/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+			protected function getForm() {
+			]]></search>
+			<add position="after"><![CDATA[
+		$this->document->addScript('view/javascript/quickcommerce/qc_populate_option_values.js');
+			]]></add>
+		 </operation>
+	</file>
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[
+			<label class="col-sm-2 control-label" for="input-required<?php echo $option_row; ?>"><?php echo $entry_required; ?></label>
+			]]></search>
+			<add position="replace" offset="11"><![CDATA[
+					  <label class="col-sm-2 control-label" for="input-required<?php echo $option_row; ?>"><?php echo $entry_required; ?></label>
+					  <div class="col-sm-8">
+					    <select name="product_option[<?php echo $option_row; ?>][required]" id="input-required<?php echo $option_row; ?>" class="form-control">
+						  <?php if ($product_option['required']) { ?>
+						  <option value="1" selected="selected"><?php echo $text_yes; ?></option>
+						  <option value="0"><?php echo $text_no; ?></option>
+						  <?php } else { ?>
+						  <option value="1"><?php echo $text_yes; ?></option>
+						  <option value="0" selected="selected"><?php echo $text_no; ?></option>
+						  <?php } ?>
+					    </select>
+					  </div>
+					  <div class="col-sm-2">
+						<button type="button" name="qc-fill-select-options" data-toggle="tooltip" title="<?php echo $button_option_value_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Fill Options</button>
+					  </div>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+			html += '	  <label class="col-sm-2 control-label" for="input-required' + option_row + '"><?php echo $entry_required; ?></label>';
+			]]></search>
+			<add position="replace" offset="4"><![CDATA[
+		html += '	  <label class="col-sm-2 control-label" for="input-required' + option_row + '"><?php echo $entry_required; ?></label>';
+		html += '	  <div class="col-sm-8"><select name="product_option[' + option_row + '][required]" id="input-required' + option_row + '" class="form-control">';
+		html += '	      <option value="1"><?php echo $text_yes; ?></option>';
+		html += '	      <option value="0"><?php echo $text_no; ?></option>';
+		html += '	  </select></div>';
+		html += '	  <div class="col-sm-2">';
+		html += '		<button type="button" name="qc-fill-select-options" data-toggle="tooltip" title="<?php echo $button_option_value_add; ?>" class="btn btn-primary"><i class="fa fa-plus-circle"></i>Fill Options</button>';
+		html += '	  </div>';
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+		html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][subtract]" class="form-control">';
+			]]></search>
+			<add position="replace" offset="3"><![CDATA[
+		html += '  <td class="text-left"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][subtract]" class="form-control">';
+		html += '    <option value="0" selected="selected"><?php echo $text_no; ?></option>';
+		html += '    <option value="1"><?php echo $text_yes; ?></option>';
+		html += '  </select></td>';
+			]]></add>
+		</operation>
+	</file>
+</modification>

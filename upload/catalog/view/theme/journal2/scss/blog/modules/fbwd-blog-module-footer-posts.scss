@@ -1,0 +1,73 @@
+//FOOTER POSTS
+
+.column.posts{
+  margin: 0;
+  h3{
+    margin-bottom: 7px;
+  }
+  > div {
+    margin-bottom: 0;
+  }
+}
+.footer-post{
+  padding: 6px 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: $f4;
+  .comment-date{
+    padding: 5px 0 0 0;
+    color: $e4;
+  }
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &:first-of-type{
+    padding-top: 0;
+  }
+  &:last-of-type{
+    border-bottom: 0;
+  }
+}
+.footer-post-image{
+  display: block;
+  overflow: hidden;
+  float: left;
+  margin-right: 10px;
+}
+
+.footer-post-title,
+.footer-post .comment-date{
+  display: block;
+  text-align: left;
+  border-width: 0;
+  transition: all 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.footer-post .comment-date{
+  font-size: 11px;
+  padding: 3px 0 0 0;
+  span:before{
+    font-size: 12px;
+  }
+}
+
+.journal-blog-feed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 20px;
+  margin-top: 30px;
+  transition: all 0.2s;
+  color: #222;
+  &:before{
+    content: "\e6b4";
+    color: #FF8000;
+    margin-right: 5px;
+    position: relative;
+    top: 1px;
+  }
+}

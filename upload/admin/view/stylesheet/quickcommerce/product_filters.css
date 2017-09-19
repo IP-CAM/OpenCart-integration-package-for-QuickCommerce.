@@ -1,0 +1,33 @@
+.scroll1 {
+    height: 104px;
+    overflow: auto;
+    margin-bottom: 4px !important;
+    padding: 2px !important;
+}
+.scroll1 .checkbox {
+    margin: 0 !important;
+}
+.scroll1 .checkbox input[type=checkbox] {
+    margin-right: 0.5rem;
+}
+.list1 {
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+}
+.list1 td {
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+.tooltip-inner {
+    max-width: 400px !important;
+    text-align: left !important;
+}
+
+#tab-option > div > div > .tab-content {
+    max-height: 625px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 1.5rem;
+}

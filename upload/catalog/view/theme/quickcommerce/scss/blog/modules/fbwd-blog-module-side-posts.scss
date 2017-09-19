@@ -1,0 +1,70 @@
+//SIDE POSTS
+.side-blog .box-post{
+  padding: 10px 0 0 0;
+}
+
+.side-blog .box-category.box-post {
+  padding: 0;
+}
+
+.side-post + hr{
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: $f4;
+}
+.side-post{
+  margin-bottom: 10px;
+  overflow: hidden;
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  &:last-of-type{
+    margin-bottom: 0;
+  }
+  &:last-of-type + hr{
+    display: none;
+  }
+  .comment-date{
+    border-bottom: none;
+    border-top: none;
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  .p-comment{
+    margin-right: 0;
+  }
+  .p-date{
+    margin-right: 10px;
+  }
+}
+.side-post-details{
+  float: left;
+  width: 75%;
+}
+.side-post-image{
+  width: 20%;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin-right: 5%;
+  img{
+    width: 100%;
+    height: auto;
+    float: left;
+  }
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.side-post-title{
+  display: block;
+  margin-bottom: 6px;
+  transition: all 0.2s;
+}

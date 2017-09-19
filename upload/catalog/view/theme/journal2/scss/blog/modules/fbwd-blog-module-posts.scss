@@ -1,0 +1,18 @@
+//POSTS
+.side-posts .box-post{
+  overflow: hidden;
+  position: relative;
+}
+
+.post-module.no-heading{
+  .posts{
+    margin-top: 0;
+  }
+}
+
+.post-module{
+  display: table;
+  &.journal-carousel{
+    display: block;
+  }
+}

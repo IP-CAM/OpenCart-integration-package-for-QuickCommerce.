@@ -1,0 +1,80 @@
+/******************************
+ BUTTONS / LINKS
+*******************************/
+a{
+  color: $dark;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.button {
+  cursor: pointer;
+  font-size: 14px;
+  transition: color .2s, background-color .2s;
+  padding: 0 12px;
+  border: 0;
+  line-height: 32px;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-appearance: none;
+  text-align: center;
+  i:before{
+    padding: 0 1px;
+  }
+}
+
+.cart{
+  position: relative;
+}
+
+.button-disabled{
+  opacity: .5;
+  cursor: default;
+  &:before, &:after{
+    display: none !important;
+  }
+}
+
+.buttons {
+  overflow: hidden;
+  padding: 15px 0;
+  line-height: 30px;
+  margin:20px 0 20px 0;
+  .left{
+    padding-top: 2px;
+  }
+}
+
+.buttons .left {
+  float: left;
+  text-align: left;
+}
+
+.buttons .right {
+  float: right;
+  text-align: right;
+}
+
+.buttons .right a {
+  text-decoration: none !important;
+}
+
+.buttons .center {
+  float: left;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr{
+  border: 0;
+  background-color: $e4;
+  height: 1px;
+  margin: 0;
+}

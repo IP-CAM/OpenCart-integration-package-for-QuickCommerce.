@@ -1,0 +1,181 @@
+/******************************
+ TEXT ROTATOR
+*******************************/
+
+.journal-rotator{
+  margin-bottom: 20px;
+}
+
+.text-rotator.bullets-on.bullets-center{
+  .quovolve-nav {
+    bottom: -5px;
+  }
+}
+
+.rotator-image{
+  margin: 15px;
+  display: block;
+  max-width: 85%;
+  height: auto;
+  float: left;
+  position: relative;
+}
+
+.rotator-image.image-center{
+  margin:15px auto 0 auto !important;
+}
+
+.rotator-text{
+  padding: 15px 15px 0 15px;
+  display: block;
+  line-height: 100%;
+  position: relative;
+  font-weight: inherit;
+  font-size: inherit;
+  > div {
+    float: left;
+  }
+}
+
+.has-cta {
+  .rotator-text{
+    display: inline-block;
+  }
+}
+
+.cta-center, .cta-right {
+  .rotator-text{
+   padding-bottom: 5px;
+  }
+}
+
+.cta-center{
+  .rotator-text{
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.rotator-author{
+  display: block;
+  margin-top: 8px;
+  position: relative;
+  padding:0 15px;
+}
+
+.bullets-on{
+  .rotator-author{
+    padding-bottom: 8px;
+  }
+  .quote{
+    padding-bottom: 20px;
+  }
+}
+
+.bullets-off{
+  .rotator-author{
+    margin-bottom: 10px;
+  }
+}
+
+.quovolve-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  ol{
+    margin: 0;
+    text-align: right;
+    padding: 0 10px 7px 20px;
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+  }
+}
+
+.headline-mode .quote.has-cta.cta-center{
+  overflow: visible;
+}
+
+.quote {
+  text-align: left;
+  overflow: hidden;
+  .cta{
+    position: relative !important;
+    i{
+      float: left;
+    }
+  }
+}
+
+.headline-mode{
+  .rotator-text{
+    padding: 14px 0 15px 0;
+  }
+  .quovolve-nav {
+    ol{
+      padding-bottom: 2px;
+    }
+
+  }
+  .quote{
+    //overflow: visible;
+    .button-icon-right{
+      i{
+        margin-right: 0 !important;
+        margin-left: 7px;
+        float: right;
+      }
+    }
+  }
+  &.align-left{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+.bullets-left{
+  .quovolve-nav {
+    ol{
+      text-align: left;
+    }
+  }
+}
+
+.bullets-center{
+  .quovolve-nav {
+    ol{
+      text-align: center;
+    }
+  }
+}
+
+.bullets-right{
+  .quote{
+    padding-bottom: 30px;
+  }
+  .quovolve-nav {
+    ol{
+      text-align: right;
+    }
+  }
+}
+
+.nav-numbers a {
+  color: transparent !important;
+  background-color: transparent;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  -webkit-perspective:1000;
+  &:hover:after{
+    content: "";
+  }
+}

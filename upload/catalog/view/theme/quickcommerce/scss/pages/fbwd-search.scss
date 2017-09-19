@@ -1,0 +1,52 @@
+/******************************
+ SEARCH PAGE
+*******************************/
+
+#content.search-page{
+  .buttons + h2{
+    margin-bottom: 15px;
+  }
+  .content{
+    margin: 15px 0;
+    padding-bottom: 5px;
+    overflow: hidden;
+    input[type="text"]{
+      width: 265px;
+    }
+    input[type='checkbox'] {
+      position: relative;
+      top: 2px;
+    }
+    select{
+      margin: 10px;
+    }
+    > div{
+      float: left;
+      position: relative;
+    }
+    .s-check{
+      top: 7px;
+    }
+  }
+}
+
+.oc2{
+  #content.search-page{
+    padding-bottom: 20px;
+  }
+}
+
+.oc2.firefox,
+.oc2.win{
+  #content.search-page{
+    .content {
+      select {
+        margin-top: 2px;
+      }
+     input[type='checkbox'] {
+       position: relative;
+       top: 2px;
+      }
+    }
+  }
+}

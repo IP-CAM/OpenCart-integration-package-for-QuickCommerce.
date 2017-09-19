@@ -1,0 +1,37 @@
+/******************************
+ RETURNS
+*******************************/
+
+.returns{
+  > h1 + p{
+    margin-bottom: 15px;
+  }
+  form{
+    h2, .content{
+      margin-bottom: 15px;
+    }
+  }
+  .left{
+    float: none;
+  }
+  .buttons .left{
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .return-product > div{
+    width: 100%;
+    display: block;
+    input{
+      margin: 3px 0;
+    }
+  }
+  .return-detail > div{
+    width: 100%;
+    display: block;
+  }
+  .return-reason{
+    margin-bottom: 20px;
+  }
+}

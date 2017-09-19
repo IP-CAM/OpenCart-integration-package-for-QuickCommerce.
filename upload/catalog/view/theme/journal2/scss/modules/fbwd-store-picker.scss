@@ -1,0 +1,27 @@
+/******************************
+STORE PICKER
+*******************************/
+#content, .side-column{
+  .store-picker{
+    padding: 10px 10px 0 10px;
+    p{
+      text-align: left !important;
+      padding: 0 0 5px 0;
+    }
+  }
+  .oc-store{
+    .box-heading{
+      margin-bottom: 10px;
+    }
+  }
+  .store-module{
+    padding: 0 10px;
+    p{
+      margin-bottom: 5px;
+    }
+    a{
+      display: inline-block;
+      margin-top: 5px;
+    }
+  }
+}

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Menu</name>
+	<version>1.0</version>
+	<code>quickcommerce_menu</code>
+	<author>lucaslopatka@gmail.com</author>
+	
+	<file path="admin/controller/common/menu.php">
+		<operation>
+			<search><![CDATA[
+				$this->load->language('common/menu');
+			]]></search>
+			<add position="after"><![CDATA[
+		$this->load->language('quickcommerce/common/menu');
+		
+		$data['text_cash_sale'] = $this->language->get('text_cash_sale');
+		$data['text_cash_sale_vendor'] = $this->language->get('text_cash_sale_vendor');
+		$data['text_cash_sale_payment'] = $this->language->get('text_cash_sale_payment');
+		$data['text_cash_sale_shipping'] = $this->language->get('text_cash_sale_shipping');
+		$data['text_cash_sale_sale'] = $this->language->get('text_cash_sale_sale');
+		
+		$data['cash_sale_vendor'] = $this->url->link('catalog/cash_sale_vendor', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale_payment'] = $this->url->link('catalog/cash_sale_payment', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale_shipping'] = $this->url->link('catalog/cash_sale_shipping', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale'] = $this->url->link('sale/sale', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['text_heading_customers'] = $this->language->get('text_heading_customers');
+		$data['text_heading_retailers'] = $this->language->get('text_heading_retailers');
+		$data['text_heading_vendors'] = $this->language->get('text_heading_vendors');
+		
+		$data['text_vendor'] = $this->language->get('text_vendor');
+		$data['text_payment'] = $this->language->get('text_payment');
+		$data['text_shipping'] = $this->language->get('text_shipping');
+		
+		$data['text_transaction'] = $this->language->get('text_transaction');
+		$data['text_transaction_credit'] = $this->language->get('text_transaction_credit');
+		$data['text_transaction_deposit'] = $this->language->get('text_transaction_deposit');
+		$data['text_transaction_order'] = $this->language->get('text_transaction_order');
+		$data['text_transaction_work_order'] = $this->language->get('text_transaction_work_order');
+		$data['text_transaction_payment'] = $this->language->get('text_transaction_payment');
+		$data['text_transaction_purchase_order'] = $this->language->get('text_transaction_purchase_order');
+		$data['text_transaction_sale'] = $this->language->get('text_transaction_sale');
+		$data['text_customer_invoice'] = $this->language->get('text_customer_invoice');
+		$data['text_customer_receipt'] = $this->language->get('text_customer_receipt');
+		$data['text_invoice_status'] = $this->language->get('text_invoice_status');
+		$data['text_journal_entry'] = $this->language->get('text_journal_entry');
+		
+		$data['text_list_account'] = $this->language->get('text_list_account');
+		$data['text_attribute_template'] = $this->language->get('text_attribute_template');
+		
+		$data['text_event'] = $this->language->get('text_event');
+		
+		$data['transaction_transaction'] = $this->url->link('transaction/transaction', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_credit'] = $this->url->link('transaction/credit', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_deposit'] = $this->url->link('transaction/deposit', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_work_order'] = $this->url->link('transaction/work_order', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_payment'] = $this->url->link('transaction/payment', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_purchase_order'] = $this->url->link('transaction/purchase_order', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_sale'] = $this->url->link('transaction/sale', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_invoice'] = $this->url->link('transaction/invoice', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_invoice_status'] = $this->url->link('localisation/invoice_status', 'token=' . $this->session->data['token'], 'SSL');
+		$data['transaction_receipt'] = $this->url->link('transaction/receipt', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['list_account'] = $this->url->link('qc/account', 'token=' . $this->session->data['token'], 'SSL');
+		$data['attribute_template'] = $this->url->link('catalog/attribute_template', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['event'] = $this->url->link('extension/event', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['text_purchase_order'] = $this->language->get('text_purchase_order');
+		$data['text_purchase_order_vendor'] = $this->language->get('text_purchase_order_vendor');
+		$data['text_purchase_order_payment'] = $this->language->get('text_purchase_order_payment');
+		$data['text_purchase_order_shipping'] = $this->language->get('text_purchase_order_shipping');
+		$data['text_purchase_order_order'] = $this->language->get('text_purchase_order_order');
+		
+		$data['purchase_order_vendor'] = $this->url->link('vendor/vendor', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order_payment'] = $this->url->link('catalog/purchase_order_payment', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order_shipping'] = $this->url->link('catalog/purchase_order_shipping', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order'] = $this->url->link('transaction/purchase_order', 'token=' . $this->session->data['token'], 'SSL');
+		
+		$data['invoice_status'] = $this->url->link('localisation/invoice_status', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$this->load->language('common/menu');
+			]]></search>
+			<add position="after"><![CDATA[
+		$data['purchase_order_vendor'] = $this->url->link('vendor/vendor', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order_payment'] = $this->url->link('catalog/purchase_order_payment', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order_shipping'] = $this->url->link('catalog/purchase_order_shipping', 'token=' . $this->session->data['token'], 'SSL');
+		$data['purchase_order'] = $this->url->link('transaction/purchase_order', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/common/menu.tpl">
+        <operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $attribute_group; ?>"><?php echo $text_attribute_group; ?></a></li>
+			]]></search>
+			<add position="after"><![CDATA[
+			  <li><a href="<?php echo $attribute_template; ?>"><?php echo $text_attribute_template; ?></a></li>
+			]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
+			]]></search>
+			<add position="after"><![CDATA[
+			  <li><a href="<?php echo $event; ?>"><?php echo $text_event; ?></a></li>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $coupon; ?>"><?php echo $text_coupon; ?></a></li>
+			]]></search>
+			<add position="after"><![CDATA[
+			  <li><a class="parent"><?php echo $text_voucher; ?></a>
+				<ul>
+				  <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
+				  <li><a href="<?php echo $voucher_theme; ?>"><?php echo $text_voucher_theme; ?></a></li>
+				</ul>
+			  </li>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a class="parent"><?php echo $text_customer; ?></a>
+			]]></search>
+			<add position="replace" offset="7"><![CDATA[]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a class="parent"><?php echo $text_paypal ?></a>
+			]]></search>
+			<add position="replace" offset="4"><![CDATA[]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a class="parent"><?php echo $text_voucher; ?></a>
+			]]></search>
+			<add position="replace" offset="4"><![CDATA[]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $order_status; ?>"><?php echo $text_order_status; ?></a></li>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<li><a href="<?php echo $order_status; ?>"><?php echo $text_order_status; ?></a></li>
+				<li><a href="<?php echo $invoice_status; ?>"><?php echo $text_invoice_status; ?></a></li>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a class="parent"><i class="fa fa-share-alt fa-fw"></i> <span><?php echo $text_marketing; ?></span></a>
+			]]></search>
+			<add position="before"><![CDATA[
+  <li><a href="<?php echo $transaction_work_order; ?>"><i class="fa fa-clipboard "></i> <span><?php echo $text_transaction_work_order; ?></span></a></li>
+  <li><a class="parent"><i class="fa fa-refresh fa-fw"></i> <span><?php echo $text_transaction; ?></span></a>
+	<ul>
+	  <li><a href="<?php echo $transaction_invoice; ?>">List All</a></li>
+	  <li><a href="<?php echo $transaction_order; ?>"><?php echo $text_transaction_order; ?></a></li>
+	  <li><a href="<?php echo $transaction_invoice; ?>"><?php echo $text_customer_invoice; ?></a></li>
+	  <li><a href="<?php echo $transaction_sale; ?>"><?php echo $text_transaction_sale; ?></a></li>
+	  <li><a href="<?php echo $transaction_receipt; ?>"><?php echo $text_customer_receipt; ?></a></li>
+	  <!--<li><a href="<?php echo $transaction; ?>">Write Checks</a></li>
+	  <li><a href="<?php echo $transaction_deposit; ?>"><?php echo $text_transaction_deposit; ?></a></li>
+	  <li><a href="<?php echo $transaction_credit; ?>"><?php echo $text_transaction_credit; ?></a></li>
+	  <li><a href="<?php echo $transaction_transaction; ?>"><?php echo $text_journal_entry; ?></a></li>-->
+	</ul>
+  </li>
+  <li><a class="parent"><i class="fa fa-refresh fa-users"></i> <span><?php echo $text_customer; ?></span></a>
+	<ul>
+	  <li><a href="<?php echo $customer; ?>"><?php echo $text_customer; ?></a></li>
+	  <li><a href="<?php echo $customer_group; ?>"><?php echo $text_customer_group; ?></a></li>
+	  <li><a href="<?php echo $custom_field; ?>"><?php echo $text_custom_field; ?></a></li>
+	  <li><a href="<?php echo $customer_ban_ip; ?>"><?php echo $text_customer_ban_ip; ?></a></li>
+	  <li><a href="<?php echo $order_recurring; ?>"><?php echo $text_order_recurring; ?></a></li>
+	  <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+	</ul>
+  </li>
+  <li><a class="parent"><i class="fa fa-tag fa-fw"></i> <span><?php echo $text_vendor; ?></span></a>
+	<ul>
+	  <li><a href="<?php echo $purchase_order_vendor; ?>"><?php echo $text_vendor; ?></a></li>
+	  <li><a href="<?php echo $purchase_order; ?>"><?php echo $text_transaction_purchase_order; ?></a></li>
+	  <li><a href="#" title="Coming soon">Vendor Invoices</a></li>
+	  <li><a href="#" title="Coming soon">Vendor Payments</a></li>
+	  <li><a href="#" title="Coming soon">Vendor Credits</a></li>
+	</ul>
+  </li>
+  <li><a class="parent"><i class="fa fa-dot-circle-o fa-fw"></i> <span><?php echo $text_heading_retailers ?></span></a>
+	<ul>
+	  <li><a href="#" title="Coming soon">Retailer Invoices</a></li>
+	  <li><a href="#" title="Coming soon">Retailer Payments</a></li>
+	</ul>
+  </li>
+  <li><a><i class="fa fa-barcode fa-fw"></i> <span>Web Point-of-Sale<?php /*echo $text_pos;*/ ?></span></a></li>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
+			]]></search>
+			<add position="after"><![CDATA[
+		<li><a href="<?php echo $list_account; ?>"><?php echo $text_list_account; ?></a></li>
+		<li><a href="<?php echo $purchase_order_payment; ?>">P.O. <?php echo $text_payment; ?></a></li>
+		<li><a href="<?php echo $purchase_order_shipping; ?>">P.O. <?php echo $text_shipping; ?></a></li>
+			]]></add>
+		</operation>
+	</file>
+</modification>

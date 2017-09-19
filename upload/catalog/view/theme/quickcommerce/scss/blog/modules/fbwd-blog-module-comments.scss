@@ -1,0 +1,21 @@
+//COMMENTS
+.blog-comments{
+  img{
+    max-width: 55px;
+    height: auto;
+  }
+  .p-user{
+    &:before{
+      display: block;
+      float: left;
+    }
+  }
+}
+
+.comment-author{
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

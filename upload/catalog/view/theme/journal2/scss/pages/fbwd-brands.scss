@@ -1,0 +1,58 @@
+/******************************
+BRANDS
+*******************************/
+
+.header-default-sticky, .header-slim-sticky{
+  .manufacturer-list a[id]:before {
+    content:"";
+    display:block;
+    height:120px;
+    margin-top:-120px;
+  }
+}
+
+.header-center-sticky{
+  .manufacturer-list a[id]:before {
+    content:"";
+    display:block;
+    height:150px;
+    margin-top:-150px;
+  }
+}
+
+.manufacturer-list:first-of-type{
+  margin-top: 10px;
+}
+
+.manufacturer-list {
+  overflow: auto;
+  ul {
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 10px;
+  }
+}
+
+.manufacturer-heading {
+  background: $gray;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 8px;
+  margin-bottom: 6px;
+}
+
+.manufacturer-content {
+  padding: 8px;
+}
+
+.manufacturer-list ul {
+  float: left;
+  width: 25%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-bottom: 10px;
+}

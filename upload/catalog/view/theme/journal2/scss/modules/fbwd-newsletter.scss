@@ -1,0 +1,108 @@
+/******************************
+NEWSLETTER
+*******************************/
+.journal-newsletter{
+  margin-bottom: 20px;
+  .box-content{
+    border-radius: inherit;
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+      height: 0;
+    }
+  }
+  input + .button{
+    margin-top: 10px;
+  }
+
+  &.text-left{
+    .newsletter-text{
+      display: table-cell;
+      vertical-align: middle;
+      height: 100%;
+      float: left;
+      width: 50%;
+      padding-right: 20px;
+      text-align: left;
+      line-height: 17px;
+    }
+    .newsletter-input-wrap{
+      display: block;
+      position: relative;
+      float: left;
+      width: 50%;
+
+      input{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+      }
+      .newsletter-button{
+        position: absolute;
+        top: 5px;
+        right: 3px;
+      }
+      input + .button{
+        margin-top: 0;
+      }
+    }
+  }
+  &.text-top{
+    .newsletter-text{
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      text-align: left;
+      line-height: 18px;
+    }
+    .newsletter-input-wrap{
+      display: block;
+      position: relative;
+      width: 100%;
+      input{
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        border: 0;
+      }
+      .newsletter-button{
+        position: absolute;
+        top: 5px;
+        right: 3px;
+      }
+      input + .button{
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.side-column{
+  .journal-newsletter{
+    .newsletter-text{
+      float: none;
+      width: 100% !important;
+      margin-bottom: 10px;
+      padding: 0;
+    }
+    .newsletter-input-wrap{
+      float: none;
+      width: 100% !important;
+      height: auto !important;
+      text-align: center;
+      input{
+        margin-bottom: 5px;
+      }
+      .newsletter-button{
+        position: relative;
+        left: auto !important;
+        right: auto !important;
+        width: 100%;
+      }
+      input + .button{
+        margin-top: 0;
+      }
+    }
+  }
+}

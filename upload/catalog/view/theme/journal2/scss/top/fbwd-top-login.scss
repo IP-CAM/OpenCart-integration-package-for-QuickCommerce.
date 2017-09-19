@@ -1,0 +1,25 @@
+@import 'variables.scss';
+/******************************
+ Login
+*******************************/
+
+.journal-login .journal-secondary {
+  text-align: right;
+  padding-right: 10px;
+  font-size: 13px;
+  a{
+    padding: 0 3px;
+  }
+  div{
+    a{
+      font-family: inherit;
+      font-size: inherit;
+      padding: 3px;
+    }
+  }
+}
+
+#welcome{
+  position: relative;
+  top: 0px;
+}

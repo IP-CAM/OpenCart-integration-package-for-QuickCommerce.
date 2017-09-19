@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Theme</name>
+	<version>1.0</version>
+	<code>quickcommerce_theme</code>
+	<author>lucaslopatka@gmail.com</author>
+    
+    <file path="catalog/controller/product/category.php">
+		<operation>
+			<search><![CDATA[
+            'product_id'  => $result['product_id'],
+            ]]></search>
+			<add position="after"><![CDATA[
+			'manufacturer'  => $result['manufacturer'],	
+		]]></add>
+		</operation>
+	</file>
+    
+    <file path="catalog/controller/product/manufacturer.php">
+		<operation>
+			<search><![CDATA[
+            'product_id'  => $result['product_id'],
+            ]]></search>
+			<add position="after"><![CDATA[
+			'manufacturer'  => $result['manufacturer'],	
+		]]></add>
+		</operation>
+	</file>
+    
+    <file path="catalog/controller/product/search.php">
+		<operation>
+			<search><![CDATA[
+            'product_id'  => $result['product_id'],
+            ]]></search>
+			<add position="after"><![CDATA[
+			'manufacturer'  => $result['manufacturer'],	
+		]]></add>
+		</operation>
+	</file>
+    
+    <file path="catalog/controller/product/special.php">
+		<operation>
+			<search><![CDATA[
+            'product_id'  => $result['product_id'],
+            ]]></search>
+			<add position="after"><![CDATA[
+			'manufacturer'  => $result['manufacturer'],	
+		]]></add>
+		</operation>
+	</file>
+</modification>

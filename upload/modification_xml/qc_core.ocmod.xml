@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Core</name>
+	<version>1.0</version>
+	<code>quickcommerce_core</code>
+	<author>lucaslopatka@gmail.com</author>
+	
+	<file path="admin/language/*/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				$_
+			]]></search>
+			<add position="after" index="1"><![CDATA[
+				$_['entry_po_cost'] = 'Cost';
+				$_['entry_po_model'] = 'Vendor Model';
+				$_['entry_po_title'] = 'Vendor Product';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				if (!empty($data['filter_name'])) {
+			]]>
+			</search>
+			<add position="before"><![CDATA[
+		if (!empty($data['filter_mpn'])) {
+			$sql .= " AND p.mpn LIKE '" . $this->db->escape($data['filter_mpn']) . "%'";
+		}
+				
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+			]]>
+			</search>
+			<add position="replace"><![CDATA[
+		$sql .= " AND pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";	
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$sql .= " AND p.model LIKE '" . $this->db->escape($data['filter_model']) . "%'";
+			]]>
+			</search>
+			<add position="replace"><![CDATA[
+		$sql .= " AND p.model LIKE '%" . $this->db->escape($data['filter_model']) . "%'";	
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				if (isset($data['image'])) {
+			]]></search>
+			<add position="before"><![CDATA[
+		$this->db->query("UPDATE " . DB_PREFIX . "product SET po_cost = '" . (float)$data['po_cost'] . "', po_model = '" . $this->db->escape($data['po_model']) . "', po_title = '" . $this->db->escape($data['po_title']) . "' WHERE product_id = '" . (int)$product_id . "'");
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<?php echo $price; ?>
+			]]></search>
+			<add position="after" offset="2"><![CDATA[
+				<div class="form-group">
+				  <label class="col-sm-2 control-label" for="input-po-cost"><?php echo $entry_po_cost; ?></label>
+                  <div class="col-sm-10">
+					<input type="text" path="po_cost" value="<?php echo $po_cost; ?>" placeholder="<?php echo $entry_po_cost; ?>" id="input-po-cost" class="form-control" />
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="col-sm-2 control-label" for="input-po-cost"><?php echo $entry_po_title; ?></label>
+                  <div class="col-sm-10">
+					<input type="text" path="po_title" value="<?php echo $po_title; ?>" placeholder="<?php echo $entry_po_title; ?>" id="input-po-cost" class="form-control" />
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label class="col-sm-2 control-label" for="input-po-cost"><?php echo $entry_po_model; ?></label>
+                  <div class="col-sm-10">
+					<input type="text" path="po_model" value="<?php echo $po_model; ?>" placeholder="<?php echo $entry_po_model; ?>" id="input-po-cost" class="form-control" />
+				  </div>
+				</div>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+		<?php echo $error_warning; ?>
+            ]]></search>
+			<add position="before"><![CDATA[
+        <?php if (is_array($error_warning)) {
+            if (isset($error_warning['message'])) {
+                $msg = '<b>' . $error_warning['error'] . '</b> ' . $error_warning['message'] . '.<br>';
+                $msg .= '<ul style="list-style-type: none; padding-left: 12px"><li><b>' . $error_warning['code'] . '</b>: ' . $error_warning['detail'] . '</li></ul>';
+                
+                $error_warning = $msg;
+                unset($msg);
+            } else {
+                $error_warning = $error_warning['error'];
+            }
+        } ?>
+            ]]></add>
+		</operation>
+	</file>
+
+	<file path="admin/view/template/catalog/product_list.tpl">
+		<operation>
+			<search><![CDATA[
+		<div class="well">
+            ]]></search>
+			<add position="replace"><![CDATA[
+        <?php if (isset($product_filters)) {
+            echo $product_filters;
+        } ?>
+        <div class="well" style="display: none">
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		<?php echo $error_warning; ?>
+            ]]></search>
+			<add position="before"><![CDATA[
+        <?php if (is_array($error_warning)) {
+            if (isset($error_warning['message'])) {
+                $msg = '<b>' . $error_warning['error'] . '</b> ' . $error_warning['message'] . '.<br>';
+                $msg .= '<ul style="list-style-type: none; padding-left: 12px"><li><b>' . $error_warning['code'] . '</b>: ' . $error_warning['detail'] . '</li></ul>';
+                
+                $error_warning = $msg;
+                unset($msg);
+            } else {
+                $error_warning = $error_warning['error'];
+            }
+        } ?>
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		<td class="text-left"><?php echo $product['status']; ?></td>
+            ]]></search>
+			<add position="after"><![CDATA[
+        <td class="text-center">
+            <span data-id="<?php echo $product['product_id']; ?>" class="label label-default"><i class="fa fa-question"></i></span>
+        </td>
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		<td class="text-right"><?php echo $column_action; ?></td>
+            ]]></search>
+			<add position="before"><![CDATA[
+        <td class="text-center"><?php echo 'Sync'; ?></td>
+            ]]></add>
+		</operation>
+	</file>
+    
+    <file path="admin/controller/catalog/product.php">
+		<operation>
+            <search><![CDATA[
+        if (isset($this->session->data['success'])) {
+            ]]></search>
+            <add position="replace" offset="6"><![CDATA[
+        if (isset($this->session->data['ipp_error'])) {
+            $this->error = array_merge($this->error, $this->session->data['ipp_error']);
+            unset($this->session->data['ipp_error']);
+        }
+        
+        $data['success'] = '';
+        if (isset($this->error['warning'])) {
+			$data['error_warning'] = $this->error['warning'];
+		} else {
+			$data['error_warning'] = '';
+
+			if (isset($this->session->data['success'])) {
+				$data['success'] = $this->session->data['success'];
+
+				unset($this->session->data['success']);
+			}
+		}
+            ]]></add>
+        </operation>
+        <operation>
+			<search><![CDATA[
+		'product_id' => $result['product_id'],
+            ]]></search>
+			<add position="after"><![CDATA[
+		'tax_class_id' => $result['tax_class_id'],
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+		if (isset($this->request->post['model'])) {
+            ]]></search>
+			<add position="before"><![CDATA[
+			$data['entry_po_cost'] = $this->language->get('entry_po_cost');
+			$data['entry_po_model'] = $this->language->get('entry_po_model');
+			$data['entry_po_title'] = $this->language->get('entry_po_title');
+
+			if (isset($this->request->post['po_cost'])) {
+				$data['po_cost'] = $this->request->post['po_cost'];
+			} elseif (!empty($product_info)) {
+				$data['po_cost'] = $product_info['po_cost'];
+			} else {
+				$data['po_cost'] = '';
+			}
+
+			if (isset($this->request->post['po_model'])) {
+				$data['po_model'] = $this->request->post['po_model'];
+			} elseif (!empty($product_info)) {
+				$data['po_model'] = $product_info['po_model'];
+			} else {
+				$data['po_model'] = '';
+			}
+
+			if (isset($this->request->post['po_title'])) {
+				$data['po_title'] = $this->request->post['po_title'];
+			} elseif (!empty($product_info)) {
+				$data['po_title'] = $product_info['po_title'];
+			} else {
+				$data['po_title'] = '';
+			}
+		]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+		'edit'       => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, 'SSL')
+            ]]></search>
+			<add position="replace"><![CDATA[
+		'edit'       => $this->url->link('catalog/qc_product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, 'SSL')
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				public function getProducts($data = array()) {
+			]]></search>
+			<add position="before"><![CDATA[
+    public function getQueryFilters() {
+        $sql  = "SELECT f.filter_id AS `filter_id`, fd.name AS `name`, fgd.name AS `group` FROM " . DB_PREFIX . "filter f";
+		$sql .= " LEFT JOIN " . DB_PREFIX . "filter_description fd ON (f.filter_id = fd.filter_id)";
+		$sql .= " LEFT JOIN " . DB_PREFIX . "filter_group_description fgd ON (f.filter_group_id = fgd.filter_group_id)";
+		$sql .= " LEFT JOIN " . DB_PREFIX . "filter_group fg ON (f.filter_group_id = fg.filter_group_id)";
+		$sql .= " WHERE fd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+		$sql .= " AND fgd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+		$sql .= " ORDER BY fg.sort_order, fgd.name, f.sort_order, fd.name";
+
+		$query = $this->db->query($sql);
+		return $query->rows;
+    }
+    
+    public function getQueryOptions() {
+        $sql  = "SELECT od.option_id, od.name";
+		$sql .= " FROM " . DB_PREFIX . "option_description od";
+		$sql .= " WHERE od.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY od.name";
+        
+        $query = $this->db->query($sql);
+		return $query->rows;
+    }
+    
+    public function getQueryOptionValues() {
+        $sql  = "SELECT ovd.option_value_id, ovd.name AS ov_name, od.name AS o_name";
+		$sql .= " FROM " . DB_PREFIX . "option_value_description ovd";
+		$sql .= " LEFT JOIN " . DB_PREFIX . "option_description od ON (ovd.option_id = od.option_id)";
+		$sql .= " WHERE ovd.language_id = '" . (int)$this->config->get('config_language_id') . "' GROUP BY ovd.option_value_id ORDER BY od.name, ovd.name";
+        
+        $query = $this->db->query($sql);
+		return $query->rows;
+    }
+    
+    public function getTotalQueryProducts($data = array()) {
+		$prefix = '';
+		$join = '';
+		$where = '';
+
+		$buildWhere = function (&$where, $condition) {
+			$prefix = (empty($where)) ? " WHERE " : " AND ";
+			return $where .= $prefix . $condition;
+		};
+
+		if (count($data['product_category']) > 0) {
+			$join = " LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id)";
+
+			if (in_array(0,$data['product_category'])) {
+				$join .= " LEFT JOIN " . DB_PREFIX . "product_to_category p2c0x ON (p.product_id = p2c0x.product_id)";
+				$buildWhere($where, "(p2c.category_id IN ('" .implode("', '", $data['product_category']). "') OR p2c0x.category_id IS NULL)");
+			} else {
+				$buildWhere($where, "p2c.category_id IN ('" .implode("', '", $data['product_category']). "')");
+			}
+		}
+
+		if (count($data['manufacturer_ids']) > 0) {
+			$buildWhere($where, "p.manufacturer_id IN ('" .implode("', '", $data['manufacturer_ids']). "')");
+		}
+
+		if (count($data['filters_ids']) > 0) {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_filter prfil ON (p.product_id = prfil.product_id)";
+
+			if (in_array(0,$data['filters_ids'])) {
+				$join.=" LEFT JOIN " . DB_PREFIX . "product_filter pf0x ON (p.product_id = pf0x.product_id)";
+				$buildWhere($where, "(prfil.filter_id IN ('" .implode("', '", $data['filters_ids']). "') OR pf0x.filter_id IS NULL)");
+			} else {
+				$buildWhere($where, "prfil.filter_id IN ('" .implode("', '", $data['filters_ids']). "')");
+			}
+		}
+
+		if ($data['price_min'] != '') {
+			$buildWhere($where, "p.price >= '" . (float)$data['price_min'] . "'");
+		}
+
+		if ($data['price_max'] != '') {
+			$buildWhere($where, "p.price <= '" . (float)$data['price_max'] . "'");
+		}
+
+		// Discounts
+		if ($data['d_price_min'] != '' OR $data['d_price_max'] != '' OR $data['d_cust_group_filter'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_discount pdisc ON (p.product_id = pdisc.product_id)";
+		}
+		if ($data['d_cust_group_filter'] != 'any') {
+			$buildWhere($where, "pdisc.customer_group_id = '" . (int)$data['d_cust_group_filter'] . "'");
+		}
+		if ($data['d_price_min'] != '') {
+			$buildWhere($where, "pdisc.price >= '" . (float)$data['d_price_min'] . "'");
+		}
+
+		if ($data['d_price_max'] != '') {
+			$buildWhere($where, "pdisc.price <= '" . (float)$data['d_price_max'] . "'");
+		}
+
+		// Specials
+		if ($data['s_price_min'] != '' OR $data['s_price_max'] != '' OR $data['s_cust_group_filter'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_special pspec ON (p.product_id = pspec.product_id)";
+		}
+
+		if ($data['s_cust_group_filter'] != 'any') {
+			$buildWhere($where, "pspec.customer_group_id = '" . (int)$data['s_cust_group_filter'] . "'");
+		}
+		if ($data['s_price_min'] != '') {
+			$buildWhere($where, "pspec.price >= '" . (float)$data['s_price_min'] . "'");
+		}
+
+		if ($data['s_price_max'] != '') {
+			$buildWhere($where, "pspec.price <= '" . (float)$data['s_price_max'] . "'");
+		}
+
+		if ($data['tax_class_filter'] != 'any') {
+			$buildWhere($where, "p.tax_class_id = '" . (int)$data['tax_class_filter'] . "'");
+		}
+
+		if ($data['stock_min'] != '') {
+			$buildWhere($where, "p.quantity >= '" . (int)$data['stock_min'] . "'");
+		}
+
+		if ($data['stock_max'] != '') {
+			$buildWhere($where, "p.quantity <= '" . (int)$data['stock_max'] . "'");
+		}
+
+		if ($data['min_q_min'] != '') {
+			$buildWhere($where, "p.minimum >= '" . (int)$data['min_q_min'] . "'");
+		}
+
+		if ($data['min_q_max'] != '') {
+			$buildWhere($where, "p.minimum <= '" . (int)$data['min_q_max'] . "'");
+		}
+
+		if ($data['stock_status_filter'] != 'any') {
+			$buildWhere($where, "p.stock_status_id = '" . (int)$data['stock_status_filter'] . "'");
+		}
+
+		if ($data['subtract_filter'] != 'any') {
+			$buildWhere($where, "p.subtract = '" . (int)$data['subtract_filter'] . "'");
+		}
+
+		if ($data['shipping_filter'] != 'any') {
+			$buildWhere($where, "p.shipping = '" . (int)$data['shipping_filter'] . "'");
+		}
+
+		if ($data['date_min'] != '') {
+			$buildWhere($where, "p.date_available >= '" . $this->db->escape($data['date_min']) . "'");
+		}
+
+		if ($data['date_max'] != '') {
+			$buildWhere($where, "p.date_available <= '" . $this->db->escape($data['date_max']) . "'");
+		}
+
+		if ($data['date_added_min'] != '') {
+			$buildWhere($where, "p.date_added >= '" . $this->db->escape($data['date_added_min']) . "'");
+		}
+
+		if ($data['date_added_max'] != '') {
+			$buildWhere($where, "p.date_added <= '" . $this->db->escape($data['date_added_max']) . "'");
+		}
+
+		if ($data['date_modified_min'] != '') {
+			$buildWhere($where, "p.date_modified >= '" . $this->db->escape($data['date_modified_min']) . "'");
+		}
+
+		if ($data['date_modified_max'] != '') {
+			$buildWhere($where, "p.date_modified <= '" . $this->db->escape($data['date_modified_max']) . "'");
+		}
+
+		if ($data['filter_status'] != 'any') {
+			$buildWhere($where, "p.status = '" . (int)$data['filter_status'] . "'");
+		}
+
+		if ($data['filter_store'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_to_store pts ON (p.product_id = pts.product_id)";
+			$buildWhere($where, "pts.store_id = '" . (int)$data['filter_store'] . "'");
+		}
+
+		if ($data['filter_attr'] != 'any') {
+            $join .= " LEFT JOIN " . DB_PREFIX . "product_attribute pattr ON (p.product_id = pattr.product_id)";
+			$buildWhere($where, "pattr.attribute_id = '" . (int)$data['filter_attr'] . "'");
+		}
+
+		if ($data['filter_opti'] != 'any') {
+			$join.=" LEFT JOIN " . DB_PREFIX . "product_option po ON (p.product_id = po.product_id)";
+			$buildWhere($where, "po.option_id = '" . (int)$data['filter_opti'] . "'");
+		}
+
+		if ($data['filter_attr_val'] != '') {
+			if ($data['filter_attr']=="any") {
+				$join .= " LEFT JOIN " . DB_PREFIX . "product_attribute pattr ON (p.product_id = pattr.product_id)";
+			}
+
+			$buildWhere($where, "pattr.text LIKE '%" . $this->db->escape($data['filter_attr_val']) . "%'");
+		}
+
+		if ($data['filter_opti_val'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_option_value pov ON (p.product_id = pov.product_id)";
+			$buildWhere($where, "pov.option_value_id = '" . (int)$data['filter_opti_val'] . "'");
+		}
+
+		if ($data['filter_name']!= '') {
+			if (version_compare(VERSION, '1.5.4.1', '>')) {
+				$buildWhere($where, "pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'");
+			}
+		}
+
+		if ($data['filter_model'] != '') {
+			if (version_compare(VERSION, '1.5.4.1', '>')) {
+				$buildWhere($where, "p.model LIKE '%" . $this->db->escape($data['filter_model']) . "%'");
+			} elseif (version_compare(VERSION, '1.5.1.2', '>')) {
+				$buildWhere($where, "LCASE(p.model) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_model'])) . "%'");
+			} else {
+				$buildWhere($where, "LCASE(p.model) LIKE '%" . $this->db->escape(strtolower($data['filter_model'])) . "%'");
+			}
+		}
+
+		if ($data['filter_tag'] != '') {
+			if (version_compare(VERSION, '1.5.3.1', '>')) {
+				$buildWhere($where, "LCASE(pd.tag) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_tag'])) . "%'");
+			}
+		}
+
+		$buildWhere($where, "pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+
+		$sql  = "SELECT COUNT(DISTINCT p.product_id) AS total";
+		$sql .= " FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+		$sql .= $join . $where;
+        
+		$query = $this->db->query($sql);
+
+		return $query->row['total'];
+	}
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+				public function getProducts($data = array()) {
+			]]></search>
+			<add position="before"><![CDATA[
+    public function getQueryProducts($data = array()) {
+		$prefix = '';
+		$join = '';
+		$where = '';
+
+		$buildWhere = function (&$where, $condition) {
+			$prefix = (empty($where)) ? " WHERE " : " AND ";
+			return $where .= $prefix . $condition;
+		};
+
+		if (count($data['product_category']) > 0) {
+			$join = " LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (p.product_id = p2c.product_id)";
+
+			if (in_array(0,$data['product_category'])) {
+				$join .= " LEFT JOIN " . DB_PREFIX . "product_to_category p2c0x ON (p.product_id = p2c0x.product_id)";
+				$buildWhere($where, "(p2c.category_id IN ('" .implode("', '", $data['product_category']). "') OR p2c0x.category_id IS NULL)");
+			} else {
+				$buildWhere($where, "p2c.category_id IN ('" .implode("', '", $data['product_category']). "')");
+			}
+		}
+
+		if (count($data['manufacturer_ids']) > 0) {
+			$buildWhere($where, "p.manufacturer_id IN ('" .implode("', '", $data['manufacturer_ids']). "')");
+		}
+
+		if (count($data['filters_ids']) > 0) {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_filter prfil ON (p.product_id = prfil.product_id)";
+
+			if (in_array(0,$data['filters_ids'])) {
+				$join.=" LEFT JOIN " . DB_PREFIX . "product_filter pf0x ON (p.product_id = pf0x.product_id)";
+				$buildWhere($where, "(prfil.filter_id IN ('" .implode("', '", $data['filters_ids']). "') OR pf0x.filter_id IS NULL)");
+			} else {
+				$buildWhere($where, "prfil.filter_id IN ('" .implode("', '", $data['filters_ids']). "')");
+			}
+		}
+
+		if ($data['price_min'] != '') {
+			$buildWhere($where, "p.price >= '" . (float)$data['price_min'] . "'");
+		}
+
+		if ($data['price_max'] != '') {
+			$buildWhere($where, "p.price <= '" . (float)$data['price_max'] . "'");
+		}
+
+		// Discounts
+		if ($data['d_price_min'] != '' OR $data['d_price_max'] != '' OR $data['d_cust_group_filter'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_discount pdisc ON (p.product_id = pdisc.product_id)";
+		}
+		if ($data['d_cust_group_filter'] != 'any') {
+			$buildWhere($where, "pdisc.customer_group_id = '" . (int)$data['d_cust_group_filter'] . "'");
+		}
+		if ($data['d_price_min'] != '') {
+			$buildWhere($where, "pdisc.price >= '" . (float)$data['d_price_min'] . "'");
+		}
+
+		if ($data['d_price_max'] != '') {
+			$buildWhere($where, "pdisc.price <= '" . (float)$data['d_price_max'] . "'");
+		}
+
+		// Specials
+		if ($data['s_price_min'] != '' OR $data['s_price_max'] != '' OR $data['s_cust_group_filter'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_special pspec ON (p.product_id = pspec.product_id)";
+		}
+
+		if ($data['s_cust_group_filter'] != 'any') {
+			$buildWhere($where, "pspec.customer_group_id = '" . (int)$data['s_cust_group_filter'] . "'");
+		}
+		if ($data['s_price_min'] != '') {
+			$buildWhere($where, "pspec.price >= '" . (float)$data['s_price_min'] . "'");
+		}
+
+		if ($data['s_price_max'] != '') {
+			$buildWhere($where, "pspec.price <= '" . (float)$data['s_price_max'] . "'");
+		}
+
+		if ($data['tax_class_filter'] != 'any') {
+			$buildWhere($where, "p.tax_class_id = '" . (int)$data['tax_class_filter'] . "'");
+		}
+
+		if ($data['stock_min'] != '') {
+			$buildWhere($where, "p.quantity >= '" . (int)$data['stock_min'] . "'");
+		}
+
+		if ($data['stock_max'] != '') {
+			$buildWhere($where, "p.quantity <= '" . (int)$data['stock_max'] . "'");
+		}
+
+		if ($data['min_q_min'] != '') {
+			$buildWhere($where, "p.minimum >= '" . (int)$data['min_q_min'] . "'");
+		}
+
+		if ($data['min_q_max'] != '') {
+			$buildWhere($where, "p.minimum <= '" . (int)$data['min_q_max'] . "'");
+		}
+
+		if ($data['stock_status_filter'] != 'any') {
+			$buildWhere($where, "p.stock_status_id = '" . (int)$data['stock_status_filter'] . "'");
+		}
+
+		if ($data['subtract_filter'] != 'any') {
+			$buildWhere($where, "p.subtract = '" . (int)$data['subtract_filter'] . "'");
+		}
+
+		if ($data['shipping_filter'] != 'any') {
+			$buildWhere($where, "p.shipping = '" . (int)$data['shipping_filter'] . "'");
+		}
+
+		if ($data['date_min'] != '') {
+			$buildWhere($where, "p.date_available >= '" . $this->db->escape($data['date_min']) . "'");
+		}
+
+		if ($data['date_max'] != '') {
+			$buildWhere($where, "p.date_available <= '" . $this->db->escape($data['date_max']) . "'");
+		}
+
+		if ($data['date_added_min'] != '') {
+			$buildWhere($where, "p.date_added >= '" . $this->db->escape($data['date_added_min']) . "'");
+		}
+
+		if ($data['date_added_max'] != '') {
+			$buildWhere($where, "p.date_added <= '" . $this->db->escape($data['date_added_max']) . "'");
+		}
+
+		if ($data['date_modified_min'] != '') {
+			$buildWhere($where, "p.date_modified >= '" . $this->db->escape($data['date_modified_min']) . "'");
+		}
+
+		if ($data['date_modified_max'] != '') {
+			$buildWhere($where, "p.date_modified <= '" . $this->db->escape($data['date_modified_max']) . "'");
+		}
+
+		if ($data['filter_status'] != 'any') {
+			$buildWhere($where, "p.status = '" . (int)$data['filter_status'] . "'");
+		}
+
+		if ($data['filter_store'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_to_store pts ON (p.product_id = pts.product_id)";
+			$buildWhere($where, "pts.store_id = '" . (int)$data['filter_store'] . "'");
+		}
+
+		if ($data['filter_attr'] != 'any') {
+            $join .= " LEFT JOIN " . DB_PREFIX . "product_attribute pattr ON (p.product_id = pattr.product_id)";
+			$buildWhere($where, "pattr.attribute_id = '" . (int)$data['filter_attr'] . "'");
+		}
+
+		if ($data['filter_opti'] != 'any') {
+			$join.=" LEFT JOIN " . DB_PREFIX . "product_option po ON (p.product_id = po.product_id)";
+			$buildWhere($where, "po.option_id = '" . (int)$data['filter_opti'] . "'");
+		}
+
+		if ($data['filter_attr_val'] != '') {
+			if ($data['filter_attr']=="any") {
+				$join .= " LEFT JOIN " . DB_PREFIX . "product_attribute pattr ON (p.product_id = pattr.product_id)";
+			}
+
+			$buildWhere($where, "pattr.text LIKE '%" . $this->db->escape($data['filter_attr_val']) . "%'");
+		}
+
+		if ($data['filter_opti_val'] != 'any') {
+			$join .= " LEFT JOIN " . DB_PREFIX . "product_option_value pov ON (p.product_id = pov.product_id)";
+			$buildWhere($where, "pov.option_value_id = '" . (int)$data['filter_opti_val'] . "'");
+		}
+
+		if ($data['filter_name']!= '') {
+			if (version_compare(VERSION, '1.5.4.1', '>')) {
+				$buildWhere($where, "pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'");
+			}
+		}
+
+		if ($data['filter_model'] != '') {
+			if (version_compare(VERSION, '1.5.4.1', '>')) {
+				$buildWhere($where, "p.model LIKE '%" . $this->db->escape($data['filter_model']) . "%'");
+			} elseif (version_compare(VERSION, '1.5.1.2', '>')) {
+				$buildWhere($where, "LCASE(p.model) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_model'])) . "%'");
+			} else {
+				$buildWhere($where, "LCASE(p.model) LIKE '%" . $this->db->escape(strtolower($data['filter_model'])) . "%'");
+			}
+		}
+
+		if ($data['filter_tag'] != '') {
+			if (version_compare(VERSION, '1.5.3.1', '>')) {
+				$buildWhere($where, "LCASE(pd.tag) LIKE '%" . $this->db->escape(utf8_strtolower($data['filter_tag'])) . "%'");
+			}
+		}
+
+		$buildWhere($where, "pd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+
+		$sql  = "SELECT p.*, pd.name";
+		$sql .= " FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
+		$sql .= $join . $where . " GROUP BY p.product_id";
+        
+        if (isset($data['sort'])) {
+			$sort = $data['sort'];
+		} else {
+			$sort = 'pd.name';
+		}
+		if (isset($data['order'])) {
+			$order = $data['order'];
+		} else {
+			$order = 'ASC';
+		}
+		if (isset($data['page'])) {
+			$page = $data['page'];
+		} else {
+			$page = 1;
+		}
+        if (isset($data['max_results'])) {
+            $max_results = $data['max_results'];
+        } else {
+            $max_results = 150; // Default from config should be passed in anyway
+        }
+        
+        $settings = array(
+			'sort'            => $sort,
+			'order'           => $order,
+			'start'           => ($page - 1) * $max_results,
+			'limit'           => $max_results
+		);
+
+        $sort_data = array(
+            'pd.name',
+            'p.model',
+            'p.price',
+            'p.quantity',
+            'p.status',
+            'p.product_id',
+            'p.date_added',
+            'p.date_modified',
+            'p.viewed',
+            'p.sort_order'
+        );
+
+        if (isset($settings['sort']) && in_array($settings['sort'], $sort_data)) {
+            $sql .= " ORDER BY " . $settings['sort'];	
+        } else {
+            $sql .= " ORDER BY pd.name";	
+        }
+        
+        if (isset($settings['order']) && ($settings['order'] == 'DESC')) {
+            $sql .= " DESC";
+        } else {
+            $sql .= " ASC";
+        }
+    
+        if (isset($settings['start']) || isset($settings['limit'])) {
+            if ($settings['start'] < 0) {
+                $settings['start'] = 0;
+            }				
+
+            if ($settings['limit'] < 1) {
+                $settings['limit'] = 20;
+            }	
+        
+            $sql .= " LIMIT " . (int)$settings['start'] . "," . (int)$settings['limit'];
+        }
+        
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+	}
+            ]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+				public function getProductOptions($product_id) {
+			]]></search>
+			<add position="before">
+			<![CDATA[
+	// QC Mod
+	public function getProductAttributeByName($product_id, $group_name, $attribute_name) {
+		$product_attribute_data = array();
+
+		$product_attribute_query = $this->db->query("SELECT DISTINCT a.attribute_id, ad.name, agd.name, pa.text FROM " . DB_PREFIX . "product_attribute pa LEFT JOIN " . DB_PREFIX . "attribute a ON (pa.attribute_id = a.attribute_id) LEFT JOIN " . DB_PREFIX . "attribute_description ad ON (a.attribute_id = ad.attribute_id) LEFT JOIN " . DB_PREFIX . "attribute_group_description agd ON (a.attribute_group_id = agd.attribute_group_id) WHERE pa.product_id = '" . (int)$product_id . "' AND ad.name = '" . $attribute_name . "' AND agd.name = '" . $group_name . "' AND ad.language_id = '" . (int)$this->config->get('config_language_id') . "' AND agd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND pa.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY a.sort_order, ad.name LIMIT 1");
+		
+		if (count($product_attribute_query->rows) > 0) {
+			$product_attribute_data = $product_attribute_query->rows[0];
+		}
+		
+		return $product_attribute_data;
+	}
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[sku = '" . $this->db->escape($data['sku']) . "',]]></search>
+			<add position="replace"><![CDATA[
+            sku = '" . $this->db->escape($data['sku']) . "', qbname = '" . $this->db->escape($data['qbname']) . "', parent_id = '" . $this->db->escape($data['parent_id']) . "',
+            ]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/english/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+$_['entry_model']            = 'Model';
+			]]>
+			</search>
+			<add position="replace">
+			<![CDATA[
+$_['entry_model']            = 'QuickBooks Name';
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				// Entry
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+$_['entry_qbname']          = 'Fully Qualified Name';
+$_['entry_parent']        	= 'Parent Item';
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				// Help
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+$_['help_qbname']           = 'QuickBooks Fully Qualified Name';
+$_['help_parent']        	= 'Is this item a variant or sub-item of another?';
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/catalog/product.php">
+        <operation>
+			<search><![CDATA[
+		$this->response->setOutput($this->load->view('catalog/product_list.tpl', $data));
+			]]></search>
+			<add position="before">
+			<![CDATA[
+        // Extra product filters
+        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+            $this->session->data['qc_product_filters'] = $this->request->post;
+		}
+		
+		if (isset($this->request->post['reset_filters']) || isset($this->request->get['reset_filters'])) {
+            unset($this->session->data['qc_product_filters']);
+			// Clear post vars
+			unset($this->request->post);
+		}
+		
+		if (isset($this->session->data['qc_product_filters'])) {
+            foreach ($this->session->data['qc_product_filters'] as $filter => $value) {
+                $this->request->post[$filter] = $value;
+            }
+		}
+        
+        $data['filter_action'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, 'SSL');
+        
+		// Load filter items
+		$this->load->model('catalog/category');
+		$this->load->model('catalog/manufacturer');
+		$this->load->model('localisation/tax_class');
+		$this->load->model('localisation/stock_status');
+		$this->load->model('localisation/language');
+		$this->load->model('catalog/attribute');
+		$this->load->model('setting/store');
+
+		if (version_compare(VERSION, '2.0.3.1', '>')) {
+			$this->load->model('customer/customer_group');
+		} else {
+			$this->load->model('sale/customer_group');
+		}
+
+		if (version_compare(VERSION, '2.0.3.1', '>')) {
+			$data['customer_groups'] = $this->model_customer_customer_group->getCustomerGroups();
+		} else {
+			$data['customer_groups'] = $this->model_sale_customer_group->getCustomerGroups();
+		}
+        
+		$data['apftxt_p_filters'] = $this->language->get('apftxt_p_filters');
+		$data['apftxt_p_filters_none'] = $this->language->get('apftxt_p_filters_none');
+        
+        $post['filters_ids'] = $this->getPostVar('filters_ids', array());
+		$post['filter_name'] = $this->getPostVar('filter_name', '');
+		$post['filter_namex'] = $this->getPostVar('filter_namex', '');
+		$post['filter_model'] = $this->getPostVar('filter_model', '');
+		$post['filter_modelx'] = $this->getPostVar('filter_modelx', '');
+		$post['filter_status'] = (int)$this->getPostVar('filter_status', 'any');
+		$post['filter_store'] = $this->getPostVar('filter_store', 'any');
+		$post['filter_tag'] = $this->getPostVar('filter_tag', '');
+		$post['product_id_to_attr'] = $this->getPostVar('product_id_to_attr', '');
+        
+        $post['categories'] = $this->model_catalog_category->getCategories(0);
+		$post['manufacturers'] = $this->model_catalog_manufacturer->getManufacturers();
+        $post['tax_classes'] = $this->model_localisation_tax_class->getTaxClasses();
+		$post['stock_statuses'] = $this->model_localisation_stock_status->getStockStatuses();
+		$post['languages'] = $this->model_localisation_language->getLanguages();
+		$post['all_attributes'] = $this->model_catalog_attribute->getAttributes();
+		$post['stores'] = $this->model_setting_store->getStores();
+        $post['p_filters'] = $this->model_catalog_product->getQueryFilters();
+		
+		$post['product_category'] = $this->getPostVar('product_category', array());
+
+		$post['manufacturer_ids'] = $this->getPostVar('manufacturer_ids', array());
+
+		$post['price_min'] = $this->getPostVar('price_min', '');
+		$post['price_max'] = $this->getPostVar('price_max', '');
+
+		$post['d_cust_group_filter'] = $this->getPostVar('d_cust_group_filter', 'any');
+		$post['s_cust_group_filter'] = $this->getPostVar('s_cust_group_filter', 'any');
+
+		$post['d_price_min'] = $this->getPostVar('d_price_min', '');
+		$post['d_price_max'] = $this->getPostVar('d_price_max', '');
+
+		$post['s_price_min'] = $this->getPostVar('s_price_min', '');
+		$post['s_price_max'] = $this->getPostVar('s_price_max', '');
+
+		$post['tax_class_filter'] = $this->getPostVar('tax_class_filter', 'any');
+
+		$post['stock_min'] = $this->getPostVar('stock_min', '');
+		$post['stock_max'] = $this->getPostVar('stock_max', '');
+
+		$post['min_q_min'] = $this->getPostVar('min_q_min', '');
+		$post['min_q_max'] = $this->getPostVar('min_q_max', '');
+
+		$post['subtract_filter'] = $this->getPostVar('subtract_filter', 'any');
+		$post['stock_status_filter'] = $this->getPostVar('stock_status_filter', 'any');
+		$post['shipping_filter'] = $this->getPostVar('shipping_filter', 'any');
+
+		$post['date_min'] = $this->getPostVar('date_min', '');
+		$post['date_max'] = $this->getPostVar('date_max', '');
+		$post['date_added_min'] = $this->getPostVar('date_added_min', '');
+		$post['date_added_max'] = $this->getPostVar('date_added_max', '');
+		$post['date_modified_min'] = $this->getPostVar('date_modified_min', '');
+		$post['date_modified_max'] = $this->getPostVar('date_modified_min', '');
+        
+		$post['filter_store'] = $this->getPostVar('filter_store', 'any');
+		$post['filter_attr'] = $this->getPostVar('filter_attr', 'any');
+		$post['filter_opti'] = $this->getPostVar('filter_opti', 'any');
+
+		$post['filter_attr_val'] = $this->getPostVar('filter_attr_val', '');
+		$post['filter_opti_val'] = $this->getPostVar('filter_opti_val', 'any');
+
+		$post['max_results'] = $this->getPostVar('max_results', $this->config->get('config_limit_admin'));
+        
+
+
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'pd.name';
+		}
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$settings['sort'] = $sort;
+		$settings['order'] = $order;
+		$settings['page'] = $page;
+
+        $product_total = $this->model_catalog_product->getTotalQueryProducts($post);
+		$results = $this->model_catalog_product->getQueryProducts(array_merge($post, $settings));
+
+        if (count($results) > 0) { // TODO: What is the standard OpenCart var for these results?
+            $this->load->model('tool/image');
+            $this->load->model('catalog/product');
+            
+            for ($i = 0; $i < count($results);$i++) {
+                // Thumbs
+                if ($results[$i]['image'] && file_exists(DIR_IMAGE . $results[$i]['image'])) {
+                    $results[$i]['image'] = $this->model_tool_image->resize($results[$i]['image'], 40, 40);
+                } else {
+                    $results[$i]['image'] = $this->model_tool_image->resize('no_image.jpg', 40, 40);
+                }
+                
+                $results[$i]['edit'] = $this->url->link('catalog/qc_product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $results[$i]['product_id'], 'SSL');
+                $results[$i]['status'] = ((bool)$results[$i]['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled');
+            
+                // Specials
+                $special = false;
+                $product_specials = $this->model_catalog_product->getProductSpecials($results[$i]['product_id']);
+                foreach ($product_specials  as $product_special) {
+                    if (($product_special['date_start'] == '0000-00-00' || strtotime($product_special['date_start']) < time()) && ($product_special['date_end'] == '0000-00-00' || strtotime($product_special['date_end']) > time())) {
+                        $special = $product_special['price'];
+                        break;
+                    }
+                }
+                
+                $results[$i]['special'] = $special;
+            
+            }
+        }
+        
+        $data['products'] = $results;
+
+		// TODO: Improve implementation so we don't have to grab products twice and redo paging
+		$pagination = new Pagination();
+		$pagination->total = $product_total;
+		$pagination->page = $page;
+		$pagination->limit = $this->config->get('config_limit_admin');
+		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+
+		$data['pagination'] = $pagination->render();
+
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($product_total - $this->config->get('config_limit_admin'))) ? $product_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $product_total, ceil($product_total / $this->config->get('config_limit_admin')));
+        
+        $data = array_merge($data, $post);
+
+		$data['product_filters'] = $this->load->view('catalog/product_filter.tpl', $data);
+			]]></add>
+		</operation>
+        <operation>
+			<search><![CDATA[
+				protected function getList() {
+			]]></search>
+			<add position="after">
+			<![CDATA[
+        $this->document->addScript('view/javascript/quickcommerce/qc_product.js');
+        
+        // Load product filter styles
+		$this->document->addStyle('view/stylesheet/quickcommerce/product_filters.css');
+        
+		$data = $this->load->language('quickcommerce/product_filter');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$this->getForm();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+		$this->document->addScript('view/javascript/quickcommerce/qc_product.js');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['help_sku'] = $this->language->get('help_sku');
+			]]></search>
+			<add position="before"><![CDATA[
+		$data['help_qbname'] = $this->language->get('help_qbname');
+		$data['help_parent'] = $this->language->get('help_parent');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['entry_model'] = $this->language->get('entry_model');
+			]]></search>
+			<add position="before"><![CDATA[
+		$data['entry_qbname'] = $this->language->get('entry_qbname');
+		$data['entry_parent'] = $this->language->get('entry_parent');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				if (isset($this->request->post['model'])) {
+			]]></search>
+			<add position="before"><![CDATA[
+		if (isset($this->request->post['qbname'])) {
+			$data['qbname'] = $this->request->post['qbname'];
+		} elseif (!empty($product_info)) {
+			$data['qbname'] = (isset($product_info['qbname'])) ? $product_info['qbname'] : '';
+		} else {
+			$data['qbname'] = '';
+		}
+		
+		if (isset($this->request->post['parent_id'])) {
+			$data['parent_id'] = $this->request->post['parent_id'];
+		} elseif (!empty($product_info)) {
+			$data['parent_id'] = (isset($product_info['parent_id'])) ? $product_info['parent_id'] : null;
+		} else {
+			$data['parent_id'] = null;
+		}
+		
+		if (isset($this->request->post['parent'])) {
+			$data['parent'] = $this->request->post['parent'];
+		} elseif (!empty($product_info)) {
+			$parent_info = (isset($product_info['parent_id'])) ? $this->model_catalog_product->getProduct($product_info['parent_id']) : false;
+
+			if ($parent_info) {
+				$data['parent'] = $parent_info['name'];
+			} else {
+				$data['parent'] = '';
+			}
+		} else {
+			$data['parent'] = '';
+		}
+		
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/catalog/product_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+		<button id="qc-peer-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from Peer" class="btn btn-warning"><i class="fa fa-list-alt"></i> Import from Peer</button> <button id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</button> <button id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</button> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="#" data-id="<?php echo $product['product_id']; ?>" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Sync with QuickBooks" class="btn btn-default"><i class="fa fa-refresh"></i></a> <a href="<?php echo $product['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-product">
+			]]></search>
+			<add position="before"><![CDATA[
+		<div class="well">
+          <div class="row">
+            <div class="col-sm-9"></div>
+            <div class="col-sm-3 pull-right">
+			  <div class="form-group">
+                <label class="control-label" for="input-batch-action"><?php echo 'Batch Actions'; ?></label>
+                <div class="input-group">
+				<select name="batch_action" id="batch-action" class="form-control" style="font-family: 'FontAwesome', Arial" data-token="<?php echo $token; ?>">
+                  <option value="sync" selected="selected"><!--<i class="fa fa-refresh"></i>-->&#xf021; <?php echo '&nbsp;&nbsp;Sync With QuickBooks'; ?></option>
+                  <option value="delete"><!--<i class="fa fa-trash"></i>-->&#xf1f8; <?php echo '&nbsp;&nbsp;Delete From QuickBooks'; ?></option>
+                  <option value="assign_accounts"><!--<i class="fa fa-external-link-square"></i>-->&#xf14c; <?php echo '&nbsp;&nbsp;Assign Accounts'; ?></option>
+                  <option value="generate_seo_urls"><!--<i class="fa fa-underline"></i>-->&#xf0cd; <?php echo '&nbsp;&nbsp;Generate SEO URLs'; ?></option>
+                </select>
+				<span class="input-group-btn">
+				  <button type="button" id="button-batch-action" class="btn btn-success pull-right"><i class="fa fa-list"></i> <?php echo 'Batch'; ?></button>
+				</span>
+				</div>
+              </div>
+			</div>
+		  </div>
+		</div>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<?php echo $footer; ?>
+			]]></search>
+			<add position="before"><![CDATA[
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="batch-assign-accounts-modal" data-token="<?php echo $token; ?>">
+		<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<!--<div class="modal-header">
+			  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			  <h4 id="mySmallModalLabel" class="modal-title">Edit Address</h4>
+			</div>-->
+			<style scoped>
+			.modal-body {
+				padding: 0;
+			}
+			</style>
+			<div class="modal-body">
+			  <div class="panel panel-default">
+				<div class="panel-heading">	
+					<h3 class="panel-title"><i class="fa fa-list-alt"></i> Assign Accounts to Products</h3>
+					<button style="float: right" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="well">
+								<form class="form-horizontal" id="form-assign-product-account">
+									<div class="row">
+										<fieldset>
+											<div class="col-sm-12">
+												<div class="form-group">
+												<label class="col-sm-2 control-label" for="input-mode">Income Account</label>
+												<div class="col-sm-10">
+													<select name="qc_income_account" id="input-mode" class="form-control">
+													<?php if (isset($accounts)) { ?>
+													<?php foreach ($accounts as $account) { ?>
+													<?php
+													$account_name = $account['name'];
+													$selected = ($income_account == (int)$account['account_id']) ? 'selected="selected"' : '';
+													if (isset($account['account_num']) && !empty($account['account_num'])) {
+														$account_name = $account['account_num'] . ' - ' . $account_name;
+													}
+													?>
+													<option value="<?php echo $account['account_id']; ?>" <?php echo $selected; ?>><?php echo $account_name; ?></option>
+													<?php } ?>
+													<?php } ?>
+													</select>
+												</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="input-mode">COGS Account</label>
+													<div class="col-sm-10">
+														<select name="qc_cogs_account" id="input-mode" class="form-control">
+														<?php if (isset($accounts)) { ?>
+														<?php foreach ($accounts as $account) { ?>
+														<?php
+														$account_name = $account['name'];
+														$selected = ($cogs_account == (int)$account['account_id']) ? 'selected="selected"' : '';
+														if (isset($account['account_num']) && !empty($account['account_num'])) {
+															$account_name = $account['account_num'] . ' - ' . $account_name;
+														}
+														?>
+														<option value="<?php echo $account['account_id']; ?>" <?php echo $selected; ?>><?php echo $account_name; ?></option>
+														<?php } ?>
+														<?php } ?>
+														</select>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label" for="input-mode">Asset Account</label>
+													<div class="col-sm-10">
+														<select name="qc_asset_account" id="input-asset-account" class="form-control">
+														<?php if (isset($accounts)) { ?>
+														<?php foreach ($accounts as $account) { ?>
+														<?php
+														$account_name = $account['name'];
+														$selected = ($asset_account == (int)$account['account_id']) ? 'selected="selected"' : '';
+														if (isset($account['account_num']) && !empty($account['account_num'])) {
+															$account_name = $account['account_num'] . ' - ' . $account_name;
+														}
+														?>
+														<option value="<?php echo $account['account_id']; ?>" <?php echo $selected; ?>><?php echo $account_name; ?></option>
+														<?php } ?>
+														<?php } ?>
+														</select>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12 text-right">
+							<button class="btn btn-primary button-payment-address-apply" data-loading-text="Loading..." type="button">Apply</button>
+							<button id="button-payment-address-cancel" class="btn btn-default" data-action="close" data-loading-text="Loading..." type="button">Close</button>
+						</div>
+					</div>
+					<div style="clear: both"></div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		</div>
+	</div>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<div class="tab-pane" id="tab-data">
+			]]></search>
+			<add position="after"><![CDATA[
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label" for="input-parent"><span data-toggle="tooltip" title="<?php echo $help_parent; ?>"><?php echo $entry_parent; ?></span></label>
+			    <div class="col-sm-10">
+				  <input type="text" name="parent" value="<?php echo $parent ?>" placeholder="<?php echo $entry_parent; ?>" id="input-parent" class="form-control" data-token="<?php echo $token; ?>" />
+				  <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label" for="input-qbname"><span data-toggle="tooltip" title="<?php echo $help_qbname; ?>"><?php echo $entry_qbname; ?></span></label>
+			    <div class="col-sm-10">
+				  <input type="text" name="qbname" value="<?php echo $qbname; ?>" placeholder="<?php echo $entry_qbname; ?>" id="input-qbname" class="form-control" readonly="readonly" />
+			    </div>
+			  </div>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/sale/order_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="<?php echo $order['convert']; ?>" data-toggle="tooltip" title="<?php echo $button_convert; ?>" class="btn btn-success"><i class="fa fa-sign-in"></i></a> <a href="<?php echo $order['view']; ?>" data-toggle="tooltip" title="<?php echo $button_view; ?>" class="btn btn-info"><i class="fa fa-eye"></i></a>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/sale/order_info.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $invoice; ?>" target="_blank" data-toggle="tooltip" title="<?php echo $button_invoice_print; ?>" class="btn btn-info"><i class="fa fa-print"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="<?php echo $convert; ?>" data-toggle="tooltip" title="<?php echo $button_convert; ?>" class="btn btn-success"><i class="fa fa-sign-in"></i></a>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/sale/order.php">
+		<operation>
+			<search><![CDATA[
+				'view'          => $this->url->link('sale/order/info', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, 'SSL'),
+			]]></search>
+			<add position="before"><![CDATA[
+				'convert'          => $this->url->link('transaction/invoice/convertOrder', 'token=' . $this->session->data['token'] . '&order_id=' . $result['order_id'] . $url, 'SSL'),
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['shipping'] = $this->url->link('sale/order/shipping', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
+			]]></search>
+			<add position="before"><![CDATA[
+				$data['convert'] = $this->url->link('transaction/invoice/convertOrder', 'token=' . $this->session->data['token'] . '&order_id=' . $order_id . $url, 'SSL');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['button_view'] = $this->language->get('button_view');
+			]]></search>
+			<add position="after"><![CDATA[
+		$data['button_convert'] = $this->language->get('button_convert');
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$data['button_invoice_print'] = $this->language->get('button_invoice_print');
+			]]></search>
+			<add position="before"><![CDATA[
+		$data['button_convert'] = $this->language->get('button_convert');
+			]]></add>
+		</operation>
+	</file>
+    
+    <file path="system/engine/controller.php">
+		<operation>
+			<search><![CDATA[
+		protected $registry;
+            ]]></search>
+			<add position="after"><![CDATA[
+    // These have been included via mod in the base controller class
+    // They are redeclared/overridden in QCController
+	protected function getPostVar($key, $default = null) {
+		return $this->getRequestVar($key, $default, 'post');
+	}
+
+	protected function getRequestVar($key, $default = null, $type = 'get') {
+		$types = array('get', 'post');
+		if (!in_array($type, $types)) {
+			throw new Exception('Invalid request type');
+		}
+
+		if (isset($this->request->{$type}[$key])) {
+			if (isset($this->request->{$type}[$key])) {
+				return $this->request->{$type}[$key];
+			}
+		}
+
+		return $default;
+	}
+            ]]></add>
+		</operation>
+	</file>
+</modification>

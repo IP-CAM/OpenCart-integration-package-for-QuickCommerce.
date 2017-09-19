@@ -1,0 +1,90 @@
+/******************************
+MEGA-MENU CATEGORIES
+*******************************/
+.mega-menu-item {
+  > div{
+    margin-right: 20px;
+    height: 100%;
+  }
+  h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+    a {
+      display: block;
+      color: inherit;
+      transition: color 0.2s;
+    }
+  }
+}
+.mega-menu-categories{
+  .mega-menu-item {
+    margin-bottom: 20px;
+    ul{
+      float: left;
+      width: 58%;
+      margin: 7px 0 0 0;
+      padding: 0;
+      list-style: none;
+      li{
+        padding-bottom: 3px;
+        position: relative;
+        a{
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: normal;
+          padding-left: 10px;
+          transition: color .1s;
+          line-height: 15px;
+          &:before{
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+    }
+    img {
+      float: right;
+      width: 40%;
+      height: auto;
+      margin-top: 10px;
+    }
+    .show-more-text{
+     a:before{
+       content: "";
+     }
+    }
+
+    &.menu-image-left{
+      ul{
+        width: 55%;
+        padding: 0 0 0 8px;
+      }
+      img{
+        float: left;
+      }
+    }
+    &.menu-image-top{
+      ul{
+        width: 100%;
+      }
+      img{
+        float: none;
+        width: 100%;
+      }
+    }
+    &.menu-no-links{
+      img{
+        width: 100%;
+      }
+    }
+    &.menu-no-image{
+      ul{
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}

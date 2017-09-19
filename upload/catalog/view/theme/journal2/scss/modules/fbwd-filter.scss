@@ -1,0 +1,64 @@
+/******************************
+ FILTER MODULE
+*******************************/
+
+#content .box-filter {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin-top: -15px;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: $margin;
+}
+
+#content #button-filter {
+  margin: 15px 0;
+  float: right;
+}
+
+#content .box-filter > li {
+  max-width: 200px;
+  float: left;
+  margin-right: 10px;
+}
+
+#content .box-filter > li > span {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 8px 12px 8px;
+  display: block;
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 8px;
+}
+
+#column-right .box-filter > li,
+#column-left .box-filter > li {
+  min-height: 40px;
+  width: 100%;
+  display: table;
+}
+
+#column-right .box-filter > li > span,
+#column-left .box-filter > li > span {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 8px 8px 0;
+  min-height: 40px;
+  display: block;
+  padding-left: 15px;
+  line-height: 1.5;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+#column-right #button-filter,
+#column-left #button-filter {
+  margin: 15px;
+}
+
+#column-right .box-content .box-filter li ul,
+#column-left .box-content .box-filter li ul {
+  display: block;
+  padding-left: 10px;
+  padding-top: 5px;
+}

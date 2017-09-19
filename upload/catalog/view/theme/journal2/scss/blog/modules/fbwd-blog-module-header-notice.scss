@@ -1,0 +1,72 @@
+/******************************
+HEADER NOTICE
+*******************************/
+
+.header-notice {
+  padding: 7px 50px 7px 10px;
+  line-height: 1.3;
+  font-size: 14px;
+  position: relative;
+  min-height: 15px;
+  z-index: 2000;
+  i {
+    margin-right: 7px !important;
+    &:before {
+      float: left;
+    }
+  }
+  a {
+    transition: all 0.2s;
+  }
+  &.floated-icon i {
+    float: left;
+  }
+  &.center-notice {
+    text-align: center;
+    i:before {
+      float: none;
+    }
+  }
+  &.right-notice {
+    text-align: right;
+    padding-right: 60px;
+    i:before {
+      float: none;
+    }
+  }
+}
+
+.notice-text:after{
+  content: "";
+  display: table;
+  width: 100%;
+  clear: both;
+}
+
+button.close-notice{
+  cursor: pointer;
+  padding: 0 12px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  transition: all 0.2s;
+  border-radius: 0 !important;
+}
+
+button.close-notice.x-icon{
+  &:before{
+    content: "\e601";
+    font-size: 26px;
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .header-notice{
+    i{
+      float: left;
+    }
+  }
+}

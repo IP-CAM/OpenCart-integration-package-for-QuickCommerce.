@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Store Setting Mods</name>
+	<version>1.0</version>
+	<code>quickcommerce_setting_store</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="admin/view/template/setting/store_list.tpl">
+		<operation>
+			<search><![CDATA[
+			<td class="text-left"><?php echo $column_name; ?></td>
+			]]></search>
+			<add position="after"><![CDATA[
+		<td class="text-left">ID</td>
+			]]></add>
+		 </operation>
+		 <operation>
+			<search><![CDATA[
+			<td class="text-left"><?php echo $store['name']; ?></td>
+			]]></search>
+			<add position="after"><![CDATA[
+		<td class="text-left"><?php echo $store['store_id']; ?></td>
+			]]></add>
+		 </operation>
+	</file>
+</modification>

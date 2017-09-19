@@ -1,0 +1,194 @@
+//FLYOUT MENU
+.flyout {
+  .fly-mega-menu {
+    left: 100%;
+    top: 0;
+    z-index: 1;
+    min-height: 100%;
+    width: 764px;
+    transition: all 0.2s;
+    box-shadow: 12px 15px 30px -8px rgba(0, 0, 0, 0.2);
+    .mega-menu-column {
+      margin: 0;
+      &:last-of-type > div {
+        margin-right: 0;
+        margin-bottom: 15px;
+        > h3{
+          margin-right: 15px;
+        }
+      }
+      &.mega-menu-html-block > div {
+        margin-right: 15px;
+        margin-bottom: 15px;
+        > h3{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.flyout-menu {
+  overflow: visible;
+  .flyout > ul > li {
+    display: table;
+    width: 100%;
+    min-height: 40px;
+    > a{
+      padding: 8px 25px 8px 12px;
+      width: 100%;
+      min-height:inherit;
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      transition: background-color .2s, color .2s;
+      border-bottom-width: 1px;
+      border-bottom-color: $f4;
+      border-bottom-style: solid;
+      &:before{
+        display: none;
+      }
+      i{
+        left: -2px;
+        &:before{
+          padding-left: 1px;
+        }
+        &.menu-plus{
+          left: auto;
+        }
+      }
+    }
+    &:last-of-type{
+      a{
+        border-bottom-width: 0;
+      }
+    }
+    &:hover {
+      .fly-mega-menu,
+      > ul{
+        display: block;
+      }
+    }
+  }
+}
+
+.flyout > ul > li.fly-mega-menu-mixed{
+  position: static;
+}
+
+.fly-drop-down,
+.fly-mega-menu-mixed {
+  .menu-plus {
+    position: absolute;
+    font-size: 17px;
+    top: 10px;
+    right: 8px;
+    &:before {
+      content: "\e6ae";
+      float: left;
+    }
+  }
+}
+
+.flyout-menu .flyout > ul > li:hover > a{
+  z-index: 2;
+  transition: all 0.2s;
+}
+
+.fly-mega-menu-mixed:first-of-type .fly-mega-menu{
+  //display: block;
+}
+
+.fly-drop-down{
+  ul{
+    z-index: 999;
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 1px 8px -3px rgba(0,0,0,.5);
+    height: 100%;
+    min-height: inherit;
+    li{
+      color: $dark;
+      background-color: white;
+      position: relative;
+      border-bottom: 1px solid $f4;
+      height: 100%;
+      display: table;
+      width: 100%;
+      min-height: inherit;
+    }
+
+    li:last-of-type{
+      border-bottom-width: 0;
+    }
+
+    li ul{
+      visibility: hidden;
+      opacity: 0;
+      left: 100%;
+      top: 0;
+      min-height: 40px;
+    }
+
+    li.left ul {
+      left: -100%;
+    }
+
+    li:hover > ul{
+      transition: opacity 0.2s;
+      visibility: visible;
+      opacity: 1;
+    }
+    li a{
+      min-width: 100px;
+      padding: 0 30px 0 12px;
+      display: block;
+      color: inherit;
+      white-space: nowrap;
+      min-height: inherit;
+      display: table-cell;
+      vertical-align: middle;
+      &:before{
+        margin-right: 5px;
+      }
+    }
+  }
+  > ul{
+    display: none;
+    left: 100%;
+    top: 0;
+    > li > a{
+      min-width: 120px;
+    }
+  }
+}
+
+
+.flyout-left{
+  z-index: 4;
+  .fly-mega-menu {
+    left: 100%;
+  }
+}
+
+.flyout-right{
+  z-index: 3;
+  .fly-mega-menu {
+    left: -100%;
+  }
+  .fly-drop-down{
+    > ul{
+      left: auto;
+      right: 220px;
+    }
+    ul li ul{
+      left: auto;
+      right: 100%;
+    }
+  }
+}
+
+//END Flyout

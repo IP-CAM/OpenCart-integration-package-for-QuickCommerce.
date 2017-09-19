@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Quote</name>
+	<version>1.0</version>
+	<code>quickcommerce_quote</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="admin/language/*/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				$_
+			]]></search>
+			<add position="after" index="1"><![CDATA[
+				$_['entry_display_mode'] = 'Display Mode';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				if (isset($data['image'])) {
+			]]></search>
+			<add position="before"><![CDATA[
+		$this->db->query("UPDATE " . DB_PREFIX . "product SET display_mode = '" . (float)$data['display_mode'] . "' WHERE product_id = '" . (int)$product_id . "'");
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/catalog/product_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<?php echo $price; ?>
+			]]></search>
+			<add position="after" offset="2"><![CDATA[
+		<div class="form-group">
+		  <label class="col-sm-2 control-label" for="input-display-mode"><?php echo $entry_display_mode; ?></label>
+		  <div class="col-sm-10">
+			<select name="display_mode" id="input-display-mode" class="form-control">
+				<?php if ($display_mode) { ?>
+				<option value="1" selected="selected"><?php echo 'Request Quote'; ?></option>
+				<option value="0"><?php echo 'Add to Cart'; ?></option>
+				<?php } else { ?>
+				<option value="1"><?php echo 'Request Quote'; ?></option>
+				<option value="0" selected="selected"><?php echo 'Add to Cart'; ?></option>
+				<?php } ?>
+			</select>
+		  </div>
+		</div>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+		if (isset($this->request->post['model'])) {
+		]]></search>
+			<add position="before"><![CDATA[
+			$data['entry_display_mode'] = $this->language->get('entry_display_mode');
+
+			if (isset($this->request->post['display_mode'])) {
+				$data['display_mode'] = $this->request->post['display_mode'];
+			} elseif (!empty($product_info)) {
+				$data['display_mode'] = $product_info['display_mode'];
+			} else {
+				$data['display_mode'] = '';
+			}
+		]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/controller/checkout/cart.php">
+		<operation>
+			<search><![CDATA[if ($product_info) {]]></search>
+			<add position="after"><![CDATA[
+				$CFP = $this->config->get('callforprice');
+				
+				if (isset($CFP) && ($CFP['Enabled'] == 'yes')) {
+					if ($CFP['Alert']=='default') {
+						$json['CFP'] = true;
+					} else if ($CFP['Alert']=='selected') {
+						if (isset($CFP['Products']) && (in_array($this->request->post['product_id'],$CFP['Products'])) )
+							$json['CFP'] = true;
+					}
+				} 
+		]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/manufacturer.php">
+		<operation>
+			<search><![CDATA[if ($result['image']) {]]></search>
+			<add position="before"><![CDATA[
+			$this->load->language('module/qc_quote');
+			$qc_quote = $this->config->get('qc_quote');
+
+			$display_mode = 0;
+			if ((bool)$qc_quote['status'] == true) {
+				if ($qc_quote['display'] == 'default') {
+					// Request quote
+					$display_mode = 1;
+
+					$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+				} else if ($qc_quote['display'] == 'selected') {
+					if (isset($result) && !empty($result['display_mode'])) {
+						if ((int)$result['display_mode'] == 1) {
+							// Request quote
+							$display_mode = 1;
+
+							$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+						}
+					}
+				}
+			}
+
+			$data['display_mode'] = $display_mode;
+		]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+			<add position="replace"><![CDATA[
+			if ($display_mode == 0) {
+				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+			} elseif ($display_mode == 1) {
+				$price = false;
+			}
+		]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/product/category.php">
+		<operation>
+			<search><![CDATA[if ($result['image']) {]]></search>
+			<add position="before"><![CDATA[
+			$this->load->language('module/qc_quote');
+			$qc_quote = $this->config->get('qc_quote');
+
+			$display_mode = 0;
+			if ((bool)$qc_quote['status'] == true) {
+				if ($qc_quote['display'] == 'default') {
+					// Request quote
+					$display_mode = 1;
+
+					$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+				} else if ($qc_quote['display'] == 'selected') {
+					if (isset($result) && !empty($result['display_mode'])) {
+						if ((int)$result['display_mode'] == 1) {
+							// Request quote
+							$display_mode = 1;
+
+							$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+						}
+					}
+				}
+			}
+
+			$data['display_mode'] = $display_mode;
+		]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+			<add position="replace"><![CDATA[
+			if ($display_mode == 0) {
+				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+			} elseif ($display_mode == 1) {
+				$price = false;
+			}
+		]]></add>
+		</operation>
+	</file>
+    
+    <file path="catalog/controller/product/search.php">
+		<operation>
+			<search><![CDATA[if ($result['image']) {]]></search>
+			<add position="before"><![CDATA[
+			$this->load->language('module/qc_quote');
+			$qc_quote = $this->config->get('qc_quote');
+
+			$display_mode = 0;
+			if ((bool)$qc_quote['status'] == true) {
+				if ($qc_quote['display'] == 'default') {
+					// Request quote
+					$display_mode = 1;
+
+					$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+				} else if ($qc_quote['display'] == 'selected') {
+					if (isset($result) && !empty($result['display_mode'])) {
+						if ((int)$result['display_mode'] == 1) {
+							// Request quote
+							$display_mode = 1;
+
+							$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+						}
+					}
+				}
+			}
+
+			$data['display_mode'] = $display_mode;
+		]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+			<add position="replace"><![CDATA[
+			if ($display_mode == 0) {
+				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+			} elseif ($display_mode == 1) {
+				$price = false;
+			}
+		]]></add>
+		</operation>
+	</file>
+
+	<file path="catalog/controller/module/boss_filterproduct.php">
+		<operation>
+			<search><![CDATA[if ($result['image']) {]]></search>
+			<add position="before"><![CDATA[
+			$this->load->language('module/qc_quote');
+			$qc_quote = $this->config->get('qc_quote');
+
+			$display_mode = 0;
+			if ((bool)$qc_quote['status'] == true) {
+				if ($qc_quote['display'] == 'default') {
+					// Request quote
+					$display_mode = 1;
+
+					$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+				} else if ($qc_quote['display'] == 'selected') {
+					if (isset($result) && !empty($result['display_mode'])) {
+						if ((int)$result['display_mode'] == 1) {
+							// Request quote
+							$display_mode = 1;
+
+							$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+						}
+					}
+				}
+			}
+
+			$data['display_mode'] = $display_mode;
+		]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));]]></search>
+			<add position="replace"><![CDATA[
+			if ($display_mode == 0) {
+				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+			} elseif ($display_mode == 1) {
+				$price = false;
+			}
+		]]></add>
+		</operation>
+	</file>
+  
+	<file path="catalog/controller/product/product.php">
+		<operation>
+			<search><![CDATA[$data['button_cart'] = $this->language->get('button_cart');]]></search>
+			<add position="after"><![CDATA[
+			$this->load->language('module/qc_quote');
+			$qc_quote = $this->config->get('qc_quote');
+
+			$display_mode = 0;
+			if ((bool)$qc_quote['status'] == true) {
+				if ($qc_quote['display'] == 'default') {
+					// Request quote
+					$display_mode = 1;
+
+					$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+				} else if ($qc_quote['display'] == 'selected') {
+					if (isset($product_info) && !empty($product_info['display_mode'])) {
+						if ((int)$product_info['display_mode'] == 1) {
+							// Request quote
+							$display_mode = 1;
+
+							$data['button_request_quote'] = $this->language->get('CallForPrice_Button');
+						}
+					}
+				}
+			}
+
+			$data['display_mode'] = $display_mode;
+		]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));]]></search>
+			<add position="replace"><![CDATA[
+			if ($display_mode == 0) {
+				$data['price'] = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')));
+			} elseif ($display_mode == 1) {
+				$data['price'] = false;
+			}
+		]]></add>
+		</operation>
+	</file>
+  
+  	<file path="catalog/view/theme/*/template/product/product.tpl">
+		<operation>
+			<search index="0"><![CDATA[<?php echo $button_cart; ?>]]></search>
+			<add position="replace"><![CDATA[
+			<?php echo ($display_mode == 1) ? $button_request_quote : $button_cart; ?>
+		]]></add>
+		</operation>
+      
+      	<operation>
+			<search><![CDATA[$('#button-cart').on('click', function() {]]></search>
+			<add position="after"><![CDATA[
+			<?php if ($display_mode == 1) { ?>
+				$('#CFP_popup').detach().appendTo('body');
+				var btn = this;
+
+				offset = $(btn).offset();
+				var leftOffset = offset.left + (parseInt($(btn).width()/2));
+				$('div#CFP_popup').css({
+					top: offset.top,
+					left: ((offset.left-$('div#CFP_popup').width()/2) + $(btn).width()/2)
+				});
+
+				$('div#CFP_popup').fadeIn('slow');
+				$(".CFP_popover-content").load("index.php?route=module/callforprice/showform&product_id="+<?php echo $product_id; ?>);
+				return;
+			<?php } ?>
+		]]></add>
+		</operation>
+	</file>
+  
+  	<file path="catalog/model/catalog/product.php">
+		<operation>
+			<search index="0"><![CDATA[if ($query->num_rows) {]]></search>
+			<add position="after"><![CDATA[
+		$qc_quote = $this->config->get('qc_quote');
+
+		if (isset($qc_quote) && ((bool)$qc_quote['status'] == true)) {
+			if ($qc_quote['display'] == 'default') {
+				$query->row['discount'] = 0;
+				$query->row['price'] = 0;
+				$query->row['special'] = 0;
+				$query->row['tax_class_id'] = 0;
+			} else if ($qc_quote['display'] == 'selected') {
+				if (isset($query->row['display_mode'])) {
+					if ((int)$query->row['display_mode'] == 1) {
+						$query->row['discount'] = 0;
+						$query->row['price'] = 0;
+						$query->row['special'] = 0;
+						$query->row['tax_class_id'] = 0;
+					}
+				}
+			}
+		}
+		]]></add>
+		</operation>
+		<operation>
+			<search index="0"><![CDATA['status'           => $query->row['status'],]]></search>
+			<add position="after"><![CDATA[
+				'display_mode'     => (int)$query->row['display_mode'],
+		]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/language/english/common/menu.php">
+		<operation>
+			<search><![CDATA[// Text]]></search>
+			<add position="after"><![CDATA[
+$_['text_quote_request']               = 'Quote Requests';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/common/menu.php">
+		<operation>
+			<search><![CDATA[
+				$this->load->language('common/menu');
+			]]></search>
+			<add position="after"><![CDATA[
+		// QC Quote
+		$data['text_quote_request'] = $this->language->get('text_quote_request');
+		$data['quote_request'] = $this->url->link('module/qc_quote/requests', 'token=' . $this->session->data['token'], 'SSL');
+		]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/common/menu.tpl">
+		<operation>
+			<search><![CDATA[
+				<li id="sale"><a class="parent"><i class="fa fa-shopping-cart fa-fw"></i> <span><?php echo $text_sale; ?></span></a>
+			]]></search>
+			<add position="before"><![CDATA[
+  <li><a href="<?php echo $quote_request; ?>"><i class="fa fa-stack-exchange"></i> <span><?php echo $text_quote_request; ?></span></a></li>
+			]]></add>
+		</operation>
+	</file>
+	
+	
+</modification>

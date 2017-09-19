@@ -1,0 +1,258 @@
+<?php
+include_once("Blogshop/Purolator/Model/Soapclient.php");
+
+class Blogshop_Purolator_Model_Soapinterface
+{
+    // namespace
+    const SERVICENAMESPACE = 'http://purolator.com/pws/datatypes/v1';
+    const SERVICEPREFIX = 'ns1';
+
+    // name of WSDL
+    const AVALIABILITYSERVICE = 'ServiceAvailabilityService';
+    const DOCUMENTSSERVICE = 'ShippingDocumentsService';
+    const ESTIMATINGSERVICE = 'EstimatingService';
+    const SHIPPINGSERVICE = 'ShippingService';
+    const TRACKINGSERVICE = 'TrackingService';
+    protected $_code = 'purolatormodule';
+    protected $_cr = false;
+    protected $_cw = false;
+    protected $_th = false;
+    protected $_clients = array();
+    // actual path after dev / production host path
+    protected $_locations = array(
+        self::AVALIABILITYSERVICE => '/ServiceAvailability/ServiceAvailabilityService.addsmx',
+        self::DOCUMENTSSERVICE => '/ShippingDocuments/ShippingDocumentsService.asmx',
+        self::ESTIMATINGSERVICE => '/Estimating/EstimatingService.asmx',
+        self::SHIPPINGSERVICE => '/Shipping/ShippingService.asmx',
+        self::TRACKINGSERVICE => '/Tracking/TrackingService.asmx'
+    );
+    protected $_versions = array(
+        self::AVALIABILITYSERVICE => '1.2',
+        self::DOCUMENTSSERVICE => '1.1',
+        self::ESTIMATINGSERVICE => '1.3',
+        self::SHIPPINGSERVICE => '1.4',
+        self::TRACKINGSERVICE => '1.1',
+        //self::PICKUPSERVICE => '1.1'
+    );
+
+    public function getHelper()
+    {
+        return mage::Helper('purolatormodule');
+    }
+
+    public function getShippingModule()
+    {
+        return Mage::getSingleton('purolatormodule/carrier_shippingmethod');
+    }
+
+    public function isActive()
+    {
+        return $this->getShippingModule()->isActive();
+    }
+
+    private function validType($type)
+    {
+        return (bool)array_key_exists($type, $this->_locations);
+    }
+
+    public function getClient($type)
+    {
+        if (!$this->validType($type)) {
+            Mage::throwException($this->getHelper()->__('Invalid Soap class type.'));
+        }
+
+        if (!isset($this->_clients[$type])) {
+            $this->_clients[$type] = $this->createPWSSOAPClient($type);
+        }
+        return $this->_clients[$type];
+    }
+
+    private function getCw()
+    {
+        if (!$this->_cw) {
+            $this->_cw = Mage::getSingleton('core/resource')->getConnection('core_write');
+        }
+        return $this->_cw;
+    }
+
+    private function getCr()
+    {
+        if (!$this->_cr) {
+            $this->_cr = Mage::getSingleton('core/resource')->getConnection('core_read');
+        }
+        return $this->_cr;
+    }
+
+    private function getTh()
+    {
+        if (!$this->_th) {
+            $this->_th = Mage::getSingleton('core/resource');
+        }
+        return $this->_th;
+    }
+
+    private function isTest()
+    {
+        return $this->getShippingModule()->isTest();
+    }
+
+    private function isDebug()
+    {
+        return $this->getShippingModule()->isDebug();
+    }
+
+    private function getAddressValidationActive()
+    {
+        return $this->getShippingModule()->getConfig('addressvalidation');
+    }
+
+    private function getKey()
+    {
+        return $this->getShippingModule()->getConfig('accesskey');
+    }
+
+    private function getPass()
+    {
+        return $this->getShippingModule()->getConfig('accesspassword');
+    }
+
+    private function getWsdlPath($type)
+    {
+        $path_parts = pathinfo(__FILE__);
+        $pp = explode(DS, $path_parts['dirname']);
+        array_pop($pp);
+
+        $path = 'wsdl' . DS . ($this->isTest() ? 'Development' : 'Production');
+        return implode(DS, $pp) . DS . $path . DS . $type . '.wsdl';
+    }
+
+    private function log($v, $force = false)
+    {
+        if ($this->isTest() || $this->isDebug() || $force) {
+            mage::log($v);
+        }
+    }
+
+    private function getLocation($type)
+    {
+        $base = ($this->isTest() ?
+              'https://devwebservices.purolator.com/EWS/V1/'
+                  : 'https://webservices.purolator.com/EWS/V1/' );
+
+        return $base . $this->_locations[$type];
+    }
+
+    private function getServiceVersion($type)
+    {
+        return $this->_versions[$type];
+    }
+
+    private function createPWSSOAPClient($type)
+    {
+        /** Purpose : Creates a SOAP Client in Non-WSDL mode with the appropriate authentication and
+         *           header information
+         **/
+        //Set the parameters for the Non-WSDL mode SOAP communication with your Development/Production credentials
+        /*$this->_clients[$type] = new SoapClient($this->getWsdlPath($type),
+            array(
+                'trace' => $this->isDebug(),
+                'location' => $this->getLocation($type),
+                'uri' => "http://purolator.com/pws/datatypes/v1",
+                'login' => $this->getKey(),
+                'password' => $this->getPass()
+            )
+        );*/
+
+        $this->_clients[$type] = new Blogshop_Purolator_Model_Soapclient($this->getWsdlPath($type),
+            array(
+                'trace' => $this->isDebug(),
+                'location' => $this->getLocation($type),
+                'uri' => "http://purolator.com/pws/datatypes/v1",
+                'login' => $this->getKey(),
+                'password' => $this->getPass(),
+                'encoding' => 'utf8',
+            )
+        );
+        //Define the SOAP Envelope Headers
+        $headers[] = new SoapHeader('http://purolator.com/pws/datatypes/v1',
+            'RequestContext',
+            array(
+                'Version' => $this->getServiceVersion($type),
+                'Language' => 'en',
+                'GroupID' => 'xxx',
+                'RequestReference' => $type . ' Request'
+            )
+        );
+
+        //Apply the SOAP Header to your client
+        $this->_clients[$type]->__setSoapHeaders($headers);
+
+        return $this->_clients[$type];
+    }
+
+    public function testAddress($address)
+    {
+        // We need caching in here if the address has already been tested we shouldn't be making a call again
+
+        if (!$this->getAddressValidationActive()) {
+            return false;
+        }
+
+        if (!$address['City'] || !$address['Postcode'] || !$address['RegionCode']) {
+            return false;
+        }
+
+        $request = new stdClass();
+        $request->Addresses->ShortAddress->City = $address['City'];
+        $request->Addresses->ShortAddress->Province = $address['RegionCode'];
+        $request->Addresses->ShortAddress->Country = $address['CountryId'];
+        $request->Addresses->ShortAddress->PostalCode = $address['Postcode'];
+
+        //Execute the request and capture the response
+        try {
+            $response = $this->getClient()->ValidateCityPostalCodeZip($request);
+        }
+        catch (Mage_Core_Exception $e) {
+            mage::log(__CLASS__ . __FUNCTION__ . "exception");
+            return false;
+        }
+        catch (Exception $e) {
+            mage::log(__CLASS__ . __FUNCTION__ . "exception");
+            return false;
+        }
+        //if($this->isTest())
+        //{
+        $this->log(__CLASS__ . " Request: " . print_r($request, 1));
+        $this->log(__CLASS__ . " Response: " . print_r($response, 1));
+        //}
+        $this->log(__CLASS__ . __LINE__);
+        if (!property_exists($response, 'ResponseInformation') || !property_exists($response->ResponseInformation, 'Errors')) {
+            $this->log("Address validation failed with Purolator Request: " . print_r($request, 1) . " Response " . print_r($response, 1), true);
+            return false;
+        }
+        $this->log(__CLASS__ . __LINE__);
+        if (property_exists($response->ResponseInformation->Errors, 'Error')) {
+            $this->log(__CLASS__ . __LINE__);
+            $ret = $this->getHelper()->__($response->ResponseInformation->Errors->Error->Description) . "<br />\n";
+            if (property_exists($response, 'SuggestedAddresses')) {
+                $sugg = $response->SuggestedAddresses;
+                //	$ret .=  $this->getHelper()->__("Please try one of the following alternatives: <br /> \n");
+                if (!is_array($sugg) && property_exists($response->SuggestedAddresses, 'SuggestedAddress')) {
+                    $sugg = array($response->SuggestedAddresses->SuggestedAddress);
+                }
+                foreach ($sugg as $a) {
+                    $add = $a->Address;
+                    $ret .= $add->City . " ";
+                    $ret .= $add->Province . ", ";
+                    $ret .= $add->Country . ", ";
+                    $ret .= $add->PostalCode . "<br />\n";
+                }
+            }
+            return $ret;
+        }
+        $this->log(__CLASS__ . __LINE__);
+        return false;
+    }
+
+
+}

@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce SEO Tools</name>
+	<version>1.0</version>
+	<code>quickcommerce_seo</code>
+	<author>lucaslopatka@gmail.com</author>
+	
+	<file path="admin/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				public function getProducts($data = array()) {
+			]]></search>
+			<add position="before"><![CDATA[
+	public function editUrlAlias($product_id = null, $keyword = '') {
+		if (!is_numeric($product_id) || $product_id < 1) {
+			return false;
+		}
+		
+		$keyword = (!empty($keyword)) ? $keyword : '';
+		
+		$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'product_id=" . (int)$product_id . "'");
+
+		$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'product_id=" . (int)$product_id . "', keyword = '" . $this->db->escape($keyword) . "'");
+	}
+	
+	public function getProductsByCategory($data = array()) {
+		$sql = 'SELECT *';		
+		if (!empty($data['filter_category_id'])) {
+			$sql .= " FROM " . DB_PREFIX . "category_path cp LEFT JOIN " . DB_PREFIX . "product_to_category p2c ON (cp.category_id = p2c.category_id)";
+			$sql .= " LEFT JOIN " . DB_PREFIX . "product p ON (p2c.product_id = p.product_id)";
+		} else {
+			$sql .= " FROM " . DB_PREFIX . "product p";
+		}
+		
+		$sql .=  " LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+		
+		if (!empty($data['filter_category_id'])) {
+			if (!empty($data['filter_sub_category'])) {
+				$sql .= " AND cp.path_id = '" . (int)$data['filter_category_id'] . "'";
+			} else {
+				$sql .= " AND p2c.category_id = '" . (int)$data['filter_category_id'] . "'";
+			}
+		}
+
+		if (!empty($data['filter_mpn'])) {
+			$sql .= " AND p.mpn LIKE '" . $this->db->escape($data['filter_mpn']) . "%'";
+		}
+				
+			
+		if (!empty($data['filter_name'])) {
+			
+		$sql .= " AND pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";	
+			
+		}
+
+		if (!empty($data['filter_model'])) {
+			
+		$sql .= " AND p.model LIKE '%" . $this->db->escape($data['filter_model']) . "%'";	
+			
+		}
+
+		/*if (isset($data['filter_price']) && !is_null($data['filter_price'])) {
+			$sql .= " AND p.price LIKE '" . $this->db->escape($data['filter_price']) . "%'";
+		}
+
+		if (isset($data['filter_quantity']) && !is_null($data['filter_quantity'])) {
+			$sql .= " AND p.quantity = '" . (int)$data['filter_quantity'] . "'";
+		}
+
+		if (isset($data['filter_status']) && !is_null($data['filter_status'])) {
+			$sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
+		}*/
+		
+		$sql .= " GROUP BY p.product_id";
+
+		$sort_data = array(
+			'pd.name',
+			'p.model',
+			'p.price',
+			'p.quantity',
+			'p.status',
+			'p.sort_order'
+		);
+
+		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
+			$sql .= " ORDER BY " . $data['sort'];
+		} else {
+			$sql .= " ORDER BY pd.name";
+		}
+
+		if (isset($data['order']) && ($data['order'] == 'DESC')) {
+			$sql .= " DESC";
+		} else {
+			$sql .= " ASC";
+		}
+
+		if (isset($data['start']) || isset($data['limit'])) {
+			if ($data['start'] < 0) {
+				$data['start'] = 0;
+			}
+
+			if ($data['limit'] < 1) {
+				$data['limit'] = 20;
+			}
+
+			$sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+		}
+
+		$query = $this->db->query($sql);
+
+		return $query->rows;
+	}
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/catalog/product.php">
+		<operation>
+			<search><![CDATA[
+				protected function getList() {
+			]]></search>
+			<add position="before"><![CDATA[
+	// From http://cubiq.org/the-perfect-php-clean-url-generator
+	protected static function regexGenerateSeoUrl($str, $replace = array(), $delimiter = '-') {
+		setlocale(LC_ALL, 'en_US.UTF8');
+		if (!empty($replace)) {
+			$str = str_replace((array)$replace, ' ', $str);
+		}
+
+		$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+		$clean = preg_replace("/[^a-zA-Z0-9_|+ -]/", '', $clean);
+		$clean = strtolower(trim($clean, '-'));
+		$clean = preg_replace("/[_|+ -]+/", $delimiter, $clean);
+
+		return $clean;
+	}
+	
+	public function getSeoRenameResultsList() {
+		$this->load->language('catalog/product');
+
+		$this->load->model('catalog/product');
+
+		if (isset($this->request->get['filter_name'])) {
+			$filter_name = $this->request->get['filter_name'];
+		} else {
+			$filter_name = null;
+		}
+
+		if (isset($this->request->get['filter_model'])) {
+			$filter_model = $this->request->get['filter_model'];
+		} else {
+			$filter_model = null;
+		}
+
+		if (isset($this->request->get['filter_price'])) {
+			$filter_price = $this->request->get['filter_price'];
+		} else {
+			$filter_price = null;
+		}
+
+		if (isset($this->request->get['filter_quantity'])) {
+			$filter_quantity = $this->request->get['filter_quantity'];
+		} else {
+			$filter_quantity = null;
+		}
+
+		if (isset($this->request->get['filter_status'])) {
+			$filter_status = $this->request->get['filter_status'];
+		} else {
+			$filter_status = null;
+		}
+
+		if (isset($this->request->get['product_category'])) {
+			$filter_category_id = $this->request->get['product_category'];
+		} else {
+			$filter_category_id = null;
+		}
+
+		if (isset($this->request->get['filter_match'])) {
+			$filter_match = $this->request->get['filter_match'];
+		} else {
+			$filter_match = null;
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$sort = $this->request->get['sort'];
+		} else {
+			$sort = 'pd.name';
+		}
+
+		if (isset($this->request->get['order'])) {
+			$order = $this->request->get['order'];
+		} else {
+			$order = 'ASC';
+		}
+
+		if (isset($this->request->get['page'])) {
+			$page = $this->request->get['page'];
+		} else {
+			$page = 1;
+		}
+
+		$url = '';
+
+		if (isset($this->request->get['filter_name'])) {
+			$url .= '&filter_name=' . urlencode(html_entity_decode($this->request->get['filter_name'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_model'])) {
+			$url .= '&filter_model=' . urlencode(html_entity_decode($this->request->get['filter_model'], ENT_QUOTES, 'UTF-8'));
+		}
+
+		if (isset($this->request->get['filter_price'])) {
+			$url .= '&filter_price=' . $this->request->get['filter_price'];
+		}
+
+		if (isset($this->request->get['filter_quantity'])) {
+			$url .= '&filter_quantity=' . $this->request->get['filter_quantity'];
+		}
+
+		if (isset($this->request->get['filter_status'])) {
+			$url .= '&filter_status=' . $this->request->get['filter_status'];
+		}
+
+		if (isset($this->request->get['filter_match'])) {
+			$url .= '&filter_match=' . $this->request->get['filter_match'];
+		}
+
+		if (isset($this->request->get['sort'])) {
+			$url .= '&sort=' . $this->request->get['sort'];
+		}
+
+		if (isset($this->request->get['order'])) {
+			$url .= '&order=' . $this->request->get['order'];
+		}
+
+		if (isset($this->request->get['page'])) {
+			$url .= '&page=' . $this->request->get['page'];
+		}
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/dashboard', 'token=' . $this->session->data['token'], 'SSL')
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('heading_title'),
+			'href' => $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url, 'SSL')
+		);
+
+		$data['add'] = $this->url->link('catalog/product/add', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['copy'] = $this->url->link('catalog/product/copy', 'token=' . $this->session->data['token'] . $url, 'SSL');
+		$data['delete'] = $this->url->link('catalog/product/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');
+
+		$data['products'] = array();
+
+		$filter_data = array(
+			'filter_name'			=> $filter_name,
+			'filter_model'			=> $filter_model,
+			'filter_price'			=> $filter_price,
+			'filter_quantity'		=> $filter_quantity,
+			'filter_status'   		=> $filter_status,
+			'filter_sub_category'	=> true,
+			'filter_category_id'	=> (is_array($filter_category_id) && count($filter_category_id) > 0) ? $filter_category_id[0] : null, // Quick hack to make sure we only pick up one
+			'filter_match'			=> $filter_match,
+			'sort'					=> $sort,
+			'order'					=> $order,
+			'start'					=> ($page - 1) * $this->config->get('config_limit_admin'),
+			'limit'					=> $this->config->get('config_limit_admin')
+		);
+
+		$this->load->model('tool/image');
+
+		$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+
+		$results = $this->model_catalog_product->getProductsByCategory($filter_data);
+
+		$this->load->model('catalog/manufacturer');
+		$manufacturerResults = $this->model_catalog_manufacturer->getManufacturers();
+		$manufacturers = array();
+		
+		foreach ($manufacturerResults as $manufacturer) {
+			$manufacturers[$manufacturer['manufacturer_id']] = $manufacturer;
+		}
+		
+		foreach ($results as $result) {
+			
+			if (is_file(DIR_IMAGE . $result['image'])) {
+				$image = $this->model_tool_image->resize($result['image'], 40, 40);
+			} else {
+				$image = $this->model_tool_image->resize('no_image.png', 40, 40);
+			}
+			
+			$seoUrl = $result['product_id'];
+			if (isset($result['model'])) {
+				$seoUrl = $result['model'];	
+			}
+			
+			if (isset($result['manufacturer_id']) && isset($manufacturers[$result['manufacturer_id']])) {
+				$seoUrl = $manufacturers[$result['manufacturer_id']]['name'] . '-' . $seoUrl;
+			}
+			
+			$seoUrl = self::regexGenerateSeoUrl($seoUrl);
+			
+			$data['products'][] = array(
+				'local_id'   => (isset($result['local_id'])) ? $result['local_id'] : '',
+				'local_model'=> $seoUrl,
+				'product_id' => $result['product_id'],
+				'image'      => $image,
+				'name'       => $result['name'],
+				'model'      => $result['model'],
+				'status'     => ($result['status']) ? $this->language->get('text_enabled') : $this->language->get('text_disabled'),
+				'edit'       => $this->url->link('catalog/product/edit', 'token=' . $this->session->data['token'] . '&product_id=' . $result['product_id'] . $url, 'SSL')
+			);
+		}
+
+		$pagination = new Pagination();
+		$pagination->total = $product_total;
+		$pagination->page = $page;
+		$pagination->limit = $this->config->get('config_limit_admin');
+		$pagination->url = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . $url . '&page={page}', 'SSL');
+
+		$data['pagination'] = $pagination->render();
+
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $this->config->get('config_limit_admin')) + 1 : 0, ((($page - 1) * $this->config->get('config_limit_admin')) > ($product_total - $this->config->get('config_limit_admin'))) ? $product_total : ((($page - 1) * $this->config->get('config_limit_admin')) + $this->config->get('config_limit_admin')), $product_total, ceil($product_total / $this->config->get('config_limit_admin')));
+
+		$data['column_image'] = $this->language->get('column_image');
+		$data['column_name'] = $this->language->get('column_name');
+		$data['column_model'] = $this->language->get('column_model');
+		$data['column_price'] = $this->language->get('column_price');
+		$data['column_quantity'] = $this->language->get('column_quantity');
+		$data['column_status'] = $this->language->get('column_status');
+		$data['column_action'] = $this->language->get('column_action');
+
+		$data['entry_name'] = $this->language->get('entry_name');
+
+		$data['entry_qbname'] = $this->language->get('entry_qbname');
+		$data['entry_parent'] = $this->language->get('entry_parent');
+
+		$data['entry_model'] = $this->language->get('entry_model');
+		$data['entry_price'] = $this->language->get('entry_price');
+		$data['entry_quantity'] = $this->language->get('entry_quantity');
+		$data['entry_status'] = $this->language->get('entry_status');
+
+		if (isset($this->request->post['selected'])) {
+			$data['selected'] = (array)$this->request->post['selected'];
+		} else {
+			$data['selected'] = array();
+		}
+
+		$data['sort'] = $sort;
+		$data['order'] = $order;
+
+		$data['token'] = $this->session->data['token'];
+
+		// Categories
+		$this->load->model('catalog/category');
+
+		if (isset($this->request->post['product_category'])) {
+			$categories = $this->request->post['product_category'];
+		} elseif (isset($this->request->get['product_id'])) {
+			$categories = $this->model_catalog_product->getProductCategories($this->request->get['product_id']);
+		} else {
+			$categories = array();
+		}
+
+		$data['product_categories'] = array();
+
+		foreach ($categories as $category_id) {
+			$category_info = $this->model_catalog_category->getCategory($category_id);
+
+			if ($category_info) {
+				$data['product_categories'][] = array(
+					'category_id' => $category_info['category_id'],
+					'name' => ($category_info['path']) ? $category_info['path'] . ' &gt; ' . $category_info['name'] : $category_info['name']
+				);
+			}
+		}
+
+		$this->response->setOutput($this->load->view('catalog/product_seo_list.tpl', $data));
+	}
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				protected function getList() {
+			]]></search>
+			<add position="before"><![CDATA[		
+	// TODO: Do this in QC Product controller?
+	// I need this method to be base OpenCart compatible though, which is why I also need this here
+	// I'd just prefer if QC can stand alone on all fronts
+	public function generateSeoUrls() {
+		if (!isset($this->request->post['selected'])) {
+			return false;
+		}
+		
+		$this->load->model('catalog/product');
+		foreach ($this->request->post['selected'] as $selected) {
+			$keyword = false;
+			if (isset($this->request->post['model'])) {
+				$keyword = $this->request->post['model'][$selected];
+				if (!empty($keyword)) {
+					$this->model_catalog_product->editUrlAlias((int)$selected, $keyword);
+				}
+			}
+		}
+	}
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/view/template/catalog/product_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<?php echo $footer; ?>
+			]]></search>
+			<add position="before"><![CDATA[
+	<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="seo-rename-modal" data-token="<?php echo $token; ?>">
+		<div class="modal-dialog modal-xl">
+		<div class="modal-content">
+			<!--<div class="modal-header">
+			  <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+			  <h4 id="mySmallModalLabel" class="modal-title">Edit Address</h4>
+			</div>-->
+			<style scoped>
+			.modal-body {
+				padding: 0;
+			}
+			</style>
+			<div class="modal-body">
+			  <div class="panel panel-default">
+				<div class="panel-heading">	
+					<h3 class="panel-title"><i class="fa fa-list-alt"></i> Batch Generate SEO URLs for Products</h3>
+					<button style="float: right" aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="well">
+								<form class="form-horizontal" id="form-seo-rename-product-filter">
+									<div class="row">
+									<fieldset>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-name"><?php echo $entry_name; ?></label>
+												<div class="col-sm-8">
+													<input type="text" name="filter_name" value="<?php echo $filter_name; ?>" placeholder="<?php echo $entry_name; ?>" id="input-name" class="form-control" />
+												</div>
+											</div>
+											<hr>
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-field"><?php echo 'Field'; //$filter_quantity; ?></label>
+												<div class="col-sm-8">
+													<small>Choose a field and its corresponding tag will be appended to the expression editor</small>
+													<br>
+													<br>
+													<select multiple="multiple" name="input_field" value="<?php echo 'Field'; //$filter_quantity; ?>" style="height: 120px; overflow: auto;" placeholder="<?php echo 'Field'; //$filter_quantity; ?>" id="input-field" class="form-control">
+														<option>Product ID {product_id}</option>
+														<option>Name {name}</option>
+														<option>QuickBooks Name {qb_name}</option>
+														<option>Manufacturer {manufacturer}</option>
+														<option>SKU {sku}</option>
+														<option>MPN {mpn}</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<?php /*
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-price"><?php echo $entry_price; ?></label>
+												<div class="col-sm-8">
+													<input type="text" name="filter_price" value="<?php echo $filter_price; ?>" placeholder="<?php echo $entry_price; ?>" id="input-price" class="form-control" />
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-quantity"><?php echo $entry_quantity; ?></label>
+												<div class="col-sm-8">
+													<input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" placeholder="<?php echo $entry_quantity; ?>" id="input-quantity" class="form-control" />
+												</div>
+											</div>
+											*/ ?>
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-model"><?php echo 'QBO Name'; //$entry_model; ?></label>
+												<div class="col-sm-8">
+													<input type="text" name="filter_model" value="<?php echo $filter_model; ?>" placeholder="<?php echo $entry_model; ?>" id="input-model" class="form-control" />
+												</div>
+											</div>
+											<hr>
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-expr"><?php echo 'Expr'; //$entry_expr; ?>
+												</label>
+												<div class="col-sm-8">
+													<small>1. {product_id}-my-url.htm</small>
+													<br>
+													<small>2. Regular Expr. (preg_replace)</small>
+													<br>
+													<br>
+													<textarea rows="6" name="expr" placeholder="<?php echo 'Expr'; //$entry_expr; ?>" id="input-expr" class="form-control">{product_id}-{manufacturer:{convert-spaces: true,convert-special:true}}-{model{convert-spaces: true,convert-special:true}}</textarea>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="form-group">
+												<label class="col-sm-4 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo 'Categories'; ?></span></label>
+												<div class="col-sm-8">
+												  <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" data-token="<?php echo $token; ?>" />
+												  <div id="product-category" class="well well-sm" style="height: 100px; overflow: auto;">
+													<?php foreach ($product_categories as $product_category) { ?>
+													<div id="product-category<?php echo $product_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $product_category['name']; ?>
+													  <input type="hidden" name="product_category[]" value="<?php echo $product_category['category_id']; ?>" />
+													</div>
+													<?php } ?>
+												  </div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-8 pull-right">
+												<!-- EDIT -->
+												<button type="button" id="button-seo-rename-filter" class="btn btn-info pull-right"><i class="fa fa-eye"></i> <?php echo 'Preview'; //$button_filter; ?></button>
+												<!-- END -->
+												</div>
+											</div>
+										</div>
+									</fieldset>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<fieldset>
+							<div class="col-sm-12">
+								<div class="row">
+									<div class="col-sm-12"><legend>Preview</legend></div>
+								</div>
+							</div>
+							<div class="col-sm-4 col-sm-push-8" for="">	
+								<div class="form-group">
+									<div class="col-sm-6">
+										<button id="qc-seo-rename-selected" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Generate for Selected" class="btn btn-warning"><i class="fa fa-adjust"></i> Generate for Selected</button>
+									</div>
+									<div class="col-sm-6">
+										<button id="qc-seo-rename-all" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Generate for All" class="btn btn-success"><i class="fa fa-circle-o"></i> Generate for All</button>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+					<div class="row" style="margin-top: 20px;">
+						<div class="col-sm-12">
+							<div class="panel panel-default">
+							  <!--<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-list"></i> <?php echo $text_list; ?></h3>
+							  </div>-->
+							  <div class="panel-body">
+								<form action="<?php echo $delete; ?>" method="post" enctype="multipart/form-data" id="form-seo-rename">
+								  <div class="table-responsive">
+									<table class="table table-bordered table-hover">
+									  <thead>
+										<tr>
+										  <td class="text-center"><?php echo $column_image; ?></td>
+										  <td class="text-left"><?php if ($sort == 'pd.name') { ?>
+											<a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
+											<?php } else { ?>
+											<a href="<?php echo $sort_name; ?>"><?php echo $column_name; ?></a>
+											<?php } ?></td>
+										  <td class="text-left"><?php if ($sort == 'p.model') { ?>
+											<a href="<?php echo $sort_model; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_model; ?></a>
+											<?php } else { ?>
+											<a href="<?php echo $sort_model; ?>"><?php echo $column_model; ?></a>
+											<?php } ?></td>
+										  <td class="text-right"><?php if ($sort == 'p.price') { ?>
+											<a href="<?php echo $sort_price; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_price; ?></a>
+											<?php } else { ?>
+											<a href="<?php echo $sort_price; ?>"><?php echo $column_price; ?></a>
+											<?php } ?></td>
+										  <td class="text-right"><?php if ($sort == 'p.quantity') { ?>
+											<a href="<?php echo $sort_quantity; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_quantity; ?></a>
+											<?php } else { ?>
+											<a href="<?php echo $sort_quantity; ?>"><?php echo $column_quantity; ?></a>
+											<?php } ?></td>
+										  <td class="text-left"><?php if ($sort == 'p.status') { ?>
+											<a href="<?php echo $sort_status; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_status; ?></a>
+											<?php } else { ?>
+											<a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
+											<?php } ?></td>
+										  <td style="width: 1px;" class="text-center"><input type="checkbox" onclick="$('input[name*=\'selected\']').prop('checked', this.checked);" /></td>
+										</tr>
+									  </thead>
+									  <tbody>
+										<tr>
+										  <td class="text-center" colspan="8"><?php echo $text_no_results; ?></td>
+										</tr>
+									  </tbody>
+									</table>
+								  </div>
+								</form>
+								<div class="row">
+								</div>
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<style scoped>
+		.modal-xl {
+			width: 1248px;
+		}
+	</style>
+			]]></add>
+		</operation>
+	</file>
+</modification>

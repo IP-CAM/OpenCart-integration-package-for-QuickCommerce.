@@ -1,0 +1,84 @@
+/******************************
+DEFAULT OC2 CAROUSEL
+*******************************/
+
+.oc2{
+  .oc-module.owl-carousel .owl-buttons div {
+    opacity: 0;
+    color: rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 0 rgba(255,255,255,0.3);
+    transition: all .3s ease;
+  }
+  .oc-module.owl-carousel:hover .owl-buttons div {
+    opacity: 0.7;
+  }
+  .oc-module.owl-carousel .owl-buttons div i {
+    font-size: 40px;
+    margin: -20px 0 0;
+  }
+  .oc-module.owl-carousel .owl-buttons .owl-prev {
+    left: -50px;
+  }
+  .oc-module.owl-carousel .owl-buttons .owl-next {
+    right: -50px;
+  }
+  .oc-module.owl-carousel:hover .owl-buttons .owl-prev {
+    left: 10px;
+  }
+  .oc-module.owl-carousel:hover .owl-buttons .owl-next {
+    right: 10px;
+  }
+
+  .oc-module {
+    &.owl-carousel{
+      background-color: white;
+    }
+    .owl-controls .owl-buttons div {
+      position: absolute;
+    }
+    .owl-controls .owl-buttons .owl-prev{
+      left: 10px;
+      top: 50%;
+    }
+
+    .owl-controls .owl-buttons .owl-next{
+      right: 10px;
+      top: 50%;
+    }
+    .owl-pagination {
+      text-align: center;
+      top: 30px;
+      position: relative;
+    }
+    .owl-controls .owl-page {
+      display: inline-block;
+      margin: 0px 6px;
+    }
+    .owl-controls .owl-page span {
+      display: block;
+      width: 11px;
+      height: 11px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+    .owl-controls .owl-page.active span {
+      background: rgba(0, 0, 0, 0.9);
+    }
+    .owl-controls .owl-page {
+      display: inline-block;
+      margin: 0px 6px;
+    }
+    .owl-controls .owl-page span {
+      display: block;
+      width: 11px;
+      height: 11px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    }
+    .owl-controls .owl-page.active span {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+}

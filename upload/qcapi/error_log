@@ -1,0 +1,489 @@
+[26-Jun-2017 20:37:43 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[26-Jun-2017 22:08:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[28-Jun-2017 23:41:00 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[01-Jul-2017 17:04:50 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[01-Jul-2017 18:03:32 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[01-Jul-2017 18:07:20 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[01-Jul-2017 21:17:39 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:07:50 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:11:58 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:12:04 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:12:51 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:24:10 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:29:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 17:46:20 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 18:06:27 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 19:16:18 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 19:16:29 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 19:17:34 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 20:24:50 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 20:55:54 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 20:56:38 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 21:00:20 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 21:00:49 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[03-Jul-2017 21:01:35 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 04:18:53 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 04:19:05 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 04:35:34 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 04:36:10 UTC] Slim Application Error:
+Type: ParseError
+Message: syntax error, unexpected '$data' (T_VARIABLE)
+File: /home/acecoffee/quickcommerce/vendor/quickcommerce/src/ResourceService.php
+Line: 70
+Trace: #0 /home/acecoffee/quickcommerce/vendor/composer/ClassLoader.php(301): Composer\Autoload\includeFile('/home/acecoffee...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\ResourceSer...')
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(17): spl_autoload_call('App\\ResourceSer...')
+#3 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Route.php(344): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(122): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Route.php(316): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(476): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(122): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(370): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#13 {main}
+View in rendered output by enabling the "displayErrorDetails" setting.
+
+[04-Jul-2017 04:43:21 UTC] Slim Application Error:
+Type: ParseError
+Message: syntax error, unexpected '$data' (T_VARIABLE)
+File: /home/acecoffee/quickcommerce/vendor/quickcommerce/src/ResourceService.php
+Line: 70
+Trace: #0 /home/acecoffee/quickcommerce/vendor/composer/ClassLoader.php(301): Composer\Autoload\includeFile('/home/acecoffee...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\ResourceSer...')
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(17): spl_autoload_call('App\\ResourceSer...')
+#3 [internal function]: Closure->{closure}(Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#4 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(41): call_user_func(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#5 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Route.php(344): Slim\Handlers\Strategies\RequestResponse->__invoke(Object(Closure), Object(Slim\Http\Request), Object(Slim\Http\Response), Array)
+#6 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(122): Slim\Route->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#7 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/Route.php(316): Slim\Route->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#8 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(476): Slim\Route->run(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#9 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/MiddlewareAwareTrait.php(122): Slim\App->__invoke(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#10 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(370): Slim\App->callMiddlewareStack(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#11 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), Object(Slim\Http\Response))
+#12 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#13 {main}
+View in rendered output by enabling the "displayErrorDetails" setting.
+
+[04-Jul-2017 05:47:49 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 05:48:00 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:08 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:48:19 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:37 UTC] PHP Fatal error:  Class 'App\Resource' not found in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource/Product.php on line 8
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 05:49:39 UTC] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 126
+[04-Jul-2017 06:12:04 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 346
+[04-Jul-2017 06:12:33 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 346
+[04-Jul-2017 06:13:12 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 346
+[04-Jul-2017 06:13:36 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 346
+[04-Jul-2017 06:14:11 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 346
+[04-Jul-2017 06:14:19 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Resource.php on line 347
+[06-Jul-2017 04:46:13 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(214): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[07-Jul-2017 20:10:44 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(225): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[07-Jul-2017 20:12:29 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(232): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[07-Jul-2017 20:13:14 UTC] PHP Warning:  Missing argument 1 for QuickCommerce\Adapter\OC2\Service\Oc2EndOfDayReportService::getTotalPurchasedSql(), called in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 49 and defined in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 98
+[07-Jul-2017 20:14:33 UTC] PHP Warning:  Missing argument 1 for QuickCommerce\Adapter\OC2\Service\Oc2EndOfDayReportService::getTotalPurchasedSql(), called in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 49 and defined in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 98
+[07-Jul-2017 20:14:33 UTC] PHP Warning:  Missing argument 1 for QuickCommerce\Adapter\OC2\Service\Oc2EndOfDayReportService::getTotalPurchasedSql(), called in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 49 and defined in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 98
+[07-Jul-2017 20:47:32 UTC] PHP Warning:  date() expects parameter 2 to be integer, object given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 77
+[07-Jul-2017 20:47:32 UTC] PHP Warning:  date() expects parameter 2 to be integer, object given in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 117
+[07-Jul-2017 21:36:26 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[07-Jul-2017 22:02:24 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[07-Jul-2017 22:23:48 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 23085056 bytes) in /home/acecoffee/quickcommerce/vendor/quickcommerce/src/Adapter/Opencart2x/Service/Oc2EndOfDayReportService.php on line 86
+[07-Jul-2017 22:57:32 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[08-Jul-2017 19:20:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[09-Jul-2017 17:23:51 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[09-Jul-2017 17:24:27 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[09-Jul-2017 17:28:06 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[09-Jul-2017 19:07:11 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[09-Jul-2017 19:44:15 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[14-Jul-2017 21:24:55 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[15-Jul-2017 18:01:03 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[15-Jul-2017 18:47:49 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[15-Jul-2017 20:15:43 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[15-Jul-2017 20:16:06 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[16-Jul-2017 16:26:41 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[18-Jul-2017 06:10:31 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[18-Jul-2017 06:27:18 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[18-Jul-2017 13:25:46 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[18-Jul-2017 14:02:16 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[21-Jul-2017 19:54:42 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572
+[23-Jul-2017 21:24:35 UTC] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Slim\App::finalize() must implement interface Psr\Http\Message\ResponseInterface, null given, called in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 377 and defined in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php:572
+Stack trace:
+#0 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(377): Slim\App->finalize(NULL)
+#1 /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php(295): Slim\App->process(Object(Slim\Http\Request), NULL)
+#2 /home/acecoffee/quickcommerce/upload/qcapi/index.php(229): Slim\App->run()
+#3 {main}
+  thrown in /home/acecoffee/quickcommerce/vendor/slim/slim/Slim/App.php on line 572

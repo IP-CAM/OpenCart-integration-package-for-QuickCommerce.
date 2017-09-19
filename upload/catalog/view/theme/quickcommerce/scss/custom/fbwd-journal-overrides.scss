@@ -1,0 +1,85 @@
+.copyright {
+    font-size: small;
+}
+
+.copyright {
+    max-width: 70%;
+    white-space: normal;
+    line-height: auto;
+    margin: 0 auto;
+}
+
+/* Grid system fixes */
+
+footer *,
+#footer * {
+    box-sizing: border-box;
+}
+
+.fullwidth-footer {
+    border-top: 1px solid white;
+}
+
+footer {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.fullwidth-footer.location {
+    border-top: 1px solid white; 
+    border-bottom: 1px solid white; 
+    position: relative;
+    z-index: 5;
+}
+
+.footer {
+    margin: 0; 
+    padding: 0; 
+    display: table; 
+    width: 100%; 
+    position: relative; 
+    z-index: 5;
+}
+
+/* Override footer header styles that I either customized or added in custom CSS */
+footer .column > h3, aside .column > h3 {
+    font-size: 1.25rem;
+    text-transform: none;
+}
+
+/* Override Journal carousel styles */
+.journal-carousel {
+    border-top: 1px solid white;
+}
+
+.journal-carousel .owl-wrapper-outer {
+    padding: 0;
+}
+
+/* Override background shading on product labels (normally black) */
+.journal-carousel .product-details {
+    border-top: 1px solid white;
+    background: rgba(61, 9, 49, 0.777);
+    padding: 1.25rem 0;
+}
+
+.journal-carousel .product-details, 
+.journal-carousel .product-grid-item .name a {
+    font-size: 1.25rem;
+}
+
+/* Adjust height to cover SFA schedule widget footer */
+.fullwidth-footer .bottom-footer {
+    position: relative;
+    top: -60px;
+}
+
+/* Override stupid Journal style */
+
+.fullwidth-footer .columns {
+    padding: 0 !important;
+}
+
+footer .column {
+    padding: 0; /* Reset padding Journal columns are retarded and only pad in one direction */
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+ <name>Batch Editor</name>
+ <code>2.0.x.x</code>
+ <version>1.0</version>
+ <author>Yarik</author>
+ <link></link>
+ 
+ <file path="admin/controller/common/menu.php">
+  <operation>
+   <search>
+    <![CDATA[$data['product'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'], 'SSL');]]>
+   </search>
+   <add position="after">
+    <![CDATA[$data['batch_editor'] = $this->url->link('batch_editor/index', 'token=' . $this->session->data['token'], 'SSL');]]>
+   </add>
+  </operation>
+ </file>
+ 
+ <file path="admin/view/template/common/menu.tpl">
+  <operation>
+   <search>
+    <![CDATA[<li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>]]>
+   </search>
+   <add position="after">
+    <![CDATA[<li><a href="<?php echo $batch_editor; ?>">Batch Editor</a></li>]]>
+   </add>
+  </operation>
+ </file>
+ 
+</modification>

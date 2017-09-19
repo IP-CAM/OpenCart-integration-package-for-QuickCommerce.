@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Template Store Name</name>
+	<version>1.0</version>
+	<code>quickcommerce_loadposition</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="catalog/controller/common/header.php">
+		<operation>
+			<search><![CDATA[
+			$data['links'] = $this->document->getLinks();
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['background'] = $this->load->controller('bossthemes/btheader');
+			$data['btheader'] = $this->load->controller('bossthemes/btheader');
+			$data['btslideshow'] = $this->load->controller('bossthemes/btslideshow');
+			$data['btmainmenu'] = $this->load->controller('bossthemes/btmainmenu');
+			$data['boss_login'] = $this->load->controller('module/boss_login');
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/common/footer.php">
+		<operation>
+			<search><![CDATA[
+			$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['btfooter'] = $this->load->controller('bossthemes/btfooter');
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/view/template/design/layout_form.tpl">
+		<operation>
+			<search><![CDATA[
+			<td class="text-left"><select name="layout_module[<?php echo $module_row; ?>][position]" class="form-control">
+			]]></search>
+			<add position="after"><![CDATA[
+			<option value="btheader" <?php echo ($layout_module['position'] == 'btheader')?'selected="selected"':''; ?>><?php echo 'Header'; ?></option>
+			<option value="btmainmenu" <?php echo ($layout_module['position'] == 'btmainmenu')?'selected="selected"':''; ?>><?php echo 'Main Menu'; ?></option>
+			<option value="btslideshow" <?php echo ($layout_module['position'] == 'btslideshow')?'selected="selected"':''; ?>><?php echo 'Slideshow'; ?></option>
+			<option value="btfooter" <?php echo ($layout_module['position'] == 'btfooter')?'selected="selected"':''; ?>><?php echo 'Footer'; ?></option>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+			html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+			]]></search>
+			<add position="before"><![CDATA[
+			html += '    <option value="btheader"><?php echo 'Header'; ?></option>';
+			html += '    <option value="btmainmenu"><?php echo 'Main Menu'; ?></option>';
+			html += '    <option value="btslideshow"><?php echo 'Slideshow'; ?></option>';
+			html += '    <option value="btfooter"><?php echo 'Footer'; ?></option>';
+			]]></add>
+		</operation>
+	</file>
+</modification>

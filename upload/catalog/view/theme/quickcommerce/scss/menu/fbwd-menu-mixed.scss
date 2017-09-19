@@ -1,0 +1,23 @@
+/******************************
+ MEGA-MENU MIXED
+*******************************/
+
+.mega-menu {
+  .wrapper p span{
+    line-height: 100% !important;
+  }
+
+  .mega-menu-column {
+    float: left;
+    margin: 0 0 -10px 0;
+    &:last-of-type {
+      > div {
+        margin-right: -20px;
+      }
+    }
+    .menu-cms-block{
+      clear: both;
+      margin: 0;
+    }
+  }
+}

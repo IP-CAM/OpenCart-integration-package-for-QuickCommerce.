@@ -1,0 +1,76 @@
+/******************************
+ CONTACT PAGE
+*******************************/
+
+.contact-page {
+  h2{
+    margin-bottom: 15px;
+  }
+  .buttons{
+    margin-top: 15px;
+  }
+  .content{
+    b{
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+  }
+}
+
+.contact-info {
+  overflow: auto;
+}
+
+.contact-info > div > div {
+  float: left;
+  width: 48%;
+  margin-bottom: 10px;
+}
+
+.oc2{
+  .contact-page{
+    h2{
+      margin-bottom: 15px;
+    }
+    .fa{
+      top: -1px;
+      font-size: 16px;
+    }
+    .col{
+      float: left;
+      width: 25%;
+      padding-left: 15px;
+      strong{
+        display:inline-block;
+        margin-bottom: 5px;
+      }
+      &:first-of-type{
+        padding-left: 0;
+      }
+    }
+    .col-sm-10{
+      width: 75%;
+      margin-bottom: 5px;
+    }
+    input[name='captcha']{
+      margin: 0;
+    }
+    .panel-body{
+      margin-bottom: 20px;
+      overflow: hidden;
+      background-color: transparent;
+    }
+  }
+  .img-thumbnail{
+    max-width: 100%;
+    height: auto;
+  }
+  address{
+    margin-bottom: 20px;
+  }
+}
+
+.route-account-return-add fieldset .radio label,
+.route-account-return-add fieldset .radio-inline{
+  width: 100% !important;
+}

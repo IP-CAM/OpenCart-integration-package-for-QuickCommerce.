@@ -1,0 +1,87 @@
+<modification>
+   <name><![CDATA[<font color="#0000"><b>Add new position</font>]]></name>
+    <version><![CDATA[<b>1.0</b>]]></version>
+	<code>loadposition</code>
+    <author><![CDATA[<font color="#CC0000"><b>Bossthemes</font>]]></author>
+    <link><![CDATA[www.bossthemes.com]]></link>
+<!-- sw-ad@hotmail.com -->	                      
+<file path="catalog/controller/common/header.php">
+		<operation>
+			<search><![CDATA[
+			$data['links'] = $this->document->getLinks();
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['btheader'] = $this->load->controller('bossthemes/btheader');
+			$data['btslideshow'] = $this->load->controller('bossthemes/btslideshow');
+			$data['btmainmenu'] = $this->load->controller('bossthemes/btmainmenu');
+			$data['boss_login'] = $this->load->controller('module/boss_login');
+			]]></add>
+		</operation>
+</file>
+<file path="catalog/controller/*/*.php">
+		<operation>
+			<search><![CDATA[
+			$data['header'] = $this->load->controller('common/header');
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['btspacer'] = $this->load->controller('bossthemes/btspacer');
+			$data['bttop'] = $this->load->controller('bossthemes/bttop');
+			]]></add>
+		</operation>
+</file>
+<file path="catalog/controller/common/footer.php">
+		<operation>
+			<search><![CDATA[
+			$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['btbottom'] = $this->load->controller('bossthemes/btbottom');
+			$data['btfooter'] = $this->load->controller('bossthemes/btfooter');
+			]]></add>
+		</operation>
+</file>
+<file path="catalog/view/theme/bt_claudine/template/*/*.tpl">
+		<operation>
+			<search><![CDATA[
+			<div class="bt-breadcrumb">
+			]]></search>
+			<add position="after" offset="9"><![CDATA[
+			<?php echo isset($btspacer)?$btspacer:''; ?>
+			<div class="boss-new-position">
+				<?php echo isset($bttop)?$bttop:''; ?>
+			</div>
+			]]></add>
+		</operation>
+</file>
+<file path="admin/view/template/design/layout_form.tpl">
+		<operation>
+			<search><![CDATA[
+			<td class="text-left"><select name="layout_module[<?php echo $module_row; ?>][position]" class="form-control">
+			]]></search>
+			<add position="after"><![CDATA[
+            <option value="btheader" <?php echo ($layout_module['position'] == 'btheader')?'selected="selected"':''; ?>><?php echo 'Header'; ?></option>
+			<option value="btmainmenu" <?php echo ($layout_module['position'] == 'btmainmenu')?'selected="selected"':''; ?>><?php echo 'Main Menu'; ?></option>
+			<option value="btslideshow" <?php echo ($layout_module['position'] == 'btslideshow')?'selected="selected"':''; ?>><?php echo 'Slideshow'; ?></option>
+			<option value="btspacer" <?php echo ($layout_module['position'] == 'btspacer')?'selected="selected"':''; ?>><?php echo 'Slideshow Spacer'; ?></option>
+			<option value="bttop" <?php echo ($layout_module['position'] == 'bttop')?'selected="selected"':''; ?>><?php echo 'Top'; ?></option>
+			<option value="btbottom" <?php echo ($layout_module['position'] == 'btbottom')?'selected="selected"':''; ?>><?php echo 'Bottom'; ?></option>
+			<option value="btfooter" <?php echo ($layout_module['position'] == 'btfooter')?'selected="selected"':''; ?>><?php echo 'Footer'; ?></option>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+			html += '    <option value="content_top"><?php echo $text_content_top; ?></option>';
+			]]></search>
+			<add position="before"><![CDATA[
+            html += '    <option value="btheader"><?php echo 'Header'; ?></option>';
+			html += '    <option value="btmainmenu"><?php echo 'Main Menu'; ?></option>';
+			html += '    <option value="btslideshow"><?php echo 'Slideshow'; ?></option>';
+			html += '    <option value="btspacer"><?php echo 'Slideshow Spacer'; ?></option>';
+			html += '    <option value="btbottom"><?php echo 'Top'; ?></option>';
+			html += '    <option value="btbottom"><?php echo 'Bottom'; ?></option>';
+			html += '    <option value="btfooter"><?php echo 'Footer'; ?></option>';
+			]]></add>
+		</operation>
+		
+</file>
+</modification>

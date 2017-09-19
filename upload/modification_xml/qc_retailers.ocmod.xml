@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Retailers</name>
+	<version>1.0</version>
+	<code>quickcommerce_retailers</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="admin/controller/common/menu.php">
+		<operation>
+			<search><![CDATA[
+				$this->load->language('common/menu');
+			]]></search>
+			<add position="after"><![CDATA[
+		$this->load->language('quickcommerce/common/menu');
+		
+		$data['text_retailer'] = $this->language->get('text_retailer');
+		$data['text_cash_sale_vendor'] = $this->language->get('text_cash_sale_vendor');
+		$data['text_cash_sale_payment'] = $this->language->get('text_cash_sale_payment');
+		$data['text_cash_sale_shipping'] = $this->language->get('text_cash_sale_shipping');
+		$data['text_cash_sale_sale'] = $this->language->get('text_cash_sale_sale');
+		
+		$data['cash_sale_vendor'] = $this->url->link('catalog/cash_sale_vendor', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale_payment'] = $this->url->link('catalog/cash_sale_payment', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale_shipping'] = $this->url->link('catalog/cash_sale_shipping', 'token=' . $this->session->data['token'], 'SSL');
+		$data['cash_sale'] = $this->url->link('sale/sale', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+	</file>
+	<file path="admin/view/template/common/menu.tpl">
+		<operation>
+			<search><![CDATA[
+				<li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
+			]]></search>
+			<add position="before"><![CDATA[
+		<li><a class="parent"><?php echo $text_cash_sale; ?></a>
+		  <ul>
+			<li><a href="<?php echo $cash_sale_vendor; ?>"><?php echo $text_cash_sale_vendor; ?></a></li>
+			<li><a href="<?php echo $cash_sale_payment; ?>"><?php echo $text_cash_sale_payment; ?></a></li>
+			<li><a href="<?php echo $cash_sale_shipping; ?>"><?php echo $text_cash_sale_shipping; ?></a></li>
+			<li><a href="<?php echo $cash_sale; ?>"><?php echo $text_cash_sale_sale; ?></a></li>
+		  </ul>
+		</li>
+			]]></add>
+		</operation>
+	</file>
+</modification>

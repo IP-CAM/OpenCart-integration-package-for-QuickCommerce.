@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Core - Taxes</name>
+	<version>1.0</version>
+	<code>quickcommerce_core_tax</code>
+	<author>lucaslopatka@gmail.com</author>
+	
+	<file path="admin/controller/localisation/tax_class.php">
+		<operation>
+			<search><![CDATA[
+				if (isset($this->error['warning'])) {
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$data['token'] = $this->session->data['token'];
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				if (!isset($this->request->get['tax_class_id'])) {
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$data['tax_class_id'] = (isset($this->request->get['tax_class_id'])) ? $this->request->get['tax_class_id'] : '';
+			]]>
+			</add>
+		</operation>
+		
+		<operation>
+			<search><![CDATA[
+				$this->getList();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$this->document->addScript('view/javascript/quickcommerce/qc_tax_class.js');
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$this->getForm();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$this->document->addScript('view/javascript/quickcommerce/qc_tax_class.js');
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/controller/localisation/tax_rate.php">
+		<operation>
+			<search><![CDATA[
+				if (isset($this->error['warning'])) {
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$data['token'] = $this->session->data['token'];
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$this->getList();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$this->document->addScript('view/javascript/quickcommerce/qc_tax_rate.js');
+			]]>
+			</add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				$this->getForm();
+			]]>
+			</search>
+			<add position="before">
+			<![CDATA[
+			$this->document->addScript('view/javascript/quickcommerce/qc_tax_rate.js');
+			]]>
+			</add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/localisation/tax_rate_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<button type="submit" form="form-tax-rate" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+			]]></search>
+			<add position="replace"><![CDATA[
+			<a id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</a> <a id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</a> <button type="submit" form="form-tax-rate" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/localisation/tax_rate_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+			<a id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</a> <a id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</a> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $tax_rate['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="<?php echo $tax_rate['edit']; ?>" data-id="<?php echo $tax_rate['tax_rate_id']; ?>" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Sync with QuickBooks" class="btn btn-default"><i class="fa fa-refresh"></i></a> <a href="<?php echo $tax_rate['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/localisation/tax_class_form.tpl">
+		<operation>
+			<search><![CDATA[
+				<button type="submit" form="form-tax-class" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+			]]></search>
+			<add position="replace"><![CDATA[
+			<a id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</a> <a id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</a> <button type="submit" form="form-tax-class" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[
+				<input type="text" name="title" value="<?php echo $title; ?>" placeholder="<?php echo $entry_title; ?>" id="input-title" class="form-control" />
+			]]></search>
+			<add position="before"><![CDATA[
+				<input type="hidden" name="tax_class_id" value="<?php echo $tax_class_id; ?>" id="input-tax-class-id" class="form-control" />
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/localisation/tax_class_list.tpl">
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+			<a id="qc-qbo-import" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Import from QuickBooks" class="btn btn-success"><i class="fa fa-cloud-download"></i> Import from QBO</a> <a id="qc-qbo-export" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Export to QuickBooks" class="btn btn-info"><i class="fa fa-cloud-upload"></i> Export to QBO</a> <a href="<?php echo $add; ?>" data-toggle="tooltip" title="<?php echo $button_add; ?>" class="btn btn-primary"><i class="fa fa-plus"></i></a>
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search><![CDATA[
+				<a href="<?php echo $tax_class['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></search>
+			<add position="replace"><![CDATA[
+				<a href="<?php echo $tax_class['edit']; ?>" data-id="<?php echo $tax_class['tax_class_id']; ?>" data-token="<?php echo $token; ?>" data-toggle="tooltip" title="Sync with QuickBooks" class="btn btn-default"><i class="fa fa-refresh"></i></a> <a href="<?php echo $tax_class['edit']; ?>" data-toggle="tooltip" title="<?php echo $button_edit; ?>" class="btn btn-primary"><i class="fa fa-pencil"></i></a>
+			]]></add>
+		</operation>
+	</file>
+</modification>

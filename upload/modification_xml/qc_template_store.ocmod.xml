@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Store Class</name>
+	<version>1.0</version>
+	<code>quickcommerce_store_class</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="catalog/controller/common/header.php">
+		<operation>
+			<search><![CDATA[
+			$data['links'] = $this->document->getLinks();
+			]]></search>
+			<add position="after"><![CDATA[
+			$data['background'] = $this->load->controller('bossthemes/btheader');
+			$data['btheader'] = $this->load->controller('bossthemes/btheader');
+			$data['btslideshow'] = $this->load->controller('bossthemes/btslideshow');
+			$data['btmainmenu'] = $this->load->controller('bossthemes/btmainmenu');
+			$data['boss_login'] = $this->load->controller('module/boss_login');
+			]]></add>
+		</operation>
+	</file>
+</modification>

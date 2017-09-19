@@ -1,0 +1,15 @@
+.pagination > .active > a, 
+.pagination > .active > a:focus, 
+.pagination > .active > a:hover, 
+.pagination > .active > span, 
+.pagination > .active > span:focus, 
+.pagination > .active > span:hover {
+    border-color: #A91626;
+    background-color: #A91626;
+    color: white !important;
+}
+
+.pagination-sm > li > a, 
+.pagination-sm > li > span {
+    padding: 1.5rem 2rem;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Categories</name>
+	<version>1.0</version>
+	<code>quickcommerce_product_categories</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="catalog/controller/product/category.php">
+		<operation info="Add category images">
+			<search position="replace" offset="3"><![CDATA[
+				$data['categories'][] = array(
+			]]></search>
+			<add><![CDATA[
+				if ($result['image']) {
+					$category_image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
+				} else {
+					$category_image = false;
+				}
+				
+				$data['categories'][] = array(
+					'name'  => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+					'href'  => $this->url->link('product/category', 'path=' . $this->request->get['path'] . '_' . $result['category_id'] . $url),
+					'thumb' => $category_image
+				);
+			]]></add>
+		</operation>
+	</file>
+</modification>

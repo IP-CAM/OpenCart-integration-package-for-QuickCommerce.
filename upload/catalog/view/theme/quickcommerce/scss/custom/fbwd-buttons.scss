@@ -1,0 +1,56 @@
+.btn-danger:not(.grommetux-button) {
+    background-color: #A91626 !important;
+    color: white !important;
+}
+
+.btn-danger:not(.grommetux-button) .fa,
+.btn-danger:not(.grommetux-button) h1,
+.btn-danger:not(.grommetux-button) h2,
+.btn-danger:not(.grommetux-button) h3,
+.btn-danger:not(.grommetux-button) h4,
+.btn-danger:not(.grommetux-button) h5,
+.btn-danger:not(.grommetux-button) h6 {
+    color: white !important;
+} 
+
+.btn-success:not(.grommetux-button) {
+    background-color: #13432D !important;
+    color: white !important;
+}
+
+.btn-success:not(.grommetux-button) .fa,
+.btn-success:not(.grommetux-button) h1,
+.btn-success:not(.grommetux-button) h2,
+.btn-success:not(.grommetux-button) h3,
+.btn-success:not(.grommetux-button) h4,
+.btn-success:not(.grommetux-button) h5,
+.btn-success:not(.grommetux-button) h6 {
+    color: white !important;
+} 
+
+.checkout-parts button,
+.checkout-parts button h4 {
+    color: black !important;
+}
+
+/* Fix now that we rearranged cart layout */
+.checkout-parts button {
+    display: block;
+    float: right !important;
+}
+
+/* Colors */
+/* rgba(199, 216, 100, 1) Jimmy Neon Green */
+/* rgba(61, 9, 49, 1) Jimmy Dark Purple */
+/* rgba(181, 102, 136, 1) Jimmy Light Purple */
+/* rgba(254, 133, 109, 1) Jimmy Sun Orange */
+
+.cta-buttons .button.cta {
+    background-color: white; /*rgba(199, 216, 100, 0.777);*/
+    transition: background-color 1s;
+    -webkit-transition: background-color 0.6s;
+}
+
+.cta-buttons .button.cta:hover {
+    background-color: rgba(254, 133, 109, 0.777);
+}

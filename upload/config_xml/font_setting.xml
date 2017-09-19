@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items_setting>
+  <groups>
+    <title>General</title>
+    <item>
+      <text>General</text>
+      <style>Helvetica</style>
+      <size>default</size>
+      <weight>default</weight>
+      <transform>default</transform>
+      <class_name>body</class_name>
+    </item>
+    <item>
+      <text>Button</text>
+      <style>Helvetica</style>
+      <size>default</size>
+      <weight>default</weight>
+      <transform>default</transform>
+      <class_name>.btn</class_name>
+    </item>
+  </groups>
+  <groups>
+    <title>Header</title>
+    <item>
+      <text>Link</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>#top-links ul li a, #top-links ul li span, #language span, #currency span</class_name>
+    </item>
+  </groups>
+  <groups>
+    <title>Footer</title>
+    <item>
+      <text>Footer font 1</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>footer h3, .footer-newletter h3</class_name>
+    </item>
+    <item>
+      <text>Footer font 2</text>
+      <style>Helvetica</style>
+      <size>default</size>
+      <weight>default</weight>
+      <transform>default</transform>
+      <class_name>footer a, .footer_column .footer-social ul li a i, .about-store p</class_name>
+    </item>
+  </groups>
+  <groups>
+    <title>Menu</title>
+    <item>
+      <text>Menu font 1</text>
+      <style>Helvetica</style>
+      <size>15px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>.mega-menu &amp;gt; ul.nav &amp;gt; li &amp;gt; a</class_name>
+    </item>
+    <item>
+      <text>Menu font 2</text>
+      <style>Helvetica</style>
+      <size>15px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>.mega-menu &amp;gt; ul.nav &amp;gt; li .dropdown .menu-row a.parent</class_name>
+    </item>
+  </groups>
+  <groups>
+    <title>Product</title>
+    <item>
+      <text>Product name</text>
+      <style>Helvetica</style>
+      <size>14px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.name a</class_name>
+    </item>
+    <item>
+      <text>Product price</text>
+      <style>Helvetica</style>
+      <size>16px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.price</class_name>
+    </item>
+  </groups>
+  <groups>
+    <title>Title</title>
+    <item>
+      <text>Page title</text>
+      <style>Helvetica</style>
+      <size>32px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>h1, h2, .bt-featured-pro.bt-nprolarge-tabs .htabs a, .bt-featured-pro .title span, .bt-box .box-heading, .bt-featured h3, h2.title_border</class_name>
+    </item>
+  </groups>
+  <customs>
+    <item>
+      <text>Breadcrumbs</text>
+      <style>Helvetica</style>
+      <size>32px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>ul.breadcrumb li:first-child</class_name>
+    </item>
+    <item>
+      <text>Box Headings</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.bt-box .box-heading, .bt-box .box-heading span</class_name>
+    </item>
+    <item>
+      <text>Product Filter Headings</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.boss_homefilter_tabs .bt-heading h3</class_name>
+    </item>
+    <item>
+      <text>Product Filter Paging</text>
+      <style>Helvetica</style>
+      <size>20px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.boss_homefilter_tabs .pages li</class_name>
+    </item>
+    <item>
+      <text>Product Price</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.price</class_name>
+    </item>
+    <item>
+      <text>Megamenu Sub-headings</text>
+      <style>Helvetica</style>
+      <size>18px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.mega-menu &amp;gt; ul.nav &amp;gt; li .dropdown .menu-column h3</class_name>
+    </item>
+    <item>
+      <text>Popular (Top) Category Headings</text>
+      <style>Helvetica</style>
+      <size>23px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.popular-cate .box-heading span</class_name>
+    </item>
+    <item>
+      <text>Popular (Top) Category Descriptions</text>
+      <style>Helvetica</style>
+      <size>18px</size>
+      <weight>default</weight>
+      <transform>default</transform>
+      <class_name>.popular-cate .box-content .cate-des</class_name>
+    </item>
+    <item>
+      <text>Popular (Top) Subcat Item</text>
+      <style>Helvetica</style>
+      <size>16px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>.popular-cate .box-content .sub_cat .sub_item a</class_name>
+    </item>
+    <item>
+      <text>Category Subcat Labels</text>
+      <style>Helvetica</style>
+      <size>14px</size>
+      <weight>default</weight>
+      <transform>uppercase</transform>
+      <class_name>.category-list ul li a, .box-category li a, .box-category ul li a</class_name>
+    </item>
+    <item>
+      <text>Megamenu</text>
+      <style>Helvetica</style>
+      <size>15px</size>
+      <weight>normal</weight>
+      <transform>uppercase</transform>
+      <class_name>.megamenu ul li a, .mega-menu &amp;gt; ul.nav &amp;gt; li .dropdown .menu-row ul.column.category li a</class_name>
+    </item>
+    <item>
+      <text>Product Description</text>
+      <style>Helvetica</style>
+      <size>17px</size>
+      <weight>normal</weight>
+      <transform>default</transform>
+      <class_name>#tab-description p, #tab-description &amp;gt; p</class_name>
+    </item>
+    <item>
+      <text>Product List/Grid Name</text>
+      <style>Helvetica</style>
+      <size>14px</size>
+      <weight>bold</weight>
+      <transform>default</transform>
+      <class_name>.product-thumb .name .boss-name</class_name>
+    </item>
+    <item>
+      <text>Product List/Grid Brand Name</text>
+      <style>Helvetica</style>
+      <size>14px</size>
+      <weight>normal</weight>
+      <transform>default</transform>
+      <class_name>.product-thumb .name.brand .boss-name</class_name>
+    </item>
+  </customs>
+</items_setting>

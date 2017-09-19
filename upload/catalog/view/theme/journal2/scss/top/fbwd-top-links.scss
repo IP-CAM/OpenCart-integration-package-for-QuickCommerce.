@@ -1,0 +1,52 @@
+@import 'variables.scss';
+/******************************
+Top Links
+*******************************/
+
+.journal-header-default,
+.journal-header-menu{
+  header .links > a{
+    padding-top: 2px;
+  }
+}
+
+header .links {
+  position: relative;
+  display: table;
+  width: 100%;
+  > a{
+    display: table-cell;
+    vertical-align: middle;
+    text-decoration: none;
+    text-align: center;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: $e4;
+    border-bottom: 1px solid transparent;
+    padding: 0 6px;
+    transition: background-color 0.2s;
+  }
+  > a:last-child, > span:last-child{
+    border-right-width: 0;
+  }
+}
+
+.links .no-link {
+  cursor: default;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 6px;
+}
+
+.journal-header-default,
+.journal-header-menu{
+  .links .no-link{
+    text-align: center;
+    border-right: 1px solid $e4;
+  }
+}
+
+.top-menu-link{
+  white-space: nowrap;
+  position: relative;
+}

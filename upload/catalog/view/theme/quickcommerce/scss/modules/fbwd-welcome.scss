@@ -1,0 +1,27 @@
+/******************************
+ WELCOME MODULE
+*******************************/
+
+.welcome{
+  margin-bottom: 15px;
+  h1{
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+  }
+  p{
+    font-weight: normal;
+    font-size: 13px;
+    padding-top: 5px;
+  }
+}
+
+.side-column{
+  .welcome{
+    padding: 10px;
+    margin-bottom: 0;
+    clear: both;
+    h1{
+      margin-bottom: 8px;
+    }
+  }
+}

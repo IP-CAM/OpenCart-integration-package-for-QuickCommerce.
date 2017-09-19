@@ -1,0 +1,71 @@
+/******************************
+ Auto-Suggest
+*******************************/
+
+
+.autocomplete2-suggestions {
+  background-color: white;
+  top: 100%;
+  div{
+    overflow: auto;
+  }
+}
+
+.autocomplete2-suggestion {
+  border-bottom: 1px solid $f4;
+  min-height: 38px;
+  padding: 7px 8px 5px 8px;
+  color: $darkblue;
+  cursor: pointer;
+
+  a:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .p-image{
+    max-width: 55px;
+    img{
+      max-width: 55px;
+    }
+  }
+
+  .p-name {
+    font-size: 13px;
+    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-left: 7px;
+    span{
+      display: block;
+      margin-bottom: 2px;
+    }
+  }
+
+  span.p-price {
+    font-size: 13px;
+    color: $dark;
+    .price-old{
+      float: left;
+      margin-right: 5px;
+      text-decoration: line-through;
+      color: $red;
+    }
+  }
+}
+
+.autocomplete2-selected{
+  background-color: transparent !important;
+}
+
+.autocomplete2-suggestion:last-child{
+  border-bottom: none;
+}
+
+.autocomplete2-selected{
+  background-color: $verylight;
+}
+
+.view-more-link{
+  display: block;
+  padding: 3px 5px;
+}

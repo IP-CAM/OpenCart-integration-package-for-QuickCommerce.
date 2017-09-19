@@ -1,0 +1,17 @@
+<modification>
+   <name><![CDATA[<font color="#0000"><b>Get Image Sub-Category</font>]]></name>
+    <version><![CDATA[<b>1.0</b>]]></version>
+    <author><![CDATA[<font color="#CC0000"><b>Bossthemes</font>]]></author>
+    <link><![CDATA[http://www.bossthemes.com]]></link>
+	<code>getimagesubcategories</code>
+	<file path="catalog/controller/product/category.php">
+		<operation>
+			<search><![CDATA[
+            'name'  => $result['name'] . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($filter_data) . ')' : ''),
+            ]]></search>
+			<add position="after"><![CDATA[
+            'thumb'  => $this->model_tool_image->resize((isset($result['image'])&&!empty($result['image']))?$result['image']:'icon_default.png', 40, 40),
+            ]]></add>
+		</operation>
+	</file>
+</modification>

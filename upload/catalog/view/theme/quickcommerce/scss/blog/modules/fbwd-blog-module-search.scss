@@ -1,0 +1,24 @@
+//BLOG SEARCH
+.box-search{
+  position: relative;
+  height: 33px;
+  a{
+    display: table;
+    width: 33px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    transition: color 0.2s;
+    padding-left: 1px;
+    border-left: 1px solid $ee;
+    &:before{
+      content: '\e697';
+      font-size: 18px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      color: #ccc;
+    }
+  }
+}

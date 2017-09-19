@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# CORS
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT, PATCH"
+Header always set Access-Control-Allow-Headers "x-requested-with, Content-Type, origin, authorization, accept, client-security-token, X-Oc-Session, X-Oc-Merchant-Id, X-Oc-Merchant-Language, X-Oc-Restadmin-Id, X-Oc-Store-Id, x-oc-session, x-oc-merchant-Id, x-oc-merchant-language, x-oc-restadmin-Id, x-oc-store-id"
+
+## Front controller redirect
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]

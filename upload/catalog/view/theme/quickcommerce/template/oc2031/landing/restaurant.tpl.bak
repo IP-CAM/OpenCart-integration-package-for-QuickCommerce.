@@ -1,0 +1,486 @@
+<?php echo $header; ?>
+<style id="rs-plugin-settings-inline-css" type="text/css">
+  .tp-caption a {
+    color: #ff7302;
+    text-shadow: none;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out
+  }
+
+  .tp-caption a:hover {
+    color: #ffa902
+  }
+
+  .tp-caption.title-first-word,
+  .title-first-word {
+    font-size: 60px;
+    line-height: 50px;
+    font-family: Kristi;
+    color: #cfa670;
+    text-decoration: none;
+    background-color: transparent;
+    border-width: 0px;
+    border-color: rgb(0, 0, 0);
+    border-style: none;
+    text-shadow: none
+  }
+
+  .tp-caption.title,
+  .title {
+    font-size: 65px;
+    font-weight: 300;
+    font-family: Lato;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: transparent;
+    border-width: 0px;
+    border-color: rgb(0, 0, 0);
+    border-style: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: -3px
+  }
+
+  .tp-caption.sub-title,
+  .sub-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: Lato;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: transparent;
+    border-width: 0px;
+    border-color: rgb(0, 0, 0);
+    border-style: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: -1px
+  }
+
+  #rev_slider_1_1_wrapper .tp-loader.spinner3 div {
+    background-color: #444444 !important;
+  }
+</style>
+<div id="container" class="container j-container">
+  <div class="row"><?php echo $column_left; ?><?php echo $column_right; ?>
+    <?php if ($column_left && $column_right) { ?>
+    <?php $class = 'col-sm-6'; ?>
+    <?php } elseif ($column_left || $column_right) { ?>
+    <?php $class = 'col-sm-9'; ?>
+    <?php } else { ?>
+    <?php $class = 'col-sm-12'; ?>
+    <?php } ?>
+    <div id="content" class="<?php echo $class; ?>">
+      <div style="" class="ppb_wrapper ">
+        <div id="special-events" style="max-height: 4000px !important; padding: 0 !important; position: relative;" class="one parallax" data-width="1800" data-height="4000" data-content-height="90">
+          <div style="" class="standard_wrapper">
+            <div style="" class="page_content_wrapper">
+              <div style="" class="inner">
+                <div class="one_half parallax_scroll" style="width: 100%; height: 2300px; position: absolute; left: 15%; background-image: url('image/scene/jp_outback.png'); padding: 40px;" data-stellar-ratio="1.3"></div>
+                <div class="one_half parallax_scroll" style="width: 100%; height: 2300px; position: absolute; left: 15%; background-image: url('image/scene/jp_over-the-hill.png'); padding: 40px;" data-stellar-ratio="1.3"></div>
+                <div class="one_half parallax_scroll" style="width: 100%; height: 2300px; position: absolute; left: 15%; background-image: url('image/scene/jp_cliff-elements.png'); padding: 40px;" data-stellar-ratio="1.3"></div>
+                <div class="one_half parallax_scroll" style="width: 100%; height: 2300px; position: absolute; left: 15%; background-image: url('image/scene/jp_foreground-02.png'); padding: 40px;" data-stellar-ratio="1.3"></div>
+                <div class="one_half parallax_scroll" style="width: 100%; height: 2300px; position: absolute; left: 15%; background-image: url('image/scene/jp_foreground-01.png'); padding: 40px;" data-stellar-ratio="1.3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="divider one">&nbsp;</div>
+        <div class="one clear" id="main">
+          <div style="" class="standard_wrapper">
+            <div style="" class="page_content_wrapper">
+              <div style="" class="inner">
+                <!--<div class="one_half parallax_scroll" style="width: 33%; position: absolute; left: 15%; background: rgba(255, 255, 255, 0.77); padding: 40px; z-index: 2; transform: translate3d(0px, 195.455px, 0px); display: none;" data-stellar-ratio="1.3">
+                  <h2 class="ppb_menu_title">Wine and cold beverages</h2>
+                  <div id="menu_3171" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title"class="menu_title">Reversanti Extra-Dry DOC</span> <span class="menu_dots"></span> <span class="menu_price"class="menu_title">Glass $11.00 / Bottle $44.00</span></h5>
+                    <div class="post_detail menu_excerpt">Spumante Prosecco - Blurb about the wine</div>
+                  </div>
+                  <div id="menu_2878" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title"class="menu_title">Cleto Chiarli Rose DOC</span> <span class="menu_dots"></span> <span class="menu_price"class="menu_title">Glass $13.00 / Bottle $52.00</span></h5>
+                    <div class="post_detail menu_excerpt">Spumante Lambrusco - Blurb about the wine</div>
+                  </div>
+                </div>-->
+                <div class="parallax_title_intro" style="width: 100%; position: absolute; margin-top: 225px; padding: 40px; z-index: 2; transform: translate3d(0px, 195.455px, 0px); display: none;" data-stellar-ratio="-2.3">
+                    <!--<div class="parallax_title inline banner_title">
+                      <h1 class="ppb_title" id="text_logo"><span>Jimmy Poblanos</span><span class="ppb_title_first"> The best Mexican food in Edmonton </span></h1>
+                    </div>
+                   
+                    <div class="cta-buttons">
+                      <a href="our-menu" class="button cta">View Our Menu</a>
+                    </div>-->
+                </div>
+                
+                <div class="one_half parallax_scroll_image last" style="width: 100%; height: 1080px">
+                  <div class="image_classic_frame expand">
+                    <div class="image_wrapper">
+                      <a href="" class="img_frame"><!--<img src="image/.jpg" alt="" class="portfolio_img">--></a>
+                    </div>
+                  </div>
+                </div>
+                <br class="clear"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="divider one">&nbsp;</div>
+
+        <div class="one withsmallpadding ppb_text" style="text-align:center; padding:30px 0 20px 0;">
+          <div class="page_content_wrapper">
+            <div class="inner" style="margin:auto;">
+              <div class="flex-column" style="width:100%; float:right;">
+                <!--<div class="flex-column hide-mobile" style="width:25%;float:right;">
+                  <img src="assets/images/effing-logo.png" style="max-height:180px;position:relative;top:-30px;right:35px;z-index:999;" />
+                </div>-->
+                <div class="flex-column" style="width:100%; float:right; box-sizing:border-box; padding-left: 40px; padding-right: 40px;">
+                  <div class="text-heading" style="width: 66%; margin: 0 auto; padding: 50px 0 80px">
+                  " The atmosphere at Leva is decidedly upbeat, a bright, airy space with floor-to-ceiling windows that offer panoramic views of the Garneau streetscape. Leva breaks every coffee shop stereotype save for one: the fact it serves a fine series of Italian coffees. "
+                  <div class="post_detail"><span style="color:#f4f4f4;">Sandor - Avenue Magazine</span></div>
+                  </div>
+                  <!--<p><span style="font-family:Kristi;font-size:40px;font-weight:600;color:#f4f4f4;">Effin' Rob</span></p>-->
+                </div>
+              </div>
+              <!--<div class="flex-column" style="width:25%;float:right;">
+                <div class="text-sub">
+                  Edmonton's Best Restaurants
+                </div>
+                <div class="post_detail">
+                  <span style="color:#f4f4f4;">Check us out in Avenue Magazine</span>
+                  <br>
+                  <img src="assets/images/googleplay40.png" />
+                  <img src="assets/images/appstore40.png" />
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="divider one">&nbsp;</div>-->
+        <!--<div class="parallax title" id="menu" style="height: 1000px;" data-image="assets/images/banners/banner-lunch-01.jpg" data-width="1800" data-height="1200" data-content-height="200">-->
+        <div class="parallax title" id="pizza" style="height: 1000px;" data-image="image/scene/jp_outback.png" data-width="1800" data-height="1200" data-content-height="70">
+          <div class="parallax_title_intro">
+            <div class="parallax_title inline">
+              <h2 class="ppb_title"><span class="ppb_title_first">Enjoy a slice of Italy</span>Artisan Neapolitan-style pizza</h2>
+            </div>
+            <p>A hidden gem when it comes to artisan pizza, Leva serves Neopolitan flat-crust style pizzas that showcase some of Italy’s finest ingredients including peppery arugula, fior di latte, prosciutto, and fresh shaved parmigiano reggiano. <span class="hide-mobile">Try our simple four-cheese variety, with dashes of herbs and red onions — or one of the more traditional varieties featuring our in-house-made zesty tomato sauce.</span></p>
+            <p>Pair your pizza of choice with a glass of Italian wine, and you’ll feel like you’re dining in Naples for the evening.</p>
+            <div class="cta-buttons">
+              <a href="our-menu" class="button cta">View Our Menu</a>
+            </div>
+          </div>
+          
+          <!--<div class="parallax_title">
+            <h2 class="ppb_title"><span class="ppb_title_first">our food is crafted with love using</span>LOCALLY SOURCED, FRESH INGREDIENTS</h2>
+          </div>-->
+        </div>
+        
+        <?php echo $content_top; ?>
+        <div class="clear"></div>
+        
+        <div class="parallax title" id="breakfast" style="height: 1000px;" data-image="image/scene/jp_over-the-hill.png" data-width="1800" data-height="1200" data-content-height="80">
+          <div class="parallax_title_intro">
+            <div class="parallax_title inline">
+              <h2 class="ppb_title"><span class="ppb_title_first">Start your mornings with Leva</span>Great breakfast, exceptional coffee</h2>
+            </div>
+            <p>LEVA serves a high quality and tasty breakfast daily with extended breakfast hours on the weekends for that slow riser. <span class="hide-mobile">Check out our breakfast menu to see all the various items we offer seven days a week. From our classic Garneau Breakfast, Eggs Parmaggiano and Avocado Toast, there is a wide array of breakfast items that will be sure to satisfy you.</span></p>
+            <p>Don't forget our excellent pastry choices that are also available seven days a week - handmade doughnuts, croissants, scones, etc. - of course our breakfast and pastries have an excellent assortment of great specialty coffees courtesy of ACE coffee Roasters (Link again)&nbsp;</p>
+            <div class="cta-buttons">
+                <a href="our-menu" class="button cta">View Breakfast Menu</a>
+            </div>
+          </div>
+          
+          <!--<div class="parallax_title">
+            <h2 class="ppb_title"><span class="ppb_title_first">our food is crafted with love using</span>LOCALLY SOURCED, FRESH INGREDIENTS</h2>
+          </div>-->
+        </div>
+        
+        <?php echo $content_bottom; ?>
+        <div class="clear"></div>
+
+        <!-- OFF -->
+        <?php /*
+        <div class="ppb_portfolio one nopadding light" style="padding:0px 0 0px 0;">
+          <div class="page_content_wrapper fullwidth">
+            <div style="position: relative; overflow: hidden; height: 1140px;" class="portfolio_filter_wrapper four_cols gallery portfolio-content section content clearfix visible isotope">
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated1">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Pizza" href="assets/images/menu-items/13651851_1744955552423519_491966790_n.jpg" class="fancy-gallery"><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/13651851_1744955552423519_491966790_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3190" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3190" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Pizza</span> <span class="menu_dots"></span><span class="menu_price">$11.00</span></h5>
+                    <div class="post_detail menu_excerpt">Fresh tomatoes, romaine lettuce, jalapenos, basil, bocconchini, avocado</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(476px, 0px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated2">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Wild Smoked Salmon Platter" href="assets/images/menu-items/10986037_1589604221274490_1385154560_n.jpg" class="fancy-gallery"><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/10986037_1589604221274490_1385154560_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3191" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3191" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Wild Smoked Salmon Platter</span> <span class="menu_dots"></span><span class="menu_price">$9.00</span></h5>
+                    <div class="post_detail menu_excerpt">Cream cheese, capers and red onion served with artisan toasted bread</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(476px, 570px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated6">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Bocconcini Salad" href="assets/images/menu-items/11909145_665416690227674_1250941858_n.jpg" class="fancy-gallery" title=""><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/11909145_665416690227674_1250941858_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3195" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3195" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Bocconcini Salad</span> <span class="menu_dots"></span><span class="menu_price">$18.00</span></h5>
+                    <div class="post_detail menu_excerpt">Fresh tomatoes, romaine lettuce, jalapenos, basil, bocconchini, avocado</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(476px, 570px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated6">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Lulu Salad" href="assets/images/menu-items/13397577_906657319444612_511957587_n.jpg" class="fancy-gallery" title=""><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/13397577_906657319444612_511957587_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3195" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3195" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Lulu Salad</span> <span class="menu_dots"></span><span class="menu_price">$18.00</span></h5>
+                    <div class="post_detail menu_excerpt">Fresh tomatoes, romaine lettuce, jalapenos, basil, bocconchini, avocado</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(1428px, 0px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated4">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Grilled Panini" href="assets/images/menu-items/13181330_1159697050759109_699237276_n.jpg" class="fancy-gallery"><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/13181330_1159697050759109_699237276_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3193" class="portfolio_desc portfolio4 filterablelast">
+                  <div id="menu_3193" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Grilled Panini</span> <span class="menu_dots"></span><span class="menu_price">$12.50</span></h5>
+                    <div class="post_detail menu_excerpt">Tuna Melt / Prosciutto Cotto & Genoa Salami / Cheese</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 570px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated5">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Hummus Platter" href="assets/images/menu-items/12568241_981146865312844_943982190_n.jpg" class="fancy-gallery"><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/12568241_981146865312844_943982190_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3194" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3194" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Hummus Platter</span> <span class="menu_dots"></span><span class="menu_price">$10.00</span></h5>
+                    <div class="post_detail menu_excerpt">Potato and fresh bocconchini lightly fried and coated in bread crumbs</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(952px, 570px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated7">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Arancini" href="assets/images/menu-items/13269472_1105876092798548_164451095_n.jpg" class="fancy-gallery" title=""><i class="fa fa-search"></i></a></div>
+                    </div>
+                  </div><img src="assets/images/menu-items/13269472_1105876092798548_164451095_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3196" class="portfolio_desc portfolio4 filterable">
+                  <div id="menu_3196" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Arancini</span> <span class="menu_dots"></span><span class="menu_price">$12.00</span></h5>
+                    <div class="post_detail menu_excerpt">Pea, saffron, and fonitna stuffed and fried risotto rice balls coated in bread crumbs</div>
+                  </div>
+                </div>
+              </div>
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(1428px, 570px);" class="element classic3_cols isotope-item">
+                <div class="one_fourth gallery4 filterablestatic animated8">
+                  <div class="button_wrapper">
+                    <div class="button_center">
+                      <div class="button_content"><a data-title="Crocchette di Patate" href="assets/images/menu-items/13267308_1009932489059854_493804475_n.jpg" class="fancy-gallery" title=""><i class="fa fa-search"></i></a><a href=""><i class="fa fa-shopping-cart"></i></a>&lt;</div>
+                    </div>
+                  </div><img src="assets/images/menu-items/13267308_1009932489059854_493804475_n.jpg" alt=""></div><br class="clear">
+                <div id="portfolio_desc_3197" class="portfolio_desc portfolio4 filterablelast">
+                  <div id="menu_3197" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Crocchette di Patate</span> <span class="menu_dots"></span><span class="menu_price">$12.00</span></h5>
+                    <div class="post_detail menu_excerpt">Potato and fresh bocconchini lightly fried and coated in bread crumbs</div>
+                    <div class="menu_highlight"><i class="fa fa-star"></i></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        */ ?>
+        
+        <div class="parallax title" id="coffee-and-tea" style="height: 1000px;" data-image="image/scene/jp_cliff-elements.png" data-width="1800" data-height="1200" data-content-height="80">
+          <div class="parallax_title_intro">
+            <div class="parallax_title inline">
+              <h2 class="ppb_title"><span class="ppb_title_first">Traditional, fresh-roasted Italian coffee</span>Try our very own ACE Coffee</h2>
+            </div>
+            <p>At LEVA exclusively use ACE coffee roasters to maintain a fresh, high-quality and authentic espresso roast. ACE, a local artisan coffee roastery, uses only the finest quality green beans, and roasts them to perfection.</p>
+            <p>LEVA is committed to supporting the local food movement in edmonton and we are pleased to be part of a great network of local vendors<span class="hide-mobile"> like ACE committed to making a difference in the local community</span>. Visit <a href="http://www.acecoffeeroasters.com" target="_blank" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://www.acecoffeeroasters.com&amp;source=gmail&amp;ust=1481765783733000&amp;usg=AFQjCNHT_pTVlCn_K-_oMaWJXvPHzK-OIQ">www.acecoffeeroasters.com</a> to learn more.</p>
+            <div class="cta-buttons">
+                <a href="our-menu" class="button cta">View Beverages Menu</a>
+            </div>
+          </div>
+          
+          <!--<div class="parallax_title">
+            <h2 class="ppb_title"><span class="ppb_title_first">our food is crafted with love using</span>LOCALLY SOURCED, FRESH INGREDIENTS</h2>
+          </div>-->
+        </div>
+        
+        <div class="divider one">&nbsp;</div>
+        <div class="one" style="padding: 0 !important; position: relative;">
+          <div style="" class="standard_wrapper">
+            <div style="" class="page_content_wrapper">
+              <div style="" class="inner">
+                <div class="one_half parallax_scroll_image" style="width: 100%;">
+                  <div class="image_classic_frame expand">
+                    <div class="image_wrapper">
+                      <a href="image/banners/fhd/2.jpg" class="img_frame"><img src="image/scene/jp_foreground.png" alt="" class="portfolio_img"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="one_half last parallax_scroll" style="width: 33%; position: absolute; right: 15%; background: rgba(255, 255, 255, 0.77); padding: 40px; transform: translate3d(0px, 119.645px, 0px); display: none;" data-stellar-ratio="1.3">
+                  <h2 class="ppb_menu_title">Caffe and specialty drinks</h2>
+                  <div id="menu_3171" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Espresso</span> <span class="menu_dots"></span><!-- <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_2878" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Americano</span> <span class="menu_dots"></span><!-- <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3186" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Cappucino</span> <span class="menu_dots"></span><!-- <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3186" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Chai Latte</span> <span class="menu_dots"></span><!-- <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3186" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">London Fog</span> <span class="menu_dots"></span><!-- <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3187" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Macchiato</span><!-- <span class="menu_dots"></span> <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3187" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Vanilla Latte</span><!-- <span class="menu_dots"></span> <span class="menu_price">Reg $4.00 / Large $6.00--></span></h5>
+                  </div>
+                  <div id="menu_3187" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Mocha</span><!-- <span class="menu_dots"></span> <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                  <div id="menu_3187" class="menu_content_classic">
+                    <h5 class="menu_post"> <span class="menu_title">Caffe Affogato</span><!-- <span class="menu_dots"></span> <span class="menu_price">Reg $4.00 / Large $6.00</span>--></h5>
+                  </div>
+                </div><br class="clear"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="divider one">&nbsp;</div>
+        
+        <!-- Laggy parallax -->
+        <!--<div style="height: 800px; padding: 0 !important; position: relative;" class="one parallax" data-image="assets/images/k5186243.b+w-dark-full.jpg" data-width="1800" data-height="1200" data-content-height="90">-->
+        <!-- TODO: This box is resizing itself -->
+        <div id="special-events" style="max-height: 720px !important; padding: 0 !important; position: relative;" class="one parallax" data-width="1800" data-height="1200" data-content-height="90">
+          <div style="" class="standard_wrapper">
+            <div style="" class="page_content_wrapper">
+              <div style="" class="inner">
+                <div class="one_half parallax_scroll" style="width: 33%; position: absolute; left: 15%; background: rgba(255, 255, 255, 0.77); padding: 40px; transform: translate3d(0px, 181.445px, 0px); display: none;" data-stellar-ratio="1.3">
+                  <h2 class="ppb_title"><span class="ppb_title_first">Catering and</span>SPECIAL EVENTS</h2>
+                  <div class="ppb_subtitle">Checkout our restaurant and special dishes</div>
+                  <div class="page_header_sep left"></div>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.<br><br>
+                  <a href="#" class="button cta">View Gallery</a>
+                </div>
+                <div class="one_half parallax_scroll_image last" style="width: 100%;">
+                  <div class="image_classic_frame expand">
+                    <div class="image_wrapper">
+                      <a href="" class="img_frame"><img src="image/general/IMG_0470.jpg" alt="" class="portfolio_img"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="divider one">&nbsp;</div>
+
+        <div class="one">
+          <div style="" class="standard_wrapper">
+            <div style="" class="page_content_wrapper">
+              <div style="" class="inner">
+                <div class="one_half parallax_scroll_image" style="width: 40%;">
+                  <div class="image_classic_frame expand">
+                    <div class="image_wrapper">
+                      <a href="image/banners/fhd/7.jpg" class="img_frame"><img src="image/general/IMG_3114.jpg" alt="" class="portfolio_img"></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="one_half last parallax_scroll" style="width: 33%; position: absolute; right: 15%; background: rgba(255, 255, 255, 0.77); padding: 40px; transform: translate3d(0px, -92.76px, 0px); display: none;" data-stellar-ratio="1.3">
+                  <h2 class="ppb_title"><span class="ppb_title_first">A taste of Italy, </span>in the heart of Garneau</h2>
+                  <div class="ppb_subtitle">The hub of coffee culture in Edmonton</div>
+                  <div class="page_header_sep left"></div>Leva is located in the heart of Garneau, one of Edmonton's top neighborhoods. Our cafe has been in operation for 10 years and has been a leader in creating a strong coffee culture in Edmonton, specializing in traditional Italian style espresso drinks, organic gelato & sorbetto, and some of the best pizza you'll find around. Start your morning at Leva with freshly baked pastries and bright sunshine, or join us for an evening on the patio with a great cappuccino or a glass of wine & cheese platter.
+                </div><br class="clear"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider one">&nbsp;</div>
+        
+        <aside class="fullwidth-footer">
+            <div id="footer" style="margin: 0; padding: 0; position: relative; border-bottom: 2px solid #cfa670;">
+                <div class="row columns" style="background-attachment: scroll; overflow: hidden; height: 480px; width: 100%; position: absolute;">
+                    <div id="embedded-map-display" style="height:600px; width:100%; max-width:100%;">
+                        <iframe style="height:100%;width:100%;border:0;" src="https://www.google.com/maps/embed/v1/place?q=Leva+Cappucino+bar&amp;key=AIzaSyC01j_TSpxl6CBk5PaAyneuYI9qEy6eZ3s" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="row columns" style="background-attachment: scroll; background-color: rgba(0,0,0,0.555); text-align: center; color: white; position: relative; z-index: 5; padding-top: 180px; padding-bottom: 100px;">
+                    <div class="column menu xs-100 sm-50 md-33 lg-50 xl-50 " style="height: 200px;">
+                        <h3 style="color: white">Our Hours</h3>
+                        <div class="column-text-wrap" style="max-width: 80%; margin-left: auto; margin-right: auto; padding-top: 0;">
+                            <p>Leva's operating hours vary according to the season. Summer hours are extended to accomodate our beautiful patio and the charming Garneau neighbourhood setting. Our winter hours, are a little more limited, especially during the week. We do, however, have an extensive take-out menu including our amazing 18-inch pizzas, perfect for a house party when it's too cold to go outside.</p>
+                        </div>
+                    </div>
+                    <div class="column menu xs-100 sm-50 md-33 lg-25 xl-25 " style="height: 200px;">
+                        <h3 style="color: white">Summer Hours</h3>
+                        <div class="column-menu-wrap">
+                            <ul style="list-style-type: none">
+                                <li>M-F: 7:00AM - 11:00PM</li>
+                                <li>Sat: 8:00AM - 10:00PM</li>
+                                <li>Sun: 8:00AM - 10:00PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                        
+                    <div class="column  menu xs-100 sm-50 md-33 lg-25 xl-25 " style="height: 200px;">
+                        <h3 style="color: white">Winter Hours</h3>
+                        <div class="column-menu-wrap">
+                            <ul style="list-style-type: none">
+                                <li>M-W: 7:00AM - 5:00PM</li>
+                                <li>T-F: 7:00AM - 9:00PM</li>
+                                <li>Sat: 8:00AM - 7:00PM</li>
+                                <li>Sun: 8:00AM - 5:00PM</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+<?php echo $footer; ?>

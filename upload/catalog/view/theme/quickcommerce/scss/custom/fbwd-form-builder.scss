@@ -1,0 +1,32 @@
+.form-builder {
+    margin-top: 100px;
+}
+
+
+
+/* TODO: What form? be specific */
+.form-builder h3 {
+    margin-top: 1.1rem;
+    border-top: 1px solid white;
+    padding-top: 2rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.menu-element {
+    box-shadow: inset 1px 0px 1px white;
+}
+
+.form-builder h4 {
+    color: white;
+}
+
+.form-builder .form-field {
+    text-align: center;
+}
+
+.form-builder .btn-primary {
+    border: 1px solid white;
+    border-radius: 5px;
+}

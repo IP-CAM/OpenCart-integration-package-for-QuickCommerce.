@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce Menu</name>
+	<version>1.0</version>
+	<code>quickcommerce_menu_23x</code>
+	<author>lucaslopatka@gmail.com</author>	
+	<file path="admin/controller/common/column_left.php">
+        <operation>
+			<search><![CDATA[
+            $this->load->language('common/column_left');
+			]]></search>
+			<add position="after"><![CDATA[
+            $this->load->language('quickcommerce/common/menu');
+            ]]></add>
+        </operation>
+		<operation>
+			<search><![CDATA[
+            // Customer
+			]]></search>
+			<add position="before"><![CDATA[
+            // Transactions
+			$transaction = array();
+			
+			if ($this->user->hasPermission('access', 'transaction/invoice')) {
+				$transaction[] = array(
+					'name'	   => $this->language->get('text_transaction_invoice'),
+					'href'     => $this->url->link('transaction/invoice', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
+			
+			if ($this->user->hasPermission('access', 'transaction/sale')) {	
+				$transaction[] = array(
+					'name'	   => $this->language->get('text_transaction_sale'),
+					'href'     => $this->url->link('transaction/sale', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
+			
+			if ($transaction) {
+				$data['menus'][] = array(
+					'id'       => 'menu-transaction',
+					'icon'	   => 'fa-clipboard', 
+					'name'	   => $this->language->get('text_transaction'),
+					'href'     => '',
+					'children' => $transaction
+				);
+			}
+            ]]></add>
+        </operation>
+        <operation>
+			<search><![CDATA[
+            if ($attribute) {
+			]]></search>
+			<add position="before"><![CDATA[
+            if ($this->user->hasPermission('access', 'catalog/attribute_template')) {
+				$attribute[] = array(
+					'name'	   => $this->language->get('text_attribute_template'),
+					'href'     => $this->url->link('catalog/attribute_template', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);
+			}
+            ]]></add>
+        </operation>
+        <operation>
+			<search><![CDATA[
+            // Users
+			]]></search>
+			<add position="before"><![CDATA[
+            // Chart of Accounts
+			$accounts = array();
+			
+			if ($this->user->hasPermission('access', 'qc/account')) {
+				$system[] = array(
+					'name'	   => $this->language->get('text_list_account'),
+					'href'     => $this->url->link('qc/account', 'token=' . $this->session->data['token'], true),
+					'children' => array()		
+				);	
+			}
+            ]]></add>
+        </operation>
+	</file>
+</modification>

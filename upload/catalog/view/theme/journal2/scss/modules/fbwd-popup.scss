@@ -1,0 +1,298 @@
+/******************************
+ POPUP
+*******************************/
+
+.mfp-removing {
+  .journal-popup {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    -webkit-transform: scale(.7);
+    -moz-transform: scale(.7);
+    -ms-transform: scale(.7);
+    transform: scale(.7);
+  }
+  &.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .has-popup{
+    margin: 0 !important;
+    overflow-y: scroll !important;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.mfp-close{
+  opacity: 1;
+  transition: all 0.2s;
+}
+.quickview .journal-popup-header .heading-title {
+  text-align: center;
+}
+
+.journal-popup {
+  position: relative;
+  background: #FFF;
+  margin: 0px auto;
+  img{
+    max-width:100%;
+    height: auto;
+  }
+  .journal-newsletter{
+    margin-bottom: 0;
+    padding:0 20px;
+    .box-content{
+      padding: 0 !important;
+      background-color: transparent !important;
+    }
+  }
+  .mfp-close{
+    color: white;
+    top: -38px;
+    right: -16px;
+  }
+
+  *{
+    box-sizing: border-box;
+  }
+  div.journal-popup-header-content{
+    text-align: center;
+    border: 0;
+    border-radius: 0;
+    white-space: normal;
+    padding: 9px;
+    line-height: 100%;
+  }
+  .button-icon-right i{
+    float: right;
+    margin-right: 0 !important;
+    margin-left: 5px;
+  }
+  .journal-popup-header{
+    border-radius: 0;
+  }
+}
+
+.journal-popup-content{
+  overflow: hidden;
+  color: $dark;
+}
+.journal-popup-content.overflow-on{
+  overflow: auto;
+}
+
+.journal-popup-header,
+.journal-popup-footer,
+.journal-popup-newsletter{
+  display: table;
+  width: 100%;
+}
+
+.journal-popup-header-content,
+.journal-popup-footer-content,
+.journal-popup-newsletter-content{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.journal-popup-footer-content{
+  text-align: left;
+  padding-left: 15px;
+  background-color: $f4;
+  .button{
+    line-height: 38px;
+  }
+}
+.dont-show-label {
+  label {
+    font-weight: normal;
+  }
+  input[type='checkbox'] {
+    margin-right: 0;
+    position: relative;
+  }
+}
+.firefox {
+  .dont-show-label {
+    input[type='checkbox'] {
+      margin-right: 0;
+      margin-left: 10px;
+    }
+  }
+  .journal-popup-footer-content{
+    .button{
+      line-height: 39px;
+    }
+  }
+}
+
+.journal-popup-footer-content.has-btn {
+  text-align: center;
+  .button:first-of-type{
+    margin-right: 8px;
+  }
+  .dont-show-label {
+    position: absolute;
+    left: 0;
+    margin-top: 9px;
+  }
+}
+
+.journal-popup {
+  display: none;
+  input.has-error,
+  textarea.has-error {
+    border: 1px solid red;
+  }
+}
+
+.has-popup .journal-popup {
+  display: block;
+}
+
+/******************************
+MOBILE POPUP
+*******************************/
+
+.has-popup.tablet body,
+.has-popup.mobile body{
+ // position: fixed;
+  width: 100%;
+}
+
+@media only screen and (min-width : 320px) and (max-width: 760px) {
+  .journal-popup img {
+    max-height: 200px;
+    width:auto;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .mfp-container{
+    padding: 0;
+  }
+  .mfp-wrap{
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .mfp-content{
+    overflow: visible;
+  }
+  .journal-popup, .journal-popup-content{
+    height: auto !important;
+  }
+  .journal-popup{
+    .journal-popup-header-content{
+      font-size: 1.2em !important;
+      padding-left: 12px;
+      padding-right: 12px;
+      white-space: normal;
+      line-height: 100%;
+    }
+  }
+  .journal-popup-newsletter{
+    .journal-newsletter{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .journal-newsletter.text-left .newsletter-text,
+    .journal-newsletter.text-left .newsletter-input-wrap{
+      width: 100%;
+      float: none;
+      margin-top: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 400px) {
+  .journal-popup-contact{
+    .mfp-close{
+      top: -7px;
+      right: -10px;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .journal-popup, .mfp-wrap{
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .journal-popup-contact{
+    input[type='text'],
+    input[type='email'],
+    input[type='password'],
+    textarea{
+      max-width: 94% !important;
+    }
+  }
+}
+
+/******************************
+POPUP FORM
+*******************************/
+
+.journal-popup-contact {
+  .content, fieldset{
+    padding: 15px;
+    b{
+      display: inline-block;
+      margin:9px 0 4px 0;
+      &:first-of-type{
+        margin-top: 0;
+      }
+      &:last-of-type{
+        display: block;
+        + br {
+          display: none;
+        }
+      }
+    }
+    textarea + br{
+      display: none;
+    }
+    input[name='captcha']{
+      margin: 0 10px 0 0;
+      height: 35px;
+      display: block;
+      float: left;
+    }
+  }
+  input + br, input + br + br{
+    display: none;
+  }
+  input[type='text'],
+  input[type='email']{
+    max-width: 600px;
+  }
+}
+.has-error{
+ //border: 1px solid $red !important;
+}
+.oc2{
+  .journal-popup-contact {
+    .form-horizontal .form-group label{
+      width: 100%;
+      float: none;
+      padding-top: 0;
+      font-weight: bold;
+      margin-bottom: 2px;
+      &:before{
+        display: none;
+      }
+    }
+    .form-horizontal .form-group label + div{
+      width: 100%;
+      float: none;
+    }
+    .pull-right{
+      float: none;
+    }
+    .form-group:last-of-type{
+      //margin-top: -40px;
+      //margin-left: 160px;
+    }
+  }
+}

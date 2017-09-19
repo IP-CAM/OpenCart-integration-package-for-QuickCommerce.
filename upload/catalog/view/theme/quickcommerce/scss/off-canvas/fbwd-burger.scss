@@ -1,0 +1,264 @@
+/* NOT IN SASS - EDIT */
+/*#nav-trigger-anim {
+  position: absolute;
+  top: 20px;
+}
+
+#nav-trigger-anim span, #nav-trigger-anim span:before, #nav-trigger-anim span:after {
+  border-radius: 2px;
+  height: 5px;
+  width: 35px;
+  background-color: #fff;
+  position: absolute;
+  display: inline-block;
+  content: '';
+  z-index: 3;
+  cursor: pointer;
+}
+
+#nav-trigger-anim span:before {
+  top: -10px;
+  width: 30px;
+  left: 2.5px;
+}
+
+#nav-trigger-anim span:after {
+  bottom: -10px;
+  width: 30px;
+  left: 2.5px;
+}
+
+#nav-trigger-anim span, #nav-trigger-anim span:before, #nav-trigger-anim span:after {
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+#nav-trigger-anim.active span {
+  background-color: transparent;
+}
+
+#nav-trigger-anim.active span:before, #nav-trigger-anim.active span:after {
+  top: 0;
+}
+
+#nav-trigger-anim.active span:before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-trigger-anim.active span:after {
+  transform: translateY(-10px) rotate(-45deg);
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+  top: 10px;
+}*/
+/* Burger */
+
+.burger {
+    display: inline-block;
+    border: 0;
+    background: none;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    border-bottom: 4px solid currentColor;
+    width: 28px;
+    transition: border-bottom 1s ease-in-out;
+    -webkit-transition: border-bottom 1s ease-in-out;
+}
+.burger::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+.burger:before {
+    content: "";
+    display: block;
+    border-bottom: 4px solid currentColor;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger:after {
+    content: "";
+    display: block;
+    border-bottom: 4px solid currentColor;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger-check {
+    display: none;
+}
+.burger-check:checked ~ .burger {
+    /*border-bottom: 4px solid transparent;*/
+    border-bottom: none;
+    transition: border-bottom 0.8s ease-in-out;
+    -webkit-transition: border-bottom 0.8s ease-in-out;
+}
+.burger-check:checked ~ .burger:before {
+    transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+.burger-check:checked ~ .burger:after {
+    transform: rotate(405deg) translateY(-4px) translateX(-5px);
+    -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+}
+/*.navigation {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.burger-check:checked ~ .navigation {
+  max-height: 500px;
+  -webkit-transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.5s ease-in-out;
+}*/
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 86px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-item-list a span {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-item-list a {
+    padding: 0.8em;
+    color: #333;
+}
+
+.bm-cross-button {
+    display: none;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 7.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-menu {
+    box-sizing: content-box;
+    overflow-x: hidden !important;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: white;
+  padding: 7.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+.bm-item-list a {
+    padding: 0.8em;
+    color: #333;
+}
+
+.bm-item-list a span {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/*#page-wrap + div > .bm-overlay {
+    display: none;
+}*/
+
+.bm-burger-button {
+    z-index: 5555 !important;
+}
+
+.bm-menu-wrap {
+    position: absolute !important; /* Menu defaults to fixed */
+}
+
+.bm-overlay {
+    opacity: 0 !important;
+}

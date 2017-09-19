@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>QuickCommerce DataSync Monitor</name>
+	<version>1.0</version>
+	<code>quickcommerce_datasync</code>
+	<author>lucaslopatka@gmail.com</author>
+	<file path="admin/controller/common/dashboard.php">
+		<operation>
+			<search><![CDATA[
+			$data['activity'] = $this->load->controller('dashboard/activity');
+			]]></search>
+			<add position="after"><![CDATA[
+		$data['datasync'] = $this->load->controller('dashboard/qc_datasync');
+			]]></add>
+		 </operation>
+	</file>
+	<file path="admin/view/template/common/dashboard.tpl">
+		<operation>
+			<search><![CDATA[
+			<div class="col-lg-4 col-md-12 col-sm-12 col-sx-12"><?php echo $activity; ?></div>
+			]]></search>
+			<add position="replace" offset="2"><![CDATA[
+		<div class="col-lg-2 col-md-12 col-sm-12 col-sx-12"><?php echo $activity; ?></div>
+		<div class="col-lg-4 col-md-12 col-sm-12 col-sx-12"> <?php echo $datasync; ?> </div>
+		<div class="col-lg-6 col-md-12 col-sm-12 col-sx-12"> <?php echo $recent; ?> </div>
+			]]></add>
+		 </operation>
+	</file>
+</modification>

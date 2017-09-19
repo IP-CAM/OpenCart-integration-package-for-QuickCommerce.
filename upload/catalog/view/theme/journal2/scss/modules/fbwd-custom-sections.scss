@@ -1,0 +1,153 @@
+/******************************
+CUSTOM SECTIONS
+*******************************/
+
+.section-brand,
+.section-category,
+.carousel-brand,
+.carousel-category{
+ .quickview-button{
+   display: none;
+ }
+  .product-details{
+    padding-bottom: 0;
+  }
+}
+
+#top-modules,
+#bottom-modules{
+  .journal2_custom_sections {
+    &:before{
+      content: "";
+      height: 40px;
+      position: absolute;
+      left: -20px;
+      right: 0;
+    }
+  }
+}
+
+#content .custom-sections{
+  margin-bottom: $margin;
+}
+
+.box-heading.box-sections{
+  padding: 0;
+}
+
+.box-sections {
+  ul {
+    margin: 0;
+    padding: 0;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    li {
+      list-style: none;
+      border-right: 1px solid white;
+      display: table-cell;
+      a {
+        display: block;
+        text-align: center;
+        padding: 0 5px;
+        color: white;
+        font-size: inherit;
+        transition: all .2s;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+    li:last-of-type {
+      border-right:0;
+    }
+    li:first-of-type {
+
+    }
+  }
+}
+
+.single-section .box-heading ul li a{
+  cursor: default;
+  padding-left: 10px;
+  text-align: left;
+  background-color: initial !important;
+  pointer-events: none;
+  &:hover{
+    background-color: inherit;
+  }
+}
+
+.isotope-item {
+  z-index: 2;
+}
+
+.backface{
+  .isotope-item{
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 0;
+}
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.7s;
+  -moz-transition-duration: 0.7s;
+  -ms-transition-duration: 0.7s;
+  -o-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property:    -moz-transform, opacity;
+  -ms-transition-property:     -ms-transform, opacity;
+  -o-transition-property:      -o-transform, opacity;
+  transition-property:         transform, opacity;
+}
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -ms-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s;
+}
+
+.oc-filter {
+  .panel-heading{
+    padding: 0;
+    height: 40px;
+    margin-bottom: 5px;
+    background-color: transparent;
+  }
+  a.list-group-item{
+    border-bottom: 1px solid #f4f4f4;
+    margin-bottom: 0;
+    display: block;
+    font-size: 15px;
+    color: inherit;
+  }
+  .list-group-item {
+    padding: 10px 0;
+    label {
+      display: block;
+    }
+  }
+}
