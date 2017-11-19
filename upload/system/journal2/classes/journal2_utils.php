@@ -1,12 +1,12 @@
 <?php
-if (!property_exists('Front', 'IS_OC2')) {
+/*if (!property_exists('Front', 'IS_OC2')) {
     echo '
         <h3>Journal Installation Error</h3>
         <p>Make sure you have uploaded all Journal files to your server and successfully replaced <b>system/engine/front.php</b> file.</p>
         <p>You can find more information <a href="http://docs.digital-atelier.com/opencart/journal/#/settings/install" target="_blank">here</a>.</p>
     ';
     exit();
-}
+}*/
 if (!function_exists('array_get_first_key')) {
     function array_get_first_key($array) {
         $key = array_keys($array);

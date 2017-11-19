@@ -1,0 +1,701 @@
+.container{margin:0 auto;max-width:1800px;overflow:hidden;width:100%;}
+.logo img{max-width:100%;}
+.small-static-text{display:block;margin:0 auto;max-width:450px;}
+.header-shop-btn{display:block;}
+.header-shop-btn {
+  background: rgba(0, 0, 0, 0) url("../images/homepage-sprite1.png") no-repeat scroll -299px 0;
+  color: #2d333d;
+  display: block;
+  float: left;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 20px;
+  letter-spacing: 1px;
+  padding: 0 0 0 32px;
+}
+.homepage.small-static-text{margin-top:29px;}
+.header-button{background:#fff url("../images/concrete-wall-2.png") repeat scroll 0 0;display:block;margin:0 auto;max-width:135px;padding:24px 0 19px 29px;margin-top:26px; overflow: hidden;}
+.catalog-product-view #header-nav, .catalog-product-view .logo{opacity:0;transform:translate(0px, -25px) translateZ(0px);transition:all 1.4s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;}
+.home-banner-img-right img{max-width:100%;}
+#header-cart.skip-active{height:100%;position:absolute;right:0;top:-38px;width:37.5%;}
+.table-head-block > span{color:#fff;font-size:0.875rem;font-weight:700;padding:0;text-transform:uppercase;display:block;width:22%;display:inline-block;text-align:center;}
+.minicart-wrapper{background:#f1f1f0 url("../images/concrete-wall-semi-transparent.png") repeat scroll 0 0;padding-bottom:15% !important;}
+.table-head-block{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;padding:12px 0 12px 0;}
+.header-loggedin > a{display:inline-block;font-family:Montserrat;font-size:0.875rem;font-weight:400;text-transform:capitalize;}
+.header-loggedin .link-nav.js-root{margin-right:5px;}
+.header-loggedin .link-nav.js-root.logout{margin:0 35px 0 8px;}
+.header-loggedin .seperator{color:#fff;display:inline-block;position:absolute;}
+.cart-detail .item-detail{color:#c4aa6a;}
+.checkout-types.minicart{/*background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;float:none; padding:20px 0 23px;max-width:272px;*/margin:0 auto;text-align:center;}
+.footer-logo > img{width:190px;margin:0 auto;}
+::-webkit-input-placeholder{color:#4e1f04;font-family:Montserrat;font-size:0.75rem;letter-spacing:2.5px;line-height:2;text-align:center;text-transform:uppercase;opacity:0.5;}
+:-ms-input-placeholder{color:#4e1f04;font-family:Montserrat;font-size:0.75rem;letter-spacing:2.5px;line-height:31px;text-align:center;text-transform:uppercase;opacity:0.5;}
+::-moz-placeholder{color:#4e1f04;font-family:Montserrat;font-size:0.75rem;letter-spacing:2.5px;line-height:31px;text-align:center;text-transform:uppercase;}
+input::-webkit-input-placeholder{color:#4e1f04;}
+
+#coupon_code::-moz-placeholder { letter-spacing: normal;}
+#coupon_code::-webkit-input-placeholder{ letter-spacing: normal;}
+#coupon_code:-ms-input-placeholder{ letter-spacing: normal;}
+
+.footer-container #newsletter-validate-detail button{background:url("../images/icon-arrow.png") no-repeat scroll right center;}
+.footer-link-block{margin:82px auto 74px;max-width:540px;overflow:hidden;width:100%;}
+.footer-link-block .footer-links { float: left; width: 33.33%;}
+.footer-link-block .footer-links, .footer-social-link > p{font-family:Montserrat;font-size:0.75rem;text-align:center;text-transform:uppercase;}
+.footer-links a{color:#4e1f04;font-weight:400;line-height:25px;opacity:0.7;}
+.footer-social-link > p{color:#4e1f04;margin-bottom:34px;}
+.footer-social-link{background:#f0f0ee none repeat scroll 0 0;border-top:1px solid #dbdbd9;padding:47px 0 72px;text-align:center;}
+.footer-msg-box{background:transparent url("../images/homepage-sprite1.png") no-repeat scroll -35px 0;display:block;height:11px;margin:68px auto 26px;width:17px;}
+.footer-social-link .list-inline > li{display:inline-block;width:71px;}
+.footer-social-link a{background:transparent url("../images/homepage-sprite1.png") no-repeat scroll 0 0;display:block;height:15px;margin:0 auto;width:20px;}
+.icon--facebook{background-position:0 -21px !important;}
+.icon--instagram{background-position:-68px -22px !important;}
+.icon--twitter{background-position:-145px -23px !important;}
+.icon--youtube{background-position:-225px -22px !important;}
+.icon--pinterest{background-position:-304px -22px !important;}
+.home-banner-our-philoshopy > img{width:100%;}
+.home-banner-images{margin-top:-223px;max-height:720px;}
+.home-banner-img-left{float:left;position:relative;width:50%;}
+.scaling-image{float:right;overflow:hidden;width:50%;}
+.home-banner-img-right{width:100%;}
+.skip-acai-berry{display:none;}
+.banner-top-text-box{padding:50px 2% 0 50px;}
+.discover.banner-top-text-box{background:#f9f6f6;padding-bottom:40px;}
+.link-underlined-blue{text-transform:uppercase;}
+.why-eat.banner-top-text-box{background:#2d333d url("../images/green-dust-and-scratches.png") repeat scroll 0 0;min-height:165px;}
+.why-eat.banner-top-text-box > h1, .our-philoshopy-text > span, .discover-subheading{color:#fff;font-family:Montserrat;font-size:1.625rem;line-height:1.2;margin:0;font-weight:700;}
+.discover-text{color:#545454;font-family:PT Sans Narrow;font-size:1rem;margin-bottom:25px;}
+.link-discover{color:#2d333d;cursor:pointer;font-family:Montserrat;font-size:0.875rem;font-weight:400;text-transform:uppercase;}
+.discover.banner-top-text-box{position:absolute;right:0;top:165px;z-index:1;}
+.banner-top-text{float:right;position:relative;width:50%;}
+.home-banner-our-philoshopy .widget.widget-static-block > img{max-width:100%;}
+@media only screen and (max-width:1300px){.home-banner-img-left > img{position:absolute;top:100%;}
+.our-philosophy-right{padding-right:5% !important;}
+.recipes-details{left:41%;top:19%;}
+.text-slider{margin-top:5%;}
+}
+.cms-discover .main-static-text{top:33%;}
+.cms-our-philosophy .main-static-text{top:28%;}
+.our-philosophy-product-img-after-640{display:none;}
+.our-philoshopy-text{background:url("../images/concrete-wall-2.png") repeat scroll 0 0 #949d2e;}
+.home-banner-our-philoshopy{clear:both;position:relative;}
+.our-philoshopy-discover{left:0;margin:0 auto;position:absolute;right:0;top:30%;width:45.5%;}
+.our-philoshopy-text{background:#949d2e url("../images/concrete-wall-2.png") repeat scroll 0 0;margin-bottom:0;margin-right:auto;margin-top:0;max-width:310px;min-height:165px;min-width:310px;width:50%;}
+.our-philoshopy-text > span{font-weight:700;}
+.philoshopy-discover-text{float:left;padding:50px 4% 0 50px;}
+.discover-content{background:#fff none repeat scroll 0 0;left:240px;max-width:427px;min-height:220px;min-width:310px;position:absolute;top:0;width:68.5%;}
+.our-philosophy-banner2{clear:both;}
+.our-philosophy-banner1{display:inline-block;width:100%;}
+.our-philosophy-block .banner-title{min-width:260px;right:-20px;top:0;background:#495429 url("../images/green-dust-and-scratches.png");}
+.our-philosophy-block .desc{bottom:auto;max-width:400px;min-width:295px;padding:90px 4% 20px;right:-160px !important;top:165px;transition:all 1000ms cubic-bezier(0.23, 1, 0.32, 1) 0s;min-height:444px;}
+.our-philosophy-block .flex-direction-nav{background:#495429 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;bottom:auto;right:-160px;top:609px;}
+.our-philosophy-banner1 .widget.widget-static-block{width:95%;margin-right:5%;}
+.our-philosophy-heading{color:#1f747f;font-size:3.75rem;font-weight:700;letter-spacing:3px;line-height:1;margin-bottom:28px;text-align:right;}
+.our-philosophy-subheading{color:#1f747f;font-size:1rem;font-weight:700;text-align:right;}
+.our-philosophy-content{color:#545454;float:right;font-family:pt sans narrow;font-size:0.875rem;font-weight:normal;line-height:25px;max-width:270px;text-align:right;}
+.our-philosophy-right{float:right;width:50%;padding-right:10%;}
+.discover-content.philoshopy-discover-text{margin:28px 0 0;}
+.philoshopy-discover-leaf > img{width:84%;}
+.discover-content.philoshopy-discover-text{padding-top:64px;}
+.philoshopy-discover-leaf{left:-42px;position:absolute;top:-72px;}
+.our-philosophy-product-img{float:right;margin:-35px 0 0;width:50.6%;}
+.our-philosophy-detail{clear:right;}
+.our-philosophy-inner-container{background:#f2f2f1 none repeat scroll 0 0;float:left;padding-bottom:8%;position:relative;width:95%;}
+.our-philosophy-banner-title{color:#4e1f04;font-family:Montserrat !important;font-size:0.75rem;margin-bottom:36px;text-transform:uppercase;}
+.superfood-block{background:url("../images/wood.jpg") repeat scroll 0 0;height:100%;padding:10% 0 0;}
+.superfood-heading{color:#bf3c25;font-size:3.75rem;font-weight:700;letter-spacing:2px;line-height:62px;margin-bottom:40px;text-align:center;}
+.superfood-content{font-family:"PT Sans Narrow",sans-serif;font-size:1.125rem;letter-spacing:0;line-height:1.4;margin:0 auto 27px;max-width:450px;text-align:center;}
+.superfood-btn{border:1px solid #bf3c25;color:#bf3c25;display:block;font-family:Montserrat;font-size:0.875rem;font-weight:400;letter-spacing:1px;margin:0 auto;padding:20px 80px;text-align:center;text-transform:uppercase;width:200px;}
+#salad{margin:0 auto;max-width:50%;position:relative;z-index:2;}
+.superfood-img{position:relative;}
+.society > h1{color:#fff;}
+.discover-left-block, .discover-right-block{width:50%;float:left;position:relative;}
+.organic .banner-top-text-box{background:#9b6a78 url("../images/concrete-wall-2.png") repeat scroll 0 0;display:inline-block;min-height:165px;min-width:240px;}
+.society.banner-top-text-box{background:#91623f url("../images/green-dust-and-scratches.png") repeat scroll 0 0;bottom:220px;min-height:165px;min-width:240px;position:absolute;right:10%;}
+.organic{background:#fff none repeat scroll 0 0 !important;margin:-165px 0 0;padding:0 0 0 80%;width:85%;}
+.organic-content .banner-desc .link-discover{display:block;padding:0;width:90px;margin:25px 0 40px 0;}
+.discover-left-block .banner-desc {
+  background: #f6f6f6 none repeat scroll 0 0;
+  left: 10%;
+  max-width: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  padding: 65px 11px 0 48px;
+  position: absolute;
+  width: 70%;
+}
+.organic-image > img{width:100%;}
+.society-image > img{width:100%;}
+.society-image{margin-right:10%}
+.organic-image{margin-left:10%;}
+.society-content .banner-desc{background:#f6f6f6 none repeat scroll 0 0;bottom:0;max-width:448px;min-height:220px;padding:65px 2% 0 50px;position:absolute;right:10%;width:90%;}
+.society-content .banner-desc .link-discover{display:block;margin-top:25px;padding:0;width:90px;}
+.discover-banner2{background:#f2f2f1 none repeat scroll 0 0;clear:both;display:block;float:left;margin:0 5%;padding-top:10%;position:relative;width:90%;}
+.recipes-image{display:inline-block;float:left;margin:16.3% 0 0 20%;width:40%;}
+.recipes-details{background:url("../images/brush.png") no-repeat scroll center center/100% auto;left:43%;padding:90px 4% 18% 6%;position:absolute;top:27%;}
+.recipes-details h1{color:#6ca848;margin:0 0 21px;}
+.discover-heading{font-size:3rem;font-weight:700;letter-spacing:3px;line-height:1;margin-bottom:20px;}
+.our-recipes-text{color:#545454;font-size:0.875rem;line-height:1.8;max-width:430px;}
+.our-recipes-link{border:1px solid #6ca848;color:#6ca848;cursor:pointer;display:inline-block;font-size:0.875rem;padding:20px 30px 24px;text-transform:uppercase;margin-top:56px;}
+.text-slider{clear:both;position:relative;padding-top:10%;}
+li{list-style:none;}
+.text-slider h1{color:#0b3e2d;text-align:center;}
+.discover-btn.header-button{background:#5a9246 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;bottom:135px;left:0;position:absolute;right:0;}
+.discover-product-link{clear:both;padding:25px 0 0 0px;}
+.recipes{display:block;overflow:hidden;padding-bottom:10%;}
+.discover-btn .header-shop-btn{color:#fff;text-transform:uppercase;font-size:1rem;font-weight:400;line-height:16px;}
+.slides.js-mask li{margin:0 !important;}
+.slides.js-mask{margin:20px 0 0 0px;}
+.discover-product-link .our-recipes-text{margin:0 auto;max-width:510px;padding:20px 0 20px 0;text-align:center;}
+.text-slider .flex-direction-nav {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 center;
+  display: inline-block;
+  position: initial;
+  padding: 25px 0 0 0;
+}
+.text-slider .containt-slider.active {
+  display: block;
+  float: left;
+  width: 100%;
+}
+.discovers .text-slider .slides {
+  float: left;
+  width: 100%;
+}
+.text-slider .the-slideshow2.gen-slider-arrows2.gen-slider-pager1.gen-slider-pager1-pos-bottom-right.grid12-12 {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.text-slider .flex-direction-nav .flex-prev{background:transparent url("../images/homepage-sprite1.png") no-repeat scroll -142px 8px;border-color:#6ca848;opacity:1;}
+.text-slider .flex-direction-nav .flex-next{background:transparent url("../images/homepage-sprite1.png") no-repeat scroll -186px 8px;border-color:#6ca848;opacity:1;}
+.discover-grid{background:#f2f2f1 none repeat scroll 0 0;clear:both;margin:0 auto;padding-bottom:9%;padding-top:24px;width:90%;}
+.grid-view-discover li:nth-child(1), .grid-view-discover li:nth-child(2), .grid-view-discover li:nth-child(3), .grid-view-discover li:nth-child(4){border-left:0 none;border-top:0 none;border-bottom:0 none;}
+.grid-view-discover li:nth-child(5), .grid-view-discover li:nth-child(6), .grid-view-discover li:nth-child(7), .grid-view-discover li:nth-child(8){border-bottom:0 none;border-left:0 none;}
+.discover-grid .grid-view-discover{background:url("../images/grid.png") no-repeat scroll 0 0;margin:0 auto;overflow:hidden;width:80%;}
+.grid-view-discover li{border:1px solid rgba(255, 255, 255, 0.2);float:left;margin:0 !important;}
+.grid-cell{display:inline;min-height:265px;width:24.99%;position:relative;}
+.discover-grid-lable{color:#fff;left:0;position:absolute;right:0;text-align:center;top:37%;font-size:1rem;font-weight:700;line-height:1.3;}
+.discover-banner3{clear:both;margin:0 5%;padding:8% 0 0 0;}
+.producer-block-right{float:right;position:relative;width:60%;}
+.our-producer-block{position:relative;}
+.our-producer-block > img{margin-left:-6%;position:absolute;top:207px;width:60%;z-index:2;}
+.producer.banner-top-text-box{background:#1d8999 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;bottom:0;margin-left:23%;min-height:165px;min-width:310px;position:absolute;}
+.producer-content-block .banner-desc{margin-left:23%;max-width:410px;min-height:220px;padding:65px 2% 0 50px;position:absolute;background:#fff;}
+.forest-background{clear:both;}
+.discover-visit-block{clear:both;}
+.visit-block-left{display:inline-block;float:left;padding:10% 0;width:30%;background:#f4f4f3;}
+.visit-block-right{float:left;width:70%;position:relative;}
+.visit-link-block{width:180px;margin:0 auto;text-align:center;}
+.visit-link-block h5{color:#000;font-size:1.125rem;font-weight:700;line-height:1;margin-bottom:42px;}
+.visit-site-link{font-size:0.875rem;text-transform:uppercase;font-weight:400;margin-bottom:32px;}
+.visit-right-content.banner-top-text-box{background:#bf3c25 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;position:absolute;bottom:0;min-height:165px;min-width:310px;left:0;}
+.discover-btn{display:none;}
+.cms-discover .discover-btn{display:block;}
+.text-slider .banner-title{display:none;}
+.text-slider .desc {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 center;
+  position: initial;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+.text-slider .desc .banner-desc {
+  color: #545454;
+  font-family: PT Sans Narrow;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  max-width: 510px;
+  position: relative;
+}
+.contacts-index-index label, .customer-account-login label, .customer-account-forgotpassword label, .customer-account-create label{font-size:12px;letter-spacing:1.1px;text-transform:uppercase;}
+.customer-account-create .control > label{font-size:13px;}
+.page-title h1{padding:15px;color:#000;border-bottom:1px solid silver !important;}
+.customer-account-login .new-users .content, .customer-account-login .col-1 .content.fieldset, .customer-account-login .col-1 .buttons-set, .customer-account-login .col-2 .new-users .buttons-set, .customer-account-create .scaffold-form, .contacts-index-index #contactForm, .customer-account-forgotpassword #form-validate{margin:0 auto;width:340px;}
+.customer-account-login .new-users, .contacts-index-index .buttons-set{border:0 none !important;}
+#shopping-cart-table .cart-footer-actions, .customer-account-login .content.fieldset > h2, .customer-account-login .new-users .content h2, .customer-account-create .buttons-set{text-align:center;color:#796744;}
+.customer-account-login .col2-set ul, .customer-account-login .new-users{padding:0px !important;}
+.form-list li{list-style:outside none none !important;}
+.customer-account-login .col2-set .buttons-set{text-align:center !important;}
+.account-login .f-left{color:#796744;display:block;font-weight:bold;margin:25px 0 0;text-align:center;}
+.customer-account-create .form-instructions, .new-users .form-instructions{color:#636363;font-style:normal;text-align:center;}
+.contacts-index-index .buttons-set button{float:none !important;}
+.contacts-index-index .buttons-set{margin-bottom:20px;text-align:center;}
+.customer-account-create .back-link, .back-link a{color:#796744;font-weight:bold;}
+.customer-account-create .buttons-set, .customer-account-forgotpassword .buttons-set{margin-bottom:20px;}
+.customer-account-create .input-box .checkbox{margin-left:0 !important;margin-right:0 !important;}
+.customer-account-create .control > label{padding-left:10px !important;}
+.customer-account-login .col-1.registered-users .buttons-set button.button{float:none;}
+.main-container{background:#fff;}
+.cms-index-index .main-container{background:0 none;}
+.cart-table{width:100% !important;}
+.cart-table thead tr{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;border-top:1px solid #c0c0c0;}
+.cart-forms .shipping{float:right;width:50%;}
+.checkout-types.top{float:right;padding:10px 20px 10px 0px;}
+.product-cart-image .product-image{margin-left:10px;}
+.cart-footer-actions .button2.btn-empty{float:none;}
+.cart-footer-actions .button2{margin:0 20px 0 0;}
+.checkout-cart-index #shopping-cart-table{margin-bottom:30px;}
+.buttons-set .button span{font-size:15px;font-weight:bold;}
+#shopping-cart-table .a-center span, #shopping-cart-table .nobr, #shopping-cart-table .a-center{color:#fff;font-size:16px;font-weight:700;}
+.checkout-cart-index .cart .cart-totals table tfoot strong, #checkoutSteps .step-title > a, .back-link a, #checkout-review-table .first > th, #review-buttons-container .f-left, #review-buttons-container .f-left a, .link-reorder, .link-print, #my-orders-table th{color:#796744;font-weight:600;}
+#shopping-cart-table .even{background:#fff none repeat scroll 0 0;}
+#shopping-cart-table .button2 span{color:#fff;font-size:14px;font-weight:600;text-decoration:none;}
+.checkout-cart-index .cart h1{border:0 none !important;}
+.cart-links a, .block .actions a{color:#796744;}
+#shopping-cart-table .product-cart-sku, .item-options dt{font-style:normal !important;}
+#shopping-cart-table .item-options{margin:0px;padding:0px;}
+#discount-coupon-form .discount-form label, .cart-forms .shipping h2{color:#796744;font-size:15px;font-weight:bold;line-height:1.5;width:100%;}
+.discount-form .button2 span, #shipping-zip-form .buttons-set .button2 span{color:#fff;font-weight:700;text-decoration:none;}
+.discount-form .button2, #shipping-zip-form .buttons-set .button2{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;padding:0 10px;}
+.checkout-cart-index .shipping .shipping-form .form-list li, #discount-coupon-form .field-wrapper{width:100%;}
+#discount-coupon-form .discount-form .input-text{width:65%;}
+.checkout-cart-index .cart-forms{float:left;width:60%;}
+.checkout-cart-index .cart-totals-wrapper{padding-right:10px;width:38%;}
+.btn-remove2{background:url("../images/delete.png") no-repeat scroll 0 0 !important;}
+.cart-totals-wrapper .cart-totals{border:1px solid silver;}
+#shopping-cart-totals-table .a-right{font-size:15px;text-align:left;}
+#shopping-cart-totals-table .a-right span{float:right;font-family:"PT Sans Narrow";padding:0 5px 0 0;}
+.cart-price .price{font-size:16px;color:#796744;}
+.checkout-cart-index .product-name a{color:#796744;font-size:16px;}
+#shopping-cart-totals-table .a-right strong { color: #4e1f04; font-size: 20px;}
+.cart-totals-wrapper .cart-totals .checkout-types.bottom, .cart-product-label{float:none;text-align:center;}
+#shipping-zip-form .buttons-set{max-width:365px;}
+.checkout-cart-index .checkout-types .btn-checkout{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;border:0 none;font-size:14px;font-weight:700;padding:10px;}
+.cart-forms #discount-coupon-form{float:left;width:50%;}
+.product-cart-info .item-options dt{float:left;width:30px;}
+.product-cart-info .product-cart-sku .label{float:left;width:40px;color:#796744;}
+#co-shipping-method-form .sp-methods label{font-size:12px;}
+.checkout-cart-index #discount-coupon-form .validation-advice{position:absolute;top:32px;left:1%;}
+.checkout-cart-index #discount-coupon-form .field-wrapper{position:relative;}
+.checkout-cart-index #shopping-cart-totals-table .a-right{padding-right:0px;}
+.col-right #checkout-progress-wrapper .block-title strong, .col-right .changelink a, #checkout-review-table .a-right > strong, .sales-order-view .col-left .block-title strong, .sales-order-view .block-account .current strong, #my-orders-table .a-right strong{color:#2f251b;}
+.col-right #checkout-progress-wrapper .block-title strong, #checkout-review-table .a-right > strong, .sales-order-view .col-left .block-title strong, #my-orders-table .a-right strong{font-size:20px;}
+#checkoutSteps .section.allow.active .step-title{/*background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;*/ border: 0 none; margin-bottom: 20px;}
+#checkoutSteps .section.allow.active .step-title h2 {  color: #4e1f04;}
+#checkoutSteps label { color: #796744; float: left; font-size: 12px;  font-weight: normal;}
+#checkout-progress-wrapper .block-content dt:first-child, #checkoutSteps .section .step-title h2{color:#000;font-weight:bold;font-size:20px;}
+#checkout-progress-wrapper .block-progress dd address, #checkout-progress-wrapper .block-progress dd{color:#000;font-style:normal;}
+/*#checkoutSteps select{border:1px solid silver;height:30px;font-size:13px;}*/
+#checkoutSteps select { background: #ffffff none repeat scroll 0 0 !important; border: 2px solid #efefe3; border-radius: 0; font-size: 13px; height: 42px;}
+#checkoutSteps .control label, #allow-gift-message-container label{float:none;}
+#onepage-checkout-shipping-method-additional-load .checkbox{top:4px;}
+#checkoutSteps .step-title .number, #checkout-review-table h3, .sales-order-view .block-account li a, .sales-order-view .block-account .current strong{font-weight:bold;}
+#checkout-review-table td{font-size:15px;}
+#checkoutSteps .form-list > li:first-child > .input-box > select{max-width:100%;width:100%;}
+/*#checkoutSteps .form-list > li:first-child > .input-box{clear:left;width:100%;}*/
+.description{color:#2f251b !important;font-style:normal !important;}
+#checkout-step-login h3{color:#000;font-weight:bold;}
+#checkout-step-login .f-left, .cart-empty a, .checkout-onepage-success .col-main a{color:#796744;font-weight:bold;}
+#checkoutSteps .input-box .validation-advice{text-align:left;/*padding-left:185px;*/}
+.shipping #co-shipping-method-form .sp-methods dd label{max-width:365px;width:100%;}
+#co-payment-form .fieldset{float:left;}
+/*#checkout-payment-method-load label{float:none;}*/
+#my-orders-table .a-right .nobr > strong{font-size:14px;font-weight:normal;}
+#checkout-review-table thead th, #my-orders-table thead th{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;color:#fff !important;}
+#checkout-review-table .last.even, #my-orders-table .even{background:#fff !important;}
+.check-cart-links-remove .btn-remove{border:0 none;}
+.checkout-onepage-index .input-box.validation-passed{display:inline-block;padding-right:24px;}
+.customer-input-box .input-box.validation-passed, .checkout-onepage-index .input-box.validation-passed, #review-form .input-box.validation-passed{background:url("../images/ok_sign.png") no-repeat scroll right transparent;}
+.checkout-onepage-index .input-text.validation-failed{background:#fff url("../images/validation-failed-close.png") no-repeat scroll right center transparent;border:1px solid #d80a09;height:30px;}
+.checkout-left{padding-left:1%;}
+.checkout-left .cart-right { border: 1px solid #dcdcda; padding: 15px;}
+/*.cart-right > h2{border-bottom:1px solid #453b31;padding:2% 0;text-align:center;color:#685633;}*/
+.cart-right > h2 { color: #4e1f04; font-size: 26px; font-weight: bold; padding: 0 0 15px;}
+.checkout-left .mini-products-list .product-details{float:left;width:70%;}
+.checkout-left .mini-products-list .product-image{float:left;width:30%;}
+.mini-products-list .product-details .product-name a{font-size:14px;font-weight:bold;color:#4E1F04;}
+#cart-sidebar .product-details-label{float:left;font-size:12px;min-width:50px;color:#796744;}
+.mini-products-list .check-cart-links .check-cart-links-remove{float:left;}
+#discount-coupon-form .discount label{text-align:left;padding-left:4%;}
+#discount-coupon-form .discount-form .field-wrapper .input-box{float:left;width:70%;padding:0;}
+/*#discount-coupon-form .button-wrapper{padding:3px 0 0;}*/
+.cart-right #discount-coupon-form .discount-form .input-text{width:100%;}
+.checkout-left .cart-right .coupon-code {
+  border-top: 1px solid #dcdcda;
+  padding: 10px 0;
+  border-bottom: 1px solid #dcdcda;
+}
+ .price{
+  color: #4e1f04;
+}
+.cart-right #shopping-cart-totals-table .a-right { width: 85%; color: #4e1f04;}
+.cart-right #shopping-cart-totals-table{margin:10px 0 10px 0;}
+.checkout-right #checkoutStepLogin .col-2 .buttons-set .button { float: right; padding: 15px;}
+.checkout-right #checkoutStepLogin .col-2 .buttons-set .or{display:block;text-align:center;}
+/*.checkout-right #checkoutStepLogin .col-2{width:35%;float:left;}*/
+.cart-right .show-items #show_all_items, .cart-right .show-items .cart-remain-items{display:inline-block;}
+.cart-right .show-items {  border-top: 1px solid #dcdcda;  clear: both;  padding: 10px 0;  text-align: center; 
+}
+.cart-right .show-items #show_all_items .button.button2 span{color:#fff;font-size:13px;font-weight:bold;text-decoration:none;}
+/*#checkoutStepLogin .form-list .input-box input, #checkoutStepLogin .form-list .input-box{width:100%;}*/
+.checkout-onepage-index .note{text-align:left;}
+.checkout-onepage-index .page-title h1 {
+  border: 0 none !important;
+  margin: 0 0 11px;
+  text-align: center;
+  font-size: 70px;
+  color: #4E1F04;
+}
+.lock-img{background:url("../images/homepage-sprite.png") no-repeat scroll -321px -42px transparent;display:inline-block;margin-right:8px !important;width:17px;}
+.pay-pal-image .pay-img {
+  background: rgba(0, 0, 0, 0) url("../images/homepage-sprite.png") no-repeat scroll -47px -392px;
+  display: inline-block;
+  height: 24px;
+  margin-left: 10px;
+  width: 130px;
+}
+.pay-pal-image{margin:0 0 25px;text-align:center;}
+.pay-pal-image > span {  color: #796744;  font-size: 15px;}
+.cart-links .check-cart-links-remove .btn-remove {  background: rgba(0, 0, 0, 0) url("../images/homepage-sprite.png") no-repeat scroll -321px 3px;  font-size: 14px;  line-height: 20px;  margin: 0;  padding: 0 0 0 17px;}
+#cart-sidebar .product-details-label{font-weight:bold;}
+.mini-products-list .check-cart-links-edit{float:left;width:50px;}
+.mini-products-list .check-cart-links-edit .btn-edit { background: rgba(0, 0, 0, 0) url("../images/homepage-sprite.png") no-repeat scroll -323px -23px;  padding: 0 0 0 16px;}
+.check-cart-links-edit a, .check-cart-links-remove a{font-size:12px;font-weight:bold;}
+.mini-products-list .product-image > img { margin: 0 auto; max-width: 100%;}
+.mini-products-list .check-cart-links{margin:6px 0;overflow:hidden;}
+/*.checkout-onepage-index #checkout-step-billing select{width:365px;}*/
+.product-att-img{background:url("../images/homepage-sprite.png") no-repeat scroll -309px -200px transparent;width:30px;height:32px;display:block;float:left;margin-right:15px;}
+.product-attr2.glucose .product-att-img{background-position:-309px -120px;}
+.product-attr3.bloodpressure .product-att-img{background-position:-309px -159px;}
+.product-att-img:hover .product-att-text{display:block !important;}
+.three-attributes > div:hover > *{display:block;}
+.three-attributes > div{position:relative;}
+.product-att-text{background:none repeat scroll 0 0 #b5b4b4;border-radius:15px;color:#fff;font-size:16px;font-weight:500;left:11px;padding:8px 20px;position:absolute;top:-42px;display:none;}
+.sales-order-view .col-left{padding:0 0 0 20px;}
+.sales-order-view .col-main{width:73%;}
+.display-after-920img{display:none;}
+.stickers{position:relative;}
+.sticker-upper-right{position:absolute;right:-35px;top:-25px;}
+.sticker-upper-right > img{width:75%;}
+.lower-sticker-right{bottom:140px;position:absolute;right:35px;}
+.lower-sticker-right > img{width:100%;}
+.upper-sticker-left{left:-15px;position:absolute;top:-50px;}
+.upper-sticker-left > img{width:95%;}
+.lower-sticker-left{bottom:90px;left:15px;position:absolute;}
+.lower-sticker-left > img{width:75%;}
+.cate-slider-block{left:0;position:absolute;right:10.5%;bottom:100%;}
+.category-slider-desc{background:#2d333d url("../images/concrete-wall-semi-transparent.png") repeat scroll 0 0;color:#fff;font-family:pt sans narrow;font-size:1rem;line-height:1.8;margin:0 auto;max-width:713px;min-height:216px;padding:50px 2% 50px 50px;position:relative;width:60%;}
+.slider-navi a{float:left;margin:0 6px;}
+.slider-navi{background:#12161c url("../images/concrete-wall-semi-transparent.png") repeat scroll 0 0;bottom:0;display:inline-block;padding:24px 30px;position:absolute;right:-160px;}
+.category-slider .category-products .products-grid .item.even{margin-top:0px;}
+/*.category-slider .category-products .products-grid .item.odd{margin-top:0px;}*/
+.category-products{/*padding:0 5%;*/}
+.catalog-category-view .col-main{background:#f0f0ee none repeat scroll 0 0;position:relative;}
+.category-products .products-grid .item{float:left;margin:0 5%;width:40%;padding:0 6% 10%;background:url("../images/brush-product.png") no-repeat scroll 0 80%/100% auto;}
+.category-products .products-grid .product-image img{max-width:320px;}
+.category-slider .category-products .products-grid .product-image img{max-width:320px !important;}
+.toolbar-filter{background:#796744 url("../images/concrete-wall-brown.png") repeat scroll 0 0;float:right;padding:60px 0 60px 5%;width:50%;}
+.sort-by > label, .block-layered-nav .block-title span, .block-content .block-subtitle{color:#fff;font-size:0.75rem;font-weight:normal;letter-spacing:2px;font-family:Montserrat;}
+.toolbar-filter select{background-color:#fff !important;border:0 none !important;border-radius:0 !important;color:#796744;display:inline-block;font-size:0.75rem;font-weight:normal;height:45px;margin:5px 15px 36px 0;min-width:170px;padding:13px 25px 13px 15px;text-transform:uppercase;-moz-appearance:none;}
+.block.block-layered-nav.block-layered-nav--no-filters{margin:0;}
+.block-layered-nav .block-title{border:0 none;display:block;float:left;margin:10px 29px 12px 0;padding:0;}
+.sort-by > label{margin:8px 37px 0 0;}
+.block-content.toggle-content{float:left;}
+@media only screen and (min-width:320px) and (max-width:1355px){.sort-by > label{display:block;margin:0px;}
+.block-layered-nav .block-title{float:none;}
+}
+.short-description .std{color:#545454;font-family:"PT Sans Narrow",sans-serif;font-size:1rem;line-height:1.4;margin:11px 0 33px;max-width:430px;}
+.products-grid .actions .button.btn-cart{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;border:0 none;padding:16px 17px;}
+.actions .button.btn-cart{display:inline-block;}
+.category-products .products-grid .actions{max-width:100%;}
+.actions .button.btn-cart .shop-img{background:url("../images/homepage-sprite1.png") no-repeat scroll -300px -61px;display:inline-block;float:left;height:18px;padding:0 0 0 34px;width:19px;}
+.viewdetails .button{background:rgba(0, 0, 0, 0) none repeat scroll 0 center;color:#2d333d;font-size:0.875rem;/*padding:0 0 3px;*/ padding:0;}
+.viewdetails{display:inline-block;margin:10px 5%;}
+.category-products .products-grid .item.even{margin-top:10%;}
+.category-products .products-grid .item.odd{/*margin-top:-5.8%;*/ margin-top:-15%;}
+.currently .block-subtitle, .block-layered-nav .currently ol li{color:#fff;}
+.block .block-content .actions > a{color:#FFF;font-weight:700;text-transform:uppercase;background:#2d333d url("../images/green-dust-and-scratches.png") repeat scroll 0 0;padding:7px;}
+.category-products .products-grid .price-box{margin:0 0 6px 0 !important;}
+.block-layered-nav .currently .block-subtitle{color:#fff !important;}
+.block-layered-nav .currently ol{padding:0px !important;}
+.our-philosophy-block .desc .banner-desc{max-width:none;}
+#upsell-product-table > li{display:inline-block;float:none;margin:0 1.5% 0 0 !important;padding:6% 0 2.8%;width:31%;}
+#upsell-product-table{text-align:center;}
+#upsell-product-table > li:nth-child(3n+1){margin:0 1.5% !important;}
+.category-products .products-grid .product-image img{margin:0 auto;}
+.product-info .product-name a , #upsell-product-table li .product-name a{color:#453b31;font-size:1.3rem;font-weight:bold !important;}
+.product-info .price-box .price , #upsell-product-table li .price-box .price{color:#453b31;font-size:1.3rem;font-weight:normal;}
+.product-info .actions .button , #upsell-product-table li .button{background:0 none;color:#453b31;}
+.product-info .actions .button.btn-cart , #upsell-product-table li .button.btn-cart{background:url("../images/add-to-cart.png") no-repeat scroll 0 0;padding-right:11px;}
+.product-info .actions .button , #upsell-product-table li .button.btn-cart , #upsell-product-table li .button{color:#453b31;font-size:0.9375rem;font-weight:bold;}
+.product-info .actions .button span , #upsell-product-table li .button span{padding:0 0 0 18px;}
+.product-info .actions a{border-left:1px solid #453b31;margin:0;padding:0 0 0 13px;}
+.catalog-category-view .product-info .product-name, #upsell-product-table li .product-name{max-height:58px;min-height:60px;overflow:hidden;}
+.product-info .product-name{max-width:250px;margin:0 auto;}
+.button.more-details{border-left:1px solid #453b31;padding:0 0 0 14px;}
+.checkout-cart-index .crosssell{clear:both;width:100%;}
+.shipping-form .buttons-set .button span{color:#fff;}
+.crosssell .product-info{clear:both;}
+.crosssell h2{font-size:35px;font-weight:400;line-height:1.5;text-align:center;}
+.crosssell .item .product-image{width:100% !important;}
+.crosssell .products-grid .product-image img{margin:0 auto;max-width:210px;}
+#blog-search-form .blog-search{overflow:hidden;}
+.is-blog .col2-left-layout .col-left.sidebar, .is-blog .col-main .post-list, .is-blog .post-view, .tag-product-list .col-left{padding-left:10px;}
+.is-blog .col-left .block .block-title span, .tag-product-list .col-left .block .block-title span{color:#252525;font-size:17px;font-weight:bold;}
+.is-blog .item a, .post-view .post-meta a, .comment-meta a, .comment-reply-link{color:#796744;font-weight:bold;}
+.col-left .blog-search .input-text{float:left;height:29px;width:62%;}
+.col-left .blog-search button.button{float:left;margin-left:2%;padding:7px 0;width:36%;}
+.is-blog .post-meta, .is-blog .post-date{font-style:normal;}
+.col-left .tags-list a{color:#453b31;font-size:14px !important;font-weight:bold;}
+.block-tags .block-content .tags-list{padding:0 0 0 9px;}
+.block-tags .block-content .actions > a{font-size:15px;font-weight:bold;}
+#respond textarea{border:1px solid silver;}
+#comments .buttons-set button.button{float:left;margin:0;}
+.col-left .block-tags .block-content .tags-list > li, .tag-list-index .tags-list > li{margin:0 0 9px;text-transform:capitalize;width:100%;}
+.blog-tag-line, .tag-list-index .tags-list{margin:0 0 0 10px;}
+.tag-list-index .tags-list a{font-size:15px !important;font-weight:bold;}
+#allow-gift-messages-for-order-container .wide textarea, .is-blog .wide textarea{max-width:365px;}
+.is-blog .blog-desc.blog-tag-line{margin-bottom:12px;}
+.is-blog .col-left .block .block-title span{display:block;padding-top:14px;}
+.is-blog .blog-home .post-list .item h2{margin-top:20px;}
+.banner h1{color:#efefef;font-size:1.5625rem;font-weight:400;text-align:center;}
+.banner-desc{color:#545454;font-size:1rem;margin:0 auto;max-width:300px;font-family:pt sans narrow;}
+#newsletter-validate-detail .input-box input, #newsletter-validate-detail .actions .button, .catalog-product-view select{border-radius:0 !important;}
+.header-minicart #compare-product .slick-track li{min-width:334px;width:100%;}
+.cms-home .main-container, .catalog-category-view .main-container, .catalog-product-view .main-container, .cms-about .main-container{padding:0px;}
+@media only screen and (max-width:979px){#checkout-step-review{display:block !important;}
+#checkout-step-review .opc-block-progress .block-content > dl > div{width:100% !important;}
+.recipes-details{background-position:0 0;}
+}
+@media only screen and (max-width:920px){.cms-about .w-one-third, .cms-about .svg, .transparent-arrow-white{display:none;}
+.display-after-920img{display:block !important;}
+.section-product-trip .block, .col-left-first{margin-bottom:0;}
+.display-after-920img > img, .right-product-image img{max-height:400px;width:100%;}
+.section-product-trip .w-two-thirds, .right-product-image, .our-product-image{width:100%;}
+.right-product-image{float:left;}
+.about-product-image .certification li{padding:20px;}
+.our-product-image{position:relative;}
+.about-product-image{overflow:hidden;}
+}
+@media only screen and (max-width:900px){.our-philoshopy-discover{width:80%;}
+.discover-content{width:332px;}
+}
+@media only screen and (max-width:740px){.skip-acai-berry > img{transform:translate(-200px, 0px) translateZ(0px) !important;}
+.skip-acai-berry{overflow:hidden;}
+.home-banner-images .widget-static-block{padding-bottom:20px;}
+}
+@media only screen and (max-width:768px){.customer-account-login .col-1.registered-users, .customer-account-login .col-2.new-users{width:100%;}
+.checkout-cart-index .cart-totals-wrapper, .checkout-cart-index .cart-forms{width:100% !important;}
+.sales-order-view .my-account{margin:0 auto;width:98%;}
+#shopping-cart-totals-table .a-right{padding-left:1%;}
+.col-left.sidebar.col-left-first .block-account{padding-top:20px;}
+.is-blog .col2-left-layout .col-left.sidebar{margin:0 auto 20px;padding:0 !important;width:96%;}
+.is-blog .col-main .post-list, .is-blog .post-view, .tag-product-list .category-products,
+.tag-product-list .main .col-wrapper .col-left, .tag-product-list .col3-layout .col-wrapper .col-right{margin:0 auto;width:96%;padding:0 !important;}
+.tag-product-list .col-wrapper .block-title strong span{color:#fff !important;font-size:17px !important;font-weight:bold;}
+.block-wishlist .block-title span small{color:#fff;}
+.customer-account .col2-left-layout .block-title > strong, .is-blog .col2-left-layout .col-left .block-title > strong{background:#796744 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;}
+.customer-account .col-left .block-title strong span, .is-blog .col2-left-layout .col-left .block-title strong span{color:#fff !important;}
+.checkout-box .checkout-left, .checkout-box .checkout-right, .checkout-right #checkoutStepLogin .col-1, .checkout-right #checkoutStepLogin .col-2{clear:both;float:none;margin:0 auto;width:300px;}
+.checkout-right #checkoutStepLogin .col-1, .checkout-right #checkoutStepLogin .col-2{padding:10px 0;}
+.pay-pal-image .pay-img{/*background-position:0 -426px;width:280px; */margin:10px 0 0;}
+.checkout-secure-shopping{margin:0 auto;width:300px;}
+#allow-gift-message-container .f-fix .input-box .input-text, .checkout-onepage-index .input-box.validation-passed, .checkout-onepage-index #checkout-step-billing select{width:100%;}
+.catalog-category-view .main-static-text{top:25% !important;}
+.text-slider{margin-top:20%;}
+#checkoutSteps .section .step-title h2, .buttons-set .button span{font-size:13px;}
+.is-blog .col-left .block .block-title span{padding-top:0;}
+}
+@media only screen and (max-width:600px){#discount-coupon-form, .cart .giftcard{width:100%;}
+#discount-coupon-form .discount-form, .cart-totals-wrapper .cart-totals, .cart-forms .shipping{margin:0 auto;padding:0px;width:300px !important;float:none !important;}
+.cart-forms #discount-coupon-form{width:100% !important;}
+.method-checkout-cart-methods-onepage-bottom .btn-checkout{width:auto;}
+#discount-coupon-form .discount-form{padding-left:0 !important;}
+#review-buttons-container .f-left{text-align:center;width:100%;}
+#review-buttons-container button.button{display:block;float:none;margin:0 auto;width:220px;}
+.cart .checkout-types.top .button.btn-proceed-checkout.btn-checkout{float:right;margin-right:5px;width:auto;}
+.checkout-onepage-index .checkout-box .input-text{width:100%;}
+}
+@media only screen and (max-width:480px){.customer-account-login .new-users .content, .customer-account-login .col-1 .buttons-set, .customer-account-login .col-2 .new-users .buttons-set, .contacts-index-index #contactForm, .customer-account-create .scaffold-form, .customer-account-forgotpassword #form-validate{width:98%;padding:0px;}
+.customer-account-create .buttons-set button.button, .customer-account-forgotpassword .buttons-set button{float:none !important;}
+.customer-account-login .col-1 .content.fieldset{width:80%;}
+.customer-account-forgotpassword .buttons-set{text-align:center;}
+.f-fix .input-box input{width:100%;}
+#checkout-step-login .col-1, #checkout-step-login .col-2{float:none;margin:15px auto 0;padding:0;width:96%;}
+#co-payment-form .fieldset{width:100%;}
+.contacts-index-index textarea{max-width:365px;}
+.slides > li:nth-child(4) .desc .banner-desc{min-height:180px !important;}
+.engagement-head, .visit-head{left:21% !important;}
+.my-wishlist .buttons-set2 button.button{float:none;}
+.my-wishlist .buttons-set.buttons-set2{text-align:center;}
+.footer-container{padding:0px !important;}
+.cms-our-philosophy .main-container{padding:0px;}
+.our-philosophy-product-img{margin-top:0px !important;}
+.our-philosophy-inner-container .our-philosophy-right{margin-top:655px !important;}
+.checkout-types.top{float:none;padding:10px 0;}
+.cart .checkout-types.top .button.btn-proceed-checkout.btn-checkout{float:none;}
+.cart .page-title h1{float:none !important;text-align:center;}
+.cms-discover .main-static-text,{top:20%;}
+.our-philosophy-block, .category-title h1{margin:0 !important;}
+.cms-our-philosophy .main-static-text{top:16%;}
+.category-title{position:static;}
+.checkout-onepage-index .page-title h1 { font-size: 45px;}
+.page-print .print-head .logo {
+  margin: 20px auto !important;
+  position: inherit;
+ }
+ .page-print .print-head {
+  text-align: center !important;
+}
+.discover-heading {
+  font-size: 1.7rem !important;
+}
+}
+@media only screen and (max-width:400px){#upsell-product-table > li{width:82%;}
+.engagement-head, .visit-head{margin:0 auto;right:0;}
+.featured-block{padding-left:3.5% !important;}
+.promotional-title, .homepage.main-static-text{font-size:1.5625rem !important;letter-spacing:0px;}
+.promotional-block a{left:34% !important;}
+.footer-social-link .list-inline > li{width:52px;}
+.cart-table .cart-footer-actions .btn-continue, .cart-table .cart-footer-actions #empty_cart_button{margin:5px auto;width:100%;}
+.cart-table .cart-footer-actions{padding:5px 0;}
+.Man-nature{max-height:950px;}
+.currently .value{display:block;}
+.footer{padding-top:50px !important;}
+.block.block-subscribe{min-width:auto !important;}
+#cart-sidebar .product-details .remove{background-position:-243px 4px !important;height:25px !important;top:0 !important;width:25px !important;}
+.mini-products-list .product-details .product-name a{font-size:12px !important;}
+}
+@media only screen and (min-width:995px) and (max-width:1050px){.account-cart-wrapper{right:0 !important;}
+}
+.subcategory .common .products-grid > li{margin-bottom:0 !important;margin-right:0;max-height:748px;overflow:hidden;position:relative;transition:all 2s cubic-bezier(0.23, 1, 0.32, 1) 0s;width:50%;}
+.category-image{border:medium none !important;margin-bottom:0 !important;padding:0 !important;}
+.subcategory .common .products-grid > li .product-name span{color:#fff;display:block;font-size:4.375rem;font-weight:700;position:absolute;top:45%;transform:translate(0px, 0px) scale(1) translateZ(0px);transition:all 2.4s cubic-bezier(0.23, 1, 0.32, 1) 0.25s;width:100%;line-height: 72px;}
+.common .products-grid > li a::before{background-color:#000;background-image:url("../images/green-dust-and-scratches.png");background-repeat:repeat;content:"";height:100%;left:0;opacity:0.4;position:absolute;top:0;transition:all 2s cubic-bezier(0.23, 1, 0.32, 1) 0s;width:100%;z-index:1;}
+.common .products-grid > li a:hover::before{opacity:0;}
+.common .products-grid > li:hover img{transform:scale(1.015) translateZ(0px);transition:all 1s cubic-bezier(0.42, 0, 1, 1) 0s;}
+.common .category-image img{max-width:100%;transition:all 1s cubic-bezier(0.42, 0, 1, 1) 0s;width:100%;}
+.category-title{min-height:165px;width:50%;position:absolute;top:-165px;}
+.category-title h1{background:#2d333d url("../images/green-dust-and-scratches.png") repeat scroll 0 0;border:medium none !important;color:#fff !important;float:right;height:165px;margin-bottom:0;padding-top:50px;width:50%;padding-left:50px;padding-right:5%;}
+.common .cat-name .item .product-name{height:100%;position:absolute;top:0;width:100%;z-index:1;}
+.common .cat-name .item .product-name > a{display:block;height:100%;}
+@media only screen and (min-width:641px) and (max-width:1024px){
+.subcategory .common .products-grid > li .product-name span{font-size:2.8875rem;}
+.category-title h1{width:300px;}
+.our-philosophy-block{width:75% !important;}
+.recipes-details{left:23% !important;top:19% !important;}
+.recipes-details{padding:90px 4% 6% 6% !important;}
+#cart-sidebar .product-details .remove{background-position:-243px 4px;height:25px;top:0;width:25px;}
+.mini-products-list .product-details .product-name a{font-size:12px;}
+.recipes-image { margin: 5% 0 0 10%;}
+.text-slider { margin-top: 5%;}
+}
+@media only screen and (max-width:640px){
+.subcategory .common .products-grid > li .product-name span{font-size:2.1875rem;}
+.subcategory .common .products-grid > li{width:100%;}
+.category-title h1{height:165px;margin-bottom:0;padding-left:25px;width:100%;}
+.category-products .products-grid .item{margin-top:59px !important;width:90%;}
+.toolbar-filter, .category-title{width:100%;}
+.category-products .products-grid .product-image img{max-width:303px;}
+.category-products .products-grid .item.even, .category-products .products-grid .item.odd{margin-top:0px;}
+.home-banner-images .widget-static-block{overflow:initial !important;}
+.our-philosophy-banner2{margin:-5px 0 0 !important;}
+.our-philosophy-block{width:100% !important;}
+.our-philosophy-block .banner-title{bottom:-150px;right:0;top:auto !important;width:100%;}
+.our-philosophy-block .desc{bottom:-597px !important;min-width:100%;right:0 !important;top:auto;min-height:444px !important;}
+.our-philosophy-inner-container{width:100%;}
+.our-philosophy-block .flex-direction-nav{bottom:-685px;right:0;top:auto;z-index:10;}
+.our-philosophy-inner-container .our-philosophy-right{margin-top:655px;padding:0 10% !important;width:100%;}
+.our-philosophy-detail{float:right;margin:0;width:100%;}
+.our-philosophy-product-img-after-640{clear:both;display:block;margin:0 auto;padding:60px 0 0;width:60%;}
+.our-philosophy-product-img{display:none;}
+.our-philosophy-content{float:right !important;line-height:1.8;max-width:430px !important;}
+.our-philosophy-inner-container{padding-bottom:0px;}
+.organic .banner-top-text-box, .producer.banner-top-text-box, .producer-content-block .banner-desc, .visit-right-content.banner-top-text-box{min-width:100%;margin:0px;}
+.organic{padding:0px;margin:0;}
+.discover-left-block .banner-desc{padding-left:50px;position:static;}
+.organic-image, .society-image{margin:0px;}
+.society.banner-top-text-box, .society-content .banner-desc, .our-producer-block > img, .producer.banner-top-text-box, .producer-content-block .banner-desc, .recipes-details, .visit-right-content.banner-top-text-box, .category-title, .cate-slider-block{position:static;}
+.recipes-image, .discover-left-block, .discover-right-block, .producer-block-right, .our-producer-block > img, .visit-block-left, .visit-block-right{margin:0;width:100%;}
+.discover-grid{display:none;}
+.discovers .banner-desc{max-width:100%;width:100%;}
+.discover-banner1, .discover-banner2, .discover-banner3{margin:0 2.5%;}
+.recipes-details, .scaling-image{clear:both;width:100%;}
+.discover-banner2{width:95%;}
+.text-slider{margin-top:0;}
+.text-slider .desc{bottom:61px !important;height:auto !important;left:0 !important;min-height:initial !important;padding-top:0 !important;right:0 !important;}
+.discover-btn.header-button{bottom:200px;}
+.cms-discover .main-container{padding:0;}
+.society-image > img{margin-top:-50%;}
+.text-slider .desc .banner-desc{margin:0 auto !important;}
+.why-eat.banner-top-text-box{min-height:165px;padding-bottom:0px;}
+.skip-acai-berry{display:none !important;}
+.home-banner-images, .our-philosophy-block, .category-title h1{margin:0px !important;}
+.slider-navi, .cate-slider-block{right:0;}
+.category-slider-desc{width:100%;}
+.Man-nature .leaf-6{bottom:3px;display:block;top:auto;}
+.why-eat.banner-top-text-box, .our-philoshopy-text, .banner-title, .organic .banner-top-text-box, .society.banner-top-text-box, .visit-right-content.banner-top-text-box, .category-title h1, .category-slider-desc{min-height:150px !important;padding:40px 25px 0 25px !important;}
+.discover.banner-top-text-box, .discover-content.philoshopy-discover-text, .discover-left-block .banner-desc, .society-content .banner-desc{min-height:180px !important;padding:40px 25px 0 25px !important;}
+.banner-title{top:-150px !important;}
+.logo{margin-left:0 !important;margin-top:-31px !important;}
+.homepage.main-static-text, .cms-index-index .main-static-text{top:22% !important;}
+.discover-banner2{padding-bottom:10%;}
+.category-slider .cate-slider-block .category-slider-desc { padding-bottom: 90px !important;}
+.footer-link-block .footer-links, .organic { width: 100%;}
+.category-products .toolbar-filter .pages {  left: auto !important;  right: 0;  top: -44px !important;}
+.toolbar-filter .toolbar {  position: relative;}
+.toolbar-filter #narrow-by-list dt::after {  border-width: 0 !important;}
+}
+@media only screen and (min-width:600px) and (max-width:768px){.my-account{padding:0 2%;}
+}
+@media only screen and (max-width:1025px){.our-philosophy-product-img, .our-philosophy-detail{margin-top:165px;}
+.discover-grid-lable{font-size:0.66rem;}
+.skip-acai-berry{position:absolute;top:165px;width:100%;}
+.skip-acai-berry{display:block;overflow:hidden;}
+.skip-acai-berry > img{transform:translate(-100px, 0px) translateZ(0px);}
+.cms-index-index .main-static-text, .cms-discover .main-static-text{top:27.7%;}
+.skip-acai-berry-img{display:none;}
+.superfood-heading{font-size:2.475rem;line-height:1;}
+.page-header-container{padding:20px 0 0 !important;}
+.lower-sticker-right{bottom:40px;right:0;}
+}
+@media only screen and (max-width:800px){.our-philosophy-content{float:none;}
+.discover-heading { font-size: 2.2rem;}
+}
+@media only screen and (min-width:768px) and (max-width:920px){#reorder-validate-detail .block-content .actions .button.btn-cart{display:block;float:none;margin:0 auto 10px;width:100%;}
+#reorder-validate-detail .block-content .actions > a{display:inline-block;margin:0 auto;text-align:center;width:100%;}
+}
+@media only screen and (min-width:1025px) and (max-width:1340px){.header-login{width:100%;}
+.header-login .logo{margin-right:1%;}
+.header-login #header-nav{width:81%;}
+}
+@media only screen and (min-width:1025px) and (max-width:1130px){.header-login .topmenu-links > li{margin:0px 8px;}
+.header-login .header-loggedin .link-nav.js-root.logout{margin:0 15px 0 8px;}
+.header-login .topmenu-links > li::before{right:-9px;}
+}
+
+/*--------------------dev 11------------------*/
+.toolbar-filter .block-content, .toolbar-filter .left-category {  float: left;}
+#narrow-by-list > dt {  background: #ffffff url("../images/select.png") no-repeat scroll 92% center !important;padding: 12px 0 12px 20px;}
+.toolbar-filter .cat-title { background: #796744 url("../images/concrete-wall-brown.png") repeat scroll 0 0; display: block; font-size: 13px;  margin: 8px ;  padding: 6px 0 6px 0;  text-align: center;  color: #fff;}
+#narrow-by-list dd { background: #ffffff none repeat scroll 0 0; border-top: 1px solid #cccccc; display: none; padding: 5px;  position: absolute;  z-index: 10;}
+#narrow-by-list .open { display: block !important;}
+.left-category .subcat-All.Products.open { background: #ffffff none repeat scroll 0 0; display: block !important;  padding: 5px;  position: absolute; top: 44px; width: 174px; border-top: 1px solid #ccc;}
+.left-category .subcat-All.Products {  display: none !important;}
+.toolbar-filter .pages {  position: absolute;  left: 20px;  top: 20px;}
+#narrow-by-list {  float: left;  margin: 0 20px 18px 0;  position: relative;  width: 174px;}
+.toolbar-filter .block-subtitle {  margin-top: 10px;  float: left;}
+.toolbar-filter .block.block-layered-nav { margin: 0;}
+.toolbar-filter .categoryhead {  background: #ffffff none repeat scroll 0 0;  border-radius: 4px;  float: left;  margin: 0; width: 174px;}
+.toolbar-filter .check-box {  padding-right: 6px;}
+.toolbar-filter .check-box > input { height: auto;}
+.toolbar-filter .left-category { position: relative;}
+.slider-product-btn {  background: #5a9246 url("../images/green-dust-and-scratches.png") repeat scroll 0 0;  left: 0;  position:absolute;  right: 0;  max-width: 280px;  height: 50px;  line-height: 50px;  margin: 0 auto;  top: -70px;}
+.add-basket-img {  background: rgba(0, 0, 0, 0) url("../images/homepage-sprite1.png") no-repeat scroll -299px 0;  display: inline-block;  height: 20px;  margin: 0 10px -6px 0;  width: 20px;}
+.discover-product-button {  font-size: 1rem;  font-weight: 400;  line-height: 16px;  text-transform: uppercase;  font-family: Montserrat;  color: #fff;}
+.producer-block-right > img, .visit-block-right > img, .visit-block-right > img, .forest-background > img {  width: 100%;}
+.cms-discover .custom-block > .second-div.second-div-pos, .cms-our-philosophy .custom-block > .second-div.second-div-pos {
+  height: 70pc;}
+.discovers .text-slider .slides {  float: left;  margin-bottom: 100px;  width: 100%;}
+@media only screen and (min-width:1800px){
+.discover-grid .grid-view-discover { background-size: 100% ;}
+ /* .organic{padding:0 0 0 59%;} */
+}
+/* @media only screen and (min-width:1450px) and (max-width:2000px){
+.discover-left-block .banner-desc, .society-content .banner-desc {
+  max-width: 491px;
+}
+} */
+.cms-terms-and-conditions .std, .cms-privacy-policy .std{  padding: 0 15px;}

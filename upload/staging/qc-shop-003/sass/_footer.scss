@@ -1,0 +1,37 @@
+//
+// Footer
+// --------------------------------------------------
+
+.footer {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+
+  .column {
+    position: relative;
+    display: table-cell;
+    vertical-align: top;
+    text-align: center;
+    background-color: $gray-lighter;
+    padding: 45px 25px;
+    &:nth-of-type(even) {
+      background-color: darken($gray-lighter, 2%);
+    }
+    @media #{$tablet-land} {
+      display: block;
+      width: 100%;
+      padding: 45px 15px;
+    }
+  }
+  .copyright {
+    font-size: $font-size-xs;
+    color: $gray;
+    margin-bottom: 0;
+    margin-top: -5px;
+  }
+  .cards {
+    width: 100%;
+    max-width: 190px;
+    margin: 0 auto;
+  }
+}

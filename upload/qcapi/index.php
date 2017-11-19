@@ -30,6 +30,31 @@ $app->group('/api', function () use ($app) {
 			}
 		});
 
+		// Get
+		$this->get('/{resource}/{id:\d+}/{attribute}', function($req, $res, $args) use ($app) {
+			$app->setDriverType('metadata'); // TODO: Use constant
+
+			$service = \App\ResourceService::load($args['resource']);
+			$service->setEntityManager($app->getEntityManager());
+			//$service->setSlim($this);
+			$service->init();
+
+			if ($service === null) {
+				\App\ResourceService::response($req, $res, \App\ResourceService::STATUS_NOT_FOUND);
+			} else {
+				if (!empty($args['id'])) {
+					// TODO: Sanitize attribute, use regex and some other tests
+					$service->get($req, $res, $args['id'], $args['attribute']);
+				} else {
+					//$service->get($req, $res, null); TODO: Throw user error - did not provide an attribute id to filter the collection on
+				}
+			}
+
+			// This is the way the other api works
+			//return $response->withJson($app->retrieve($args['resource'], $request->getQueryParams(), $args['id'], $args['attribute']));
+			//echo json_encode($app->retrieve($args['resource'], $request->getQueryParams(), $args['id'], $args['attribute']));
+		});
+
 		// Post
 		$this->post('/{resource}[/{id:\d+}]', function($req, $res, $args) use ($app) {
 			$app->setDriverType('metadata'); // TODO: Use constant
