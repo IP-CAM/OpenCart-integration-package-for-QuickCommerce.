@@ -2,144 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b731ea63-816f-4666-9b16-4599a4853fef" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5509.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5578.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5637.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5641.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5664.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5683.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5701.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5727.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/featured-image/phobulous/fhd/20170911-DSCF5729.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5509.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5578.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5637.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5641.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5664.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5683.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5701.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5727.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/20170911-DSCF5729.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5509.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5578.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5637.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5641.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5664.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5683.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5701.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5727.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/hero-slider/phobulous/fhd/20170911-DSCF5729.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/phobulous-logo_brown.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/phobulous-logo_green.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/phobulous-logo_white.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/curry-shrimp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/dumplings.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/green-onion-cake.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/iced-coffee.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/jumbo-prawn-vermecelli-perspecive.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/jumbo-prawn-vermecelli.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/meatlovers-vermecelli.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/mother-pho.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/noodle-soup.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/papaya-salad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/pork-and-shrimp-salad-rolls.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/fhd/spring-rolls.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/curry-shrimp.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/dumplings.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/green-onion-cake.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/iced-coffee.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/jumbo-prawn-vermecelli-perspecive.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/jumbo-prawn-vermecelli.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/meatlovers-vermecelli.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/mother-pho.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/noodle-soup.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/papaya-salad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/pork-and-shrimp-salad-rolls.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/black/orig/spring-rolls.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5509.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5578.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5637.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5641.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5664.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5683.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5701.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5727.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/fhd/20170911-DSCF5729.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5509.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5512.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5524.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5532.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5578.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5603.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5637.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5641.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5650.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5664.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5683.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5701.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5727.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/products/normal/20170911-DSCF5729.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous-menu/phobulous_menu_2017-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous-menu/phobulous_menu_2017-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/bamboo-cutting-board.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/basil.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/cilantro.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/condiment-chili.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/condiment-cilantro.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/condiment-lime.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/condiment-onion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/grass-2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/grass.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf-6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/leaf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/logo-text.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/mint.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/pho-noodles-black-bowl-02.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/phobulous-hero-01.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/salad.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/sliced-green-onions.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/tomato.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/upload/img/template/phobulous/wood.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/admin/language/en-gb/common/footer.php" afterPath="$PROJECT_DIR$/app/upload/admin/language/en-gb/common/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/admin/view/javascript/common.js" afterPath="$PROJECT_DIR$/app/upload/admin/view/javascript/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/admin/view/stylesheet/stylesheet.css" afterPath="$PROJECT_DIR$/app/upload/admin/view/stylesheet/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/admin/view/template/common/column_left.tpl" afterPath="$PROJECT_DIR$/app/upload/admin/view/template/common/column_left.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/admin/view/template/common/header.tpl" afterPath="$PROJECT_DIR$/app/upload/admin/view/template/common/header.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/catalog/view/theme/quickcommerce/template/common/footer.tpl" afterPath="$PROJECT_DIR$/app/upload/catalog/view/theme/quickcommerce/template/common/footer.tpl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/index.php" afterPath="$PROJECT_DIR$/app/upload/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload/php.ini" afterPath="$PROJECT_DIR$/app/upload/php.ini" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/install-docker-compose.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/install-quickcommerce.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -151,16 +16,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="default.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/nginx/conf.d/default.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="file.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/upload/system/library/cache/file.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,11 +46,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/upload/admin/view/stylesheet/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="489">
               <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install-docker-compose.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/install-docker-compose.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install-quickcommerce.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/install-quickcommerce.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -247,16 +122,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/nginx/sites/default.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="99" column="3" lean-forward="false" selection-start-line="99" selection-start-column="3" selection-end-line="99" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -285,12 +150,12 @@
       <find>logoi</find>
       <find>logi</find>
       <find>log</find>
-      <find>logo</find>
       <find>firelogo</find>
       <find>firebralogo</find>
       <find>firebrandlogo</find>
       <find>#header #button-menu + .navbar-brand</find>
       <find>firebrand-logo</find>
+      <find>logo</find>
     </findStrings>
     <replaceStrings>
       <replace>/quickcommerce-vestracing/</replace>
@@ -329,6 +194,8 @@
         <option value="$PROJECT_DIR$/app/upload/admin/view/javascript/font-awesome/css/font-awesome.css" />
         <option value="$PROJECT_DIR$/app/upload/admin/language/en-gb/common/footer.php" />
         <option value="$PROJECT_DIR$/app/upload/admin/view/stylesheet/stylesheet.css" />
+        <option value="$PROJECT_DIR$/scripts/install-docker-compose.sh" />
+        <option value="$PROJECT_DIR$/scripts/install-quickcommerce.sh" />
       </list>
     </option>
   </component>
@@ -340,8 +207,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1200" />
+    <option name="x" value="-10" />
+    <option name="y" value="59" />
+    <option name="width" value="1153" />
+    <option name="height" value="993" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -372,7 +241,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -383,94 +252,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php-fpm" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nginx" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nginx" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sites" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nginx" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf.d" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docker" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -485,124 +266,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="quickcommerce-vestracing" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheet" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -613,7 +276,6 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="true" />
     <property name="SearchEverywhereHistoryKey" value="footer.php&#9;FILE&#9;file:///Web/quickcommerce-vestracing/app/upload/admin/language/en-gb/common/footer.php" />
   </component>
   <component name="RecentsManager">
@@ -621,8 +283,8 @@
       <recent name="$PROJECT_DIR$/docker/database" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/docker" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
@@ -716,22 +378,22 @@
       <updated>1554436321577</updated>
       <workItem from="1554436323759" duration="300000" />
       <workItem from="1554436868220" duration="717000" />
-      <workItem from="1554441931375" duration="11188000" />
+      <workItem from="1554441931375" duration="11710000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12205000" />
+    <option name="totallyTimeSpent" value="12727000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
+    <frame x="-10" y="59" width="1153" height="993" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2567216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41125542" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -977,6 +639,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/install-docker-compose.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/install-quickcommerce.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
