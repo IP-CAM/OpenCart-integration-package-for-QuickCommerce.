@@ -213,13 +213,6 @@
                         <div class="payments">
                         </div>
                         <span class="copyright">
-							<!--© Copyright 2017 ACE Coffee Roasters Ltd. (acecoffeeroasters.com). All rights reserved.
-							<br/>
-							Product and company names are trademarks™ or registered® trademarks of their respective holders.
-							<br/>
-							Website conceptualized and designed by Firebrand Web Solutions.
-                            -->
-                            
                         </div>
 						</span>
 					</div>

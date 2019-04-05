@@ -1,4 +1,6 @@
 <?php
+//ini_set('error_reporting','E_ALL & ~E_WARNING & ~E_DEPRECATED & ~E_NOTICE');
+//ini_set('display_errors', 'Off');
 // Version
 define('VERSION', '2.3.0.2');
 

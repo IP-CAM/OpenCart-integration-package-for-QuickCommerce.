@@ -21,7 +21,8 @@ h1, h2, h3, h4, h5, h6, p {
 .page-header h1 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
-	font-size: 30px;
+	/*font-size: 30px;*/
+	font-size: 24px;
 	color: #848484;
 	display: inline-block;
 	margin-bottom: 15px;
@@ -50,6 +51,13 @@ h1, h2, h3, h4, h5, h6, p {
 	color: #BBBBBB;
 	padding: 0 5px;
 }
+/* EDIT */
+a, a:hover, a:focus,
+.breadcrumb li:last-child a {
+	/*color: #E0382B;*/
+	color: black;
+}
+/* END */
 a:hover, a:focus {
 	text-decoration: none;
 }
@@ -93,9 +101,25 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 }
 #header #button-menu + .navbar-brand {
 	padding: 10px 10px 10px 10px;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
+	margin-right: 0;
 	height: auto;
 }
+.navbar-brand img,
+#header #button-menu + .navbar-brand img {
+	max-height: 20px;
+}
+/* EDIT */
+@media screen and (min-width: 640px) {
+	#header #button-menu + .navbar-brand {
+		padding: 10px 10px 10px 20px;
+	}
+	.navbar-brand img,
+	#header #button-menu + .navbar-brand img {
+		max-height: 24px;
+	}
+}
+/* END */
 #header .nav > li > a {
 	padding: 3px 16px;
 	line-height: 38px;
