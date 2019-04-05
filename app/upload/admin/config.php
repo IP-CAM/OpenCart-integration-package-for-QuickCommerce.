@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:8081/admin/');
-define('HTTP_CATALOG', 'http://localhost:8081/');
+define('HTTP_SERVER', 'http://159.89.130.199/admin/');
+define('HTTP_CATALOG', 'http://159.89.130.199/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:8081/admin/');
-define('HTTPS_CATALOG', 'http://localhost:8081/');
+define('HTTPS_SERVER', 'http://159.89.130.199/admin/');
+define('HTTPS_CATALOG', 'http://159.89.130.199/');
 
 // DIR
 define('DIR_APPLICATION', '/var/www/upload/admin/');
