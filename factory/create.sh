@@ -8,17 +8,21 @@ fi
 # For future use - the base version of OpenCart to apply QuickCommerce to
 SHOP_VERSION="2.3.0.2"
 
-rm -rf workspace/quickcommerce/*
+rm -rf ./workspace/quickcommerce
 # Clone a fresh copy of OpenCart
-git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
+git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git ./workspace/quickcommerce
+# Install vendor libs
+composer install
 # Go to the vendor folder and pull in the quickcommerce (PHP lib) submodule
-cd workspace/quickcommerce/vendor && git submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
+cd ./workspace/quickcommerce/vendor && git clone https://github.com/bluecollardev/quickcommerce.git quickcommerce 
+#submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
 # Exit vendor dir go back to the root (quickcommerce) dir
 cd ../
 
 # Install frontend submodule and fetch the submodule files 
 # TODO: A var for the theme and repo path!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-git submodule add https://github.com/bluecollardev/clients-phobulous-theme frontend
+git clone https://github.com/bluecollardev/clients-phobulous-theme frontend
+#git submodule add https://github.com/bluecollardev/clients-phobulous-theme frontend
 # Create build directory for frontend files, this is where webpack will put the static output files
 mkdir -p upload/staging 
 # React toggle display package needs to be removed...
