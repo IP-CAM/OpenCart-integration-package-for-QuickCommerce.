@@ -2,12 +2,12 @@ version: '3'
 services:
   nginx:
     build:
-      context: ../images/nginx
+      context: ./nginx
     volumes:
       # Mount the workspace directory, where we clone the projects and assemble our images
       - ./workspace:/tmp/workspace:rw
       # Mount the output directory
-      - ./volume-qc:/var/www/quickcommerce:rw
+      - ./volume-qc:/var/www:rw
       # Mount nginx config
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/sites/:/etc/nginx/sites-available
@@ -27,11 +27,11 @@ services:
       # Mount the workspace directory, where we clone the projects and assemble our images
       - ./workspace:/tmp/workspace:rw
       # Mount the output directory
-      - ./volume-qc:/var/www/quickcommerce:rw
+      - ./volume-qc:/var/www:rw
     links:
       - maria-db
     # Run the workspace setup script
-    command: "bash ./workspace/setup.sh"
+    #command: "bash /tmp/workspace/setup.sh"
   maria-db:
     build:
       context: ../images/maria-db

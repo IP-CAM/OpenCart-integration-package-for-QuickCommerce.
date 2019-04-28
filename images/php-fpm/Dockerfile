@@ -30,15 +30,15 @@ RUN curl -sS "https://getcomposer.org/installer" | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # Add setup/start scripts
-COPY wait_for_service.sh /wait_for_service.sh
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /*.sh
+#COPY wait_for_service.sh /wait_for_service.sh
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /*.sh
 
 # Add application contents
-RUN ls -la
-ADD files.tar.gz /var/www/
+# Files are mounted in at /var/www
+#ADD files.tar.gz /var/www/
 RUN echo "Files in www directory"
-RUN ls -la /var/www/
+#RUN ls -la /var/www/
 COPY update_shop_config.php /var/www/update_shop_config.php
 
 # Install frontend submodule's node packages
@@ -56,7 +56,7 @@ COPY update_shop_config.php /var/www/update_shop_config.php
 
 
 RUN echo 'EXECUTE ENTRYPOINT.SH'
-CMD ["/entrypoint.sh"] # Execute from entrypoint script
-#CMD ["php-fpm"]
+#CMD ["/entrypoint.sh"] # Execute from entrypoint script
+CMD ["php-fpm"]
 
-#EXPOSE 9000
+EXPOSE 9000

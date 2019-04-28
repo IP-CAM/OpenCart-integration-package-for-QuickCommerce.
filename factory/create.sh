@@ -51,7 +51,8 @@ mkdir -p ${OC_PATH}/upload/staging
 #git submodule update --init --recursive
 
 # Delete any existing volume data
-rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
+rm -rf ${DIR}/volume-qc/*
+rm -rf ${DIR}/volume-db/*
 
 # Clear builds
 docker-compose rm -f --all
@@ -66,19 +67,31 @@ docker-compose run --service-ports php-fpm
 docker-compose stop maria-db
 
 # Cleanup mysql files
-rm -rf ${DIR}/volume-db/ib_*
+#rm -rf ${DIR}/volume-db/ib_*
 
 # Create and move artifacts
-tar zcvf files.tar.gz -C ${DIR}/volume-qc .
-tar zcvf data.tar.gz -C ${DIR}/volume-db .
-#chown ${USER:=$(/usr/bin/id -run)} ${QC_PATH}
-#chown $(stat -c '%U:%G' .) *.tar.gz
-mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
-mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
+echo "Build tarballs"
+# Package won't be ready yet just copy so we can make sure this is sane
+rm -rf $(find ${OC_PATH}/. -name ".git" -or -name ".gitignore")
+cp -r ${OC_PATH}/. ${DIR}/volume-qc
+
+chown -Rv ${USER:=$(/usr/bin/id -run)} ${DIR}/volume-qc
+chown -Rv ${USER:=$(/usr/bin/id -run)} ${DIR}/volume-db
+#find ${DIR}/volume-qc/ -print -exec chmod +rx {} \;
+#find ${DIR}/volume-db/ -print -exec chmod +rx {} \;
+find ${DIR}/volume-qc/ -exec chmod +rx {} \;
+find ${DIR}/volume-db/ -exec chmod +rx {} \;
+
+# TODO: Fix this later
+#tar cvzf files.tar.gz -C ${DIR}/volume-qc .
+#tar cvzf data.tar.gz -C ${DIR}/volume-db .
+#chown ${USER:=$(/usr/bin/id -run)} *.tar.gz
+#mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
+#mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-rm -rf ${DIR}/volume-qc/*
-rm -rf ${DIR}/volume-db/*
+#rm -rf ${DIR}/volume-qc/*
+#rm -rf ${DIR}/volume-db/*
 
 # Clear builds
 docker-compose rm -f --all
