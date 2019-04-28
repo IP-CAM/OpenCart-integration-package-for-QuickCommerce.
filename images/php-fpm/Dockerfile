@@ -39,7 +39,7 @@ RUN mv composer.phar /usr/local/bin/composer
 #ADD files.tar.gz /var/www/
 RUN echo "Files in www directory"
 #RUN ls -la /var/www/
-COPY update_shop_config.php /var/www/update_shop_config.php
+COPY update_shop_config.php /var/www/quickcommerce/update_shop_config.php
 
 # Install frontend submodule's node packages
 #RUN apk add --update nodejs npm
