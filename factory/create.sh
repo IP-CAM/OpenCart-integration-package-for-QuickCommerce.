@@ -8,13 +8,13 @@ fi
 # For future use - the base version of OpenCart to apply QuickCommerce to
 SHOP_VERSION="2.2.0.0"
 
-rm -rf workspace/quickcommerce
+rm -rf workspace/quickcommerce/*
 #git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
 # Clone the Quick Commerce application (quickcommerce-oc or QuickCommerce's version of OpenCart)
-git clone https://github.com/bluecollardev/quickcommerce-oc.git . && \
+git clone https://github.com/bluecollardev/quickcommerce-oc.git workspace/quickcommerce && \
 # Go to the quickcommerce-react lib folder and pull the quickcommerce (PHP lib) submodule
-cd vendor && git submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce && \
-# Exit vendor dir go back to the root dir
+cd workspace/quickcommerce/vendor && git submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce && \
+# Exit vendor dir go back to the root (quickcommerce) dir
 cd ../
 
 # Install frontend submodule and fetch the submodule files 
