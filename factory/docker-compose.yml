@@ -21,7 +21,7 @@ services:
     build:
       context: ../images/php-fpm
     env_file:
-       # Configure database user and shop admin user / pw
+      # Configure database user and shop admin user / pw
       - shop-config.env
     volumes:
       # Mount the workspace directory, where we clone the projects and assemble our images
