@@ -8,8 +8,8 @@ fi
 # For future use - the base version of OpenCart to apply QuickCommerce to
 SHOP_VERSION="2.2.0.0"
 
-rm -rf workspace/shop
-#git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/shop
+rm -rf workspace/quickcommerce
+#git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
 # Clone the Quick Commerce application (quickcommerce-oc or QuickCommerce's version of OpenCart)
 git clone https://github.com/bluecollardev/quickcommerce-oc.git . && \
 # Go to the quickcommerce-react lib folder and pull the quickcommerce (PHP lib) submodule
@@ -34,7 +34,7 @@ docker-compose rm -f --all
 cp ../images/php-fpm/files.tar.gz ../images/php-fpm
 cp ../images/maria-db/data.tar.gz ../images/maria-db
 
-# Install shop
+# Build QuickCommerce
 docker-compose build php-fpm maria-db
 docker-compose run --service-ports php-fpm
 docker-compose stop maria-db
@@ -53,4 +53,4 @@ mv data.tar.gz ../images/maria-db
 #rm -rf volume-php volume-mysql
 
 docker-compose rm -f --all
-#rm -rf workspace/shop
+#rm -rf workspace/quickcommerce
