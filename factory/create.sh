@@ -72,10 +72,10 @@ mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
 mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-#rm -rf volume-qc volume-db
+rm -rf volume-qc volume-db
 
 docker-compose rm -f --all
-rm -rf ${WS_PATH}
+rm -rf ${OC_PATH}
 
 # Set cwd to original dir
 cd ${DIR}
