@@ -17,6 +17,10 @@ QK_LIB_PATH="${VENDOR_PATH}/${QK_PKG_NAME}"
 FRONTEND_PKG_NAME="frontend"
 FRONTEND_PATH="${OC_PATH}/${FRONTEND_PKG_NAME}"
 
+# Create temp dirs for quickcommerce and db
+mkdir -p "${DIR}/volume-qc"
+mkdir -p "${DIR}/volume-db"
+
 rm -rf ${OC_PATH}
 # Clone a fresh copy of OpenCart
 echo "Cloning into directory ${OC_PATH}"
@@ -72,7 +76,7 @@ mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
 mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-rm -rf ${DIR}/volume-qc ${DIR}/volume-db
+rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
 
 # Clear builds
 docker-compose rm -f --all
