@@ -1,20 +1,21 @@
 #!/bin/bash
 
-if [ "$(id -u)" != "0" ]; then
-   echo "This script must be run as root" 1>&2
-   exit 1
-fi
+#if [ "$(id -u)" != "0" ]; then
+#   echo "This script must be run as root" 1>&2
+#   exit 1
+#fi
 
 # For future use - the base version of OpenCart to apply QuickCommerce to
 SHOP_VERSION="2.3.0.2"
+cd $(dirname $0)
 
-rm -rf ./workspace/quickcommerce
+rm -rf workspace/quickcommerce
 # Clone a fresh copy of OpenCart
-git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git ./workspace/quickcommerce
+git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
 # Install vendor libs
 composer install
 # Go to the vendor folder and pull in the quickcommerce (PHP lib) submodule
-cd ./workspace/quickcommerce/vendor && git clone https://github.com/bluecollardev/quickcommerce.git quickcommerce 
+cd workspace/quickcommerce/vendor && git clone https://github.com/bluecollardev/quickcommerce.git quickcommerce 
 #submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
 # Exit vendor dir go back to the root (quickcommerce) dir
 cd ../
@@ -46,8 +47,8 @@ docker-compose stop maria-db
 #rm -rf volume-db/ib_*
 
 # Create and move artifacts
-tar -cfvz files.tar.gz -C volume-qc .
-tar -cfvz data.tar.gz -C volume-db .
+tar cfvz files.tar.gz -C volume-qc .
+tar cfvz data.tar.gz -C volume-db .
 chown $(stat -c '%U:%G' .) *.tar.gz
 mv files.tar.gz ../images/php-fpm
 mv data.tar.gz ../images/maria-db
