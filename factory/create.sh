@@ -50,9 +50,10 @@ mkdir -p ${OC_PATH}/upload/staging
 # Not used right now, as I'm cloning to get around some issues
 #git submodule update --init --recursive
 
-# Delete any existing volumes, we're about to create new volumes
-rm -rf ${DIR}/volume-qc ${DIR}/volume-db
+# Delete any existing volume data
+rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
 
+# Clear builds
 docker-compose rm -f --all
 
 # Delete previously created artifacts by copying empty ones
@@ -60,7 +61,7 @@ cp ${IMAGES_PATH}/php-fpm/default-files.tar.gz ${IMAGES_PATH}/php-fpm/files.tar.
 cp ${IMAGES_PATH}/maria-db/default-data.tar.gz ${IMAGES_PATH}/maria-db/data.tar.gz
 
 # Build QuickCommerce
-docker-compose build php-fpm maria-db
+docker-compose build php-fpm #maria-db
 docker-compose run --service-ports php-fpm
 docker-compose stop maria-db
 
@@ -68,20 +69,20 @@ docker-compose stop maria-db
 rm -rf ${DIR}/volume-db/ib_*
 
 # Create and move artifacts
-tar cfvz files.tar.gz -C ${DIR}/volume-qc .
-tar cfvz data.tar.gz -C ${DIR}/volume-db .
+tar zcvf files.tar.gz -C ${DIR}/volume-qc .
+tar zcvf data.tar.gz -C ${DIR}/volume-db .
 #chown ${USER:=$(/usr/bin/id -run)} ${QC_PATH}
 #chown $(stat -c '%U:%G' .) *.tar.gz
 mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
 mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
+#rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
 
 # Clear builds
 docker-compose rm -f --all
 # Delete OpenCart folder from workspace
-rm -rf ${OC_PATH}
+#rm -rf ${OC_PATH}
 
 # Set cwd to original dir
 cd ${DIR}
