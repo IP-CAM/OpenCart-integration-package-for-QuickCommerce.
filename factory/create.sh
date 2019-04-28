@@ -6,14 +6,13 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # For future use - the base version of OpenCart to apply QuickCommerce to
-SHOP_VERSION="2.2.0.0"
+SHOP_VERSION="2.3.0.2"
 
 rm -rf workspace/quickcommerce/*
-#git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
-# Clone the Quick Commerce application (quickcommerce-oc or QuickCommerce's version of OpenCart)
-git clone https://github.com/bluecollardev/quickcommerce-oc.git workspace/quickcommerce && \
-# Go to the quickcommerce-react lib folder and pull the quickcommerce (PHP lib) submodule
-cd workspace/quickcommerce/vendor && git submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce && \
+# Clone a fresh copy of OpenCart
+git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git workspace/quickcommerce
+# Go to the vendor folder and pull in the quickcommerce (PHP lib) submodule
+cd workspace/quickcommerce/vendor && git submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
 # Exit vendor dir go back to the root (quickcommerce) dir
 cd ../
 
