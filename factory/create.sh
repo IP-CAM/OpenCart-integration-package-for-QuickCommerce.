@@ -77,7 +77,8 @@ mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
 mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
+rm -rf ${DIR}/volume-qc/*
+rm -rf ${DIR}/volume-db/*
 
 # Clear builds
 docker-compose rm -f --all
