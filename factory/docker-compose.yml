@@ -31,7 +31,7 @@ services:
     links:
       - maria-db
     # Run the workspace setup script
-    #command: "bash /tmp/workspace/setup.sh"
+    command: "bash ./workspace/setup.sh"
   maria-db:
     build:
       context: ../images/maria-db
