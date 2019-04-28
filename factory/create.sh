@@ -8,6 +8,7 @@
 # For future use - the base version of OpenCart to apply QuickCommerce to
 SHOP_VERSION="2.3.0.2"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+IMAGES_PATH="${DIR}/../images"
 WS_PATH="${DIR}/workspace"
 OC_PATH="${WS_PATH}/quickcommerce"
 VENDOR_PATH="${OC_PATH}/vendor"
@@ -40,38 +41,42 @@ cd ${OC_PATH}
 git clone https://github.com/bluecollardev/clients-phobulous-theme ${FRONTEND_PKG_NAME}
 #git submodule add https://github.com/bluecollardev/clients-phobulous-theme frontend
 # Create build directory for frontend files, this is where webpack will put the static output files
-mkdir -p ${OC_PATH}/upload/staging 
+mkdir -p ${OC_PATH}/upload/staging
 # React toggle display package needs to be removed...
 # Not used right now, as I'm cloning to get around some issues
 #git submodule update --init --recursive
 
 # Delete any existing volumes, we're about to create new volumes
-#rm -rf volume-qc volume-db
+rm -rf ${DIR}/volume-qc ${DIR}/volume-db
 
-#docker-compose rm -f --all
+docker-compose rm -f --all
 
 # Delete previously created artifacts by copying empty ones
-#cp ${WS_PATH}/../images/php-fpm/files.tar.gz ${WS_PATH}/../images/php-fpm
-#cp ${WS_PATH}/../images/maria-db/data.tar.gz ${WS_PATH}/../images/maria-db
+cp ${IMAGES_PATH}/php-fpm/default-files.tar.gz ${IMAGES_PATH}/php-fpm/files.tar.gz
+cp ${IMAGES_PATH}/maria-db/default-data.tar.gz ${IMAGES_PATH}/maria-db/data.tar.gz
 
 # Build QuickCommerce
-#docker-compose build php-fpm maria-db
-#docker-compose run --service-ports php-fpm
-#docker-compose stop maria-db
+docker-compose build php-fpm maria-db
+docker-compose run --service-ports php-fpm
+docker-compose stop maria-db
 
 # Cleanup mysql files
-#rm -rf volume-db/ib_*
+rm -rf ${DIR}/volume-db/ib_*
 
 # Create and move artifacts
-#tar cfvz files.tar.gz -C volume-qc .
-#tar cfvz data.tar.gz -C volume-db .
+tar cfvz files.tar.gz -C ${DIR}/volume-qc .
+tar cfvz data.tar.gz -C ${DIR}/volume-db .
+#chown ${USER:=$(/usr/bin/id -run)} ${QC_PATH}
 #chown $(stat -c '%U:%G' .) *.tar.gz
-#mv files.tar.gz ${WS_PATH}/../images/php-fpm
-#mv data.tar.gz ${WS_PATH}/../images/maria-db
+mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
+mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-#rm -rf volume-php volume-mysql
+#rm -rf volume-qc volume-db
 
-#docker-compose rm -f --all
-#rm -rf workspace/quickcommerce
+docker-compose rm -f --all
+rm -rf ${WS_PATH}
+
+# Set cwd to original dir
+cd ${DIR}
 
