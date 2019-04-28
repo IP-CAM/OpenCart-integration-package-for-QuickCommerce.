@@ -37,6 +37,8 @@ RUN chmod +x /*.sh
 # Add application contents
 RUN ls -la
 ADD files.tar.gz /var/www/
+RUN echo "Files in www directory"
+RUN ls -la /var/www/
 COPY update_shop_config.php /var/www/update_shop_config.php
 
 # Install frontend submodule's node packages
@@ -54,7 +56,7 @@ COPY update_shop_config.php /var/www/update_shop_config.php
 
 
 RUN echo 'EXECUTE ENTRYPOINT.SH'
-#CMD ["/entrypoint.sh"] # Execute from entrypoint script
-CMD ["php-fpm"]
+CMD ["/entrypoint.sh"] # Execute from entrypoint script
+#CMD ["php-fpm"]
 
-EXPOSE 9000
+#EXPOSE 9000

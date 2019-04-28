@@ -61,7 +61,7 @@ cp ${IMAGES_PATH}/php-fpm/default-files.tar.gz ${IMAGES_PATH}/php-fpm/files.tar.
 cp ${IMAGES_PATH}/maria-db/default-data.tar.gz ${IMAGES_PATH}/maria-db/data.tar.gz
 
 # Build QuickCommerce
-docker-compose build php-fpm #maria-db
+docker-compose build php-fpm maria-db
 docker-compose run --service-ports php-fpm
 docker-compose stop maria-db
 
@@ -77,12 +77,12 @@ mv ${DIR}/files.tar.gz ${IMAGES_PATH}/php-fpm
 mv ${DIR}/data.tar.gz ${IMAGES_PATH}/maria-db
 
 # Delete volumes - leave this out for now while devving
-#rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
+rm -rf ${DIR}/volume-qc/. ${DIR}/volume-db/.
 
 # Clear builds
 docker-compose rm -f --all
 # Delete OpenCart folder from workspace
-#rm -rf ${OC_PATH}
+rm -rf ${OC_PATH}
 
 # Set cwd to original dir
 cd ${DIR}

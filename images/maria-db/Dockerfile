@@ -1,5 +1,6 @@
 FROM mariadb:latest
-
+RUN echo 'BUILD MARIA IMAGE'
+RUN mkdir -p /var/lib/db-data
 RUN { \
         echo "[mysqld]"; \
         echo "datadir=/var/lib/db-data"; \
