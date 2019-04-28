@@ -66,6 +66,8 @@ upload/vqmod/vqcache/*
 upload/vqmod/logs/*
 
 # QuickCommerce Specific and Vendor
+config/*
+
 upload/system/modification/*
 upload/system/upload/*
 upload/system/cache/*
