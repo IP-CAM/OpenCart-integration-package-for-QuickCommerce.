@@ -37,15 +37,15 @@ composer install
 # Go to the vendor folder and pull in the quickcommerce (PHP lib) submodule
 cd ${VENDOR_PATH}
 
-git clone https://github.com/bluecollardev/quickcommerce-oc-mods.git ${QK_MODS_PATH}
-git clone https://github.com/bluecollardev/quickcommerce.git ${QK_PKG_NAME}
+git clone --depth 1 https://github.com/bluecollardev/quickcommerce-oc-mods.git ${QK_MODS_PATH}
+git clone --depth 1 https://github.com/bluecollardev/quickcommerce.git ${QK_PKG_NAME}
 #submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
 # Exit vendor dir go back to the root (quickcommerce) dir
 cd ${OC_PATH}
 
 # Install frontend submodule and fetch the submodule files 
 # TODO: A var for the theme and repo path!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-git clone https://github.com/bluecollardev/clients-phobulous-theme ${FRONTEND_PKG_NAME}
+git clone --depth 1 https://github.com/bluecollardev/clients-phobulous-theme ${FRONTEND_PKG_NAME}
 #git submodule add https://github.com/bluecollardev/clients-phobulous-theme frontend
 # Create build directory for frontend files, this is where webpack will put the static output files
 mkdir -p ${OC_PATH}/upload/staging
@@ -103,6 +103,8 @@ chown -Rv ${USER:=$(/usr/bin/id -run)} ${DIR}/volume-db
 docker-compose rm -f --all
 # Delete OpenCart folder from workspace
 rm -rf ${OC_PATH}
+# Delete OpenCart mods
+rm -rf ${QK_MODS_PATH}
 
 # Set cwd to original dir
 cd ${DIR}
