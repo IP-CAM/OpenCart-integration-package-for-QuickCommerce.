@@ -45,7 +45,7 @@ COPY update_shop_config.php /var/www/quickcommerce/update_shop_config.php
 #RUN apk add --update nodejs npm
 #RUN cd frontend && npm install --save react-toggle-display
 # Build the frontend app, which will drop files into the Quick Commerce front-end template
-#RUN webpack --watch
+#RUN webpack
 
 # Copy application contents from workspace to publish dir
 #RUN cd ../
@@ -55,8 +55,8 @@ COPY update_shop_config.php /var/www/quickcommerce/update_shop_config.php
 #RUN rm -rf tmp
 
 
-RUN echo 'EXECUTE ENTRYPOINT.SH'
+#RUN echo 'EXECUTE ENTRYPOINT.SH'
 #CMD ["/entrypoint.sh"] # Execute from entrypoint script
-CMD ["php-fpm"]
+#CMD ["php-fpm"]
 
-EXPOSE 9000
+#EXPOSE 9000

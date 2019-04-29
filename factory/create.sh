@@ -12,6 +12,7 @@ IMAGES_PATH="${DIR}/../images"
 WS_PATH="${DIR}/workspace"
 OC_PATH="${WS_PATH}/quickcommerce"
 VENDOR_PATH="${OC_PATH}/vendor"
+QK_MODS_PATH="${WS_PATH}/quickcommerce-mods"
 QK_PKG_NAME="quickcommerce"
 QK_LIB_PATH="${VENDOR_PATH}/${QK_PKG_NAME}"
 FRONTEND_PKG_NAME="frontend"
@@ -22,6 +23,7 @@ mkdir -p "${DIR}/volume-qc"
 mkdir -p "${DIR}/volume-db"
 
 rm -rf ${OC_PATH}
+rm -rf ${QK_MODS_PATH}
 # Clone a fresh copy of OpenCart
 echo "Cloning into directory ${OC_PATH}"
 git clone --depth 1 -b ${SHOP_VERSION} https://github.com/opencart/opencart.git ${OC_PATH}
@@ -35,6 +37,7 @@ composer install
 # Go to the vendor folder and pull in the quickcommerce (PHP lib) submodule
 cd ${VENDOR_PATH}
 
+git clone https://github.com/bluecollardev/quickcommerce-oc-mods.git ${QK_MODS_PATH}
 git clone https://github.com/bluecollardev/quickcommerce.git ${QK_PKG_NAME}
 #submodule add https://github.com/bluecollardev/quickcommerce.git quickcommerce
 # Exit vendor dir go back to the root (quickcommerce) dir
@@ -63,8 +66,8 @@ cp ${IMAGES_PATH}/maria-db/default-data.tar.gz ${IMAGES_PATH}/maria-db/data.tar.
 
 # Build QuickCommerce
 docker-compose build php-fpm maria-db
-docker-compose run --service-ports php-fpm
-docker-compose stop maria-db
+#docker-compose run --service-ports php-fpm
+docker-compose stop php-fpm maria-db
 
 # Cleanup mysql files
 #rm -rf ${DIR}/volume-db/ib_*
@@ -73,14 +76,17 @@ docker-compose stop maria-db
 echo "Build tarballs"
 # Package won't be ready yet just copy so we can make sure this is sane
 rm -rf $(find ${OC_PATH}/. -name ".git" -or -name ".gitignore")
+# Copy OpenCart files
 cp -r ${OC_PATH}/. ${DIR}/volume-qc
+# Merge in QuickCommerce mods for OpenCart
+cp -r ${QK_MODS_PATH}/* ${DIR}/volume-qc/upload
 
 chown -Rv ${USER:=$(/usr/bin/id -run)} ${DIR}/volume-qc
 chown -Rv ${USER:=$(/usr/bin/id -run)} ${DIR}/volume-db
 #find ${DIR}/volume-qc/ -print -exec chmod +rx {} \;
 #find ${DIR}/volume-db/ -print -exec chmod +rx {} \;
-find ${DIR}/volume-qc/ -exec chmod +rx {} \;
-find ${DIR}/volume-db/ -exec chmod +rx {} \;
+#find ${DIR}/volume-qc/ -exec chmod +rx {} \;
+#find ${DIR}/volume-db/ -exec chmod +rx {} \;
 
 # TODO: Fix this later
 #tar cvzf files.tar.gz -C ${DIR}/volume-qc .
