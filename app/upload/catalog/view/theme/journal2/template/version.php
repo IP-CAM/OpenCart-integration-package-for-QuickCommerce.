@@ -1,2 +1,0 @@
-<?php
-define('JOURNAL_TEMPLATE_VERSION', 2);
