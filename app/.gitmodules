@@ -1,6 +1,0 @@
-[submodule "vendor/quickcommerce"]
-	path = vendor/quickcommerce
-	url = https://github.com/firebrandsolutions/quickcommerce.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/firebrandsolutions/clients-phobulous-theme
